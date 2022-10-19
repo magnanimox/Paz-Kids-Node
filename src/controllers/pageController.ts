@@ -2,9 +2,7 @@ import { Request, Response } from "express";
 import { EpisodesTp } from "../models/TpEpisodes";
 import { EpisodesAb } from "../models/AbEpisodes";
 
-// Rotas de Menu
-
-export const inicio = (req: Request, res: Response) => {
+export const inicio = async (req: Request, res: Response) => {
     res.render("pages/inicio");
 };
 
@@ -17,8 +15,6 @@ export const recursos = (req: Request, res: Response) => {
     res.send("recursos no controller");
     // res.render(pages/recursos);
 };
-
-// Rotas das Séries
 
 export const aventura = async (req: Request, res: Response) => {
     let episodes = await EpisodesAb.findAll();

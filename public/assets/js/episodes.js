@@ -10,7 +10,6 @@ c(".prog-month h4").innerHTML = monthName;
 
 // Episodes
 window.episodesTp = [];
-window.episodesTp1 = [];
 window.episodesTpCurrentMonth = [];
 window.episodesAb = [];
 
@@ -88,37 +87,12 @@ function getCurrentAbEpisode(episodesAb) {
     })[0];
 }
 
-function renderTp1(episodesTp) {
-    window.episodesTp1.forEach((item) => {
-        let episodeCard = c(".section-area .terra-prometida").cloneNode(true);
-
-        episodeCard.querySelector("#thumb img").src = item.img;
-        episodeCard.querySelector("#ep").innerHTML = item.episodio;
-        episodeCard.querySelector("#name").innerHTML = item.name;
-        episodeCard.querySelector("#download a").href = item.download;
-        episodeCard.querySelector("#slides a").href = item.slides;
-        episodeCard.querySelector("#youtube a").href = item.youtube;
-        episodeCard.querySelector("#lifekids a").href = item.lifekids;
-
-        c(".episodes-append-tp1").append(episodeCard);
-    });
-}
-
-// populating consts
 getEpisodesTp().then((episodesTp) => {
-    //populate global
     window.episodesTp = episodesTp;
 
     const episodeToShow = getCurrentTpEpisode(episodesTp);
 
     renderEpisodeTp(episodeToShow);
-
-    // populate Tp1
-    for (let i in window.episodesTp) {
-        if (window.episodesTp[i].temp === 1) {
-            window.episodesTp1.push(episodesTp[i]);
-        }
-    }
 });
 
 getEpisodesAb().then((episodesAb) => {
@@ -128,8 +102,6 @@ getEpisodesAb().then((episodesAb) => {
 
     renderEpisodeAb(episodeToShow);
 });
-
-//Week buttons for Terra Prometida
 
 function prevWeek() {
     window.today = dayjs(window.today).subtract(1, "week");
