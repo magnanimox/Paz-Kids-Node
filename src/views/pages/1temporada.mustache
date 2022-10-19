@@ -1,0 +1,45 @@
+{{>partials/header}}
+
+<section>
+    <div class="section-area">
+        <div class="section-title">
+            <h3>Escola de Missões Planetária - 1ª Temporada</h3>
+        </div>
+         {{#episodes}}
+                <div class="terra-prometida mrg-top">
+                    <div class="thumb-backarea">
+                        <div id="thumb" class="thumbnail">
+                            <img
+                                src="{{ img }}"
+                                alt=""
+                                srcset=""
+                            />
+                        </div>
+                        <div class="info-episode">
+                            <div class="episode-title">
+                                <h3>Episódio <span id="ep">{{ episodio }}</span>:</h3>
+                                <h4><span id="name">{{ name }}</span></h4>
+                            </div>
+                            <div class="episode-buttons a-b">
+                                <button id="download" class="bt-download item-1">
+                                    <a href="{{ download }}" target="_blank">Download</a>
+                                </button>
+                                <button id="slides" class="bt-slides item-2">
+                                    <a href="{{ slides }}" target="_blank">Slides</a>
+                                </button>
+                                <button id="youtube" class="bt-youtube item-3">
+                                    <a href="{{ youtube }}" target="_blank">Youtube</a>
+                                </button>
+                                <button id="lifekids" class="bt-lifekids item-4">
+                                    <a href="{{ lifekids }}" target="_blank">Lifekids</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        {{/episodes}}
+    </div>
+    <div class="break-space"></div>
+    </section>
+
+{{>partials/footer}}

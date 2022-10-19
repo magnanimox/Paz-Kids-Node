@@ -1,0 +1,92 @@
+{{>partials/header}}
+
+<section>
+    <div class="section-area">
+        <div class="prog-month">
+            <h3>Programação</h3>
+            <hr />
+            <h4>Mês</h4>
+        </div>
+        <div class="aventura-biblica">
+            <div class="grade">
+                <h3>Aventura Bíblica</h3>
+                <h4>(2-6 Anos)</h4>
+            </div>
+
+            <div class="thumb-backarea">
+                <div class="thumbnail">
+                    <img src="assets/images/thumb-empty.jpg" alt="" srcset="" />
+                </div>
+                <div class="info-episode">
+                    <div class="episode-title">
+                        <h3>Episódio:</h3>
+                        <h4>O menino e o gigante</h4>
+                    </div>
+                    <div class="episode-buttons a-b">
+                        <button class="bt-download item-1">
+                            <a href="" target="_blank">Download</a>
+                        </button>
+                        <button class="bt-material item-2">
+                            <a href="" target="_blank">Material</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="terra-prometida">
+            <div class="grade">
+                <h3>Terra Prometida</h3>
+                <h4>(7-12 Anos)</h4>
+            </div>
+
+            <div class="thumb-backarea">
+                <div class="thumbnail">
+                    <img
+                        id="tp-thumb"
+                        src="assets/images/thumb-empty.jpg"
+                        alt=""
+                        srcset=""
+                    />
+                </div>
+                <div class="info-episode">
+                    <div class="episode-title">
+                        <h3>Episódio:</h3>
+                        <h4 id="tp-name">Noite dos Meninos</h4>
+                    </div>
+                    <div class="episode-buttons t-p">
+                        <button class="bt-download item-1">
+                            <a id="tp-download" href="" target="_blank"
+                                >Download</a
+                            >
+                        </button>
+                        <button class="bt-slides item-2">
+                            <a id="tp-slides" href="" target="_blank">Slides</a>
+                        </button>
+                        <button class="bt-youtube item-3">
+                            <a id="tp-youtube" href="" target="_blank"
+                                >Youtube</a
+                            >
+                        </button>
+                        <button class="bt-lifekids item-4">
+                            <a d="tp-lifekids" href="" target="_blank"
+                                >Lifekids</a
+                            >
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="weeks">
+                <div class="weeks-area">
+                    <button class="week-menos" onclick="prevWeek()">-</button>
+                    <div class="week-actual">
+                        <h4>Semana 1</h4>
+                    </div>
+                    <button class="week-mais" onclick="nextWeek()">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="break-space"></div>
+</section>
+
+{{>partials/footer}}

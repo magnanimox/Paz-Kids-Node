@@ -5,7 +5,11 @@ const router = Router();
 
 router.get("/", PageController.inicio);
 router.get("/quemsomos", PageController.quemSomos);
-router.get("/assista", PageController.assista);
 router.get("/recursos", PageController.recursos);
+
+// Rotas das séries
+router.get("/aventura-biblica", PageController.aventura);
+router.get("/1temporada", PageController.temp1);
+router.get("/2temporada", PageController.temp2);
 
 export default router;
