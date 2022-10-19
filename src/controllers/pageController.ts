@@ -7,12 +7,12 @@ export const inicio = async (req: Request, res: Response) => {
 };
 
 export const quemSomos = (req: Request, res: Response) => {
-    res.send("quemsomos no controller");
+    res.send("quemsomos page");
     // res.render(pages/quemSomos);
 };
 
 export const recursos = (req: Request, res: Response) => {
-    res.send("recursos no controller");
+    res.send("recursos page");
     // res.render(pages/recursos);
 };
 
