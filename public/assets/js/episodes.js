@@ -22,9 +22,7 @@ const getEpisodesAb = async () => {
 
 // Fetch: Terra Prometida
 const getEpisodesTp = async () => {
-    return await fetch("assets/json/tpEpisodes.json").then((data) =>
-        data.json()
-    );
+    return await fetch("/api/episodes").then((data) => data.json());
 };
 
 // Render: Aventura Bíblica

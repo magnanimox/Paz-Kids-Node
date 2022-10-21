@@ -1,7 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../instances/mysql";
 
-export interface EpisodeInstace extends Model {
+export interface EpisodeInstance extends Model {
     id: number;
     episodio: number;
     temp: number;
@@ -14,7 +14,7 @@ export interface EpisodeInstace extends Model {
     showAt: string;
 }
 
-export const EpisodesTp = sequelize.define<EpisodeInstace>(
+export const EpisodesTp = sequelize.define<EpisodeInstance>(
     "Episode",
     {
         id: {
@@ -47,7 +47,6 @@ export const EpisodesTp = sequelize.define<EpisodeInstace>(
         },
         showAt: {
             type: DataTypes.STRING,
-            defaultValue: "#",
         },
     },
     {

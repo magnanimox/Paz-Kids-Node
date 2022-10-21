@@ -1,19 +1,39 @@
 import { Request, Response } from "express";
-import { EpisodesTp } from "../models/TpEpisodes";
+import { EpisodeInstance, EpisodesTp } from "../models/TpEpisodes";
 import { EpisodesAb } from "../models/AbEpisodes";
+import dayjs from "dayjs";
+import { monthName, today } from "../helpers/index";
+
+var isBetween = require("dayjs/plugin/isBetween");
+dayjs.extend(isBetween);
 
 export const inicio = async (req: Request, res: Response) => {
-    res.render("pages/inicio");
+    const episodes = JSON.parse(JSON.stringify(await EpisodesTp.findAll()));
+
+    const episodeToShow = episodes.filter((data: EpisodeInstance) => {
+        const episodeDate = dayjs(data.showAt);
+        const start = episodeDate.subtract(2, "day").format("YYYY/MM/DD");
+        const end = episodeDate.add(4, "day").format("YYYY/MM/DD");
+        let showThisEpisode = false;
+
+        if (today.isBetween(start, end, "day", "[]")) {
+            showThisEpisode = true;
+        }
+        return showThisEpisode;
+    });
+    res.send(console.log(episodeToShow));
+
+    // res.render("pages/inicio",
+    // monthName,
+    // episodeToShow)
 };
 
-export const quemSomos = (req: Request, res: Response) => {
-    res.send("quemsomos page");
-    // res.render(pages/quemSomos);
+export const quemsomos = (req: Request, res: Response) => {
+    res.render("pages/quemsomos");
 };
 
-export const recursos = (req: Request, res: Response) => {
-    res.send("recursos page");
-    // res.render(pages/recursos);
+export const recursos = async (req: Request, res: Response) => {
+    res.render("pages/recursos");
 };
 
 export const aventura = async (req: Request, res: Response) => {
