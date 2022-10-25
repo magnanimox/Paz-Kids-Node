@@ -43,7 +43,7 @@
                 <div class="thumbnail">
                     <img
                         id="tp-thumb"
-                        src="assets/images/thumb-empty.jpg"
+                        src="{{ episodeToShow.img }}"
                         alt=""
                         srcset=""
                     />
@@ -51,24 +51,24 @@
                 <div class="info-episode">
                     <div class="episode-title">
                         <h3>Episódio:</h3>
-                        <h4 id="tp-name">Noite dos Meninos</h4>
+                        <h4 id="tp-name">{{ episodeToShow.name }}</h4>
                     </div>
                     <div class="episode-buttons t-p">
                         <button class="bt-download item-1">
-                            <a id="tp-download" href="" target="_blank"
+                            <a id="tp-download" href="{{ episodeToShow.download }}" target="_blank"
                                 >Download</a
                             >
                         </button>
                         <button class="bt-slides item-2">
-                            <a id="tp-slides" href="" target="_blank">Slides</a>
+                            <a id="tp-slides" href=" {{ episodeToShow.slides }} " target="_blank">Slides</a>
                         </button>
                         <button class="bt-youtube item-3">
-                            <a id="tp-youtube" href="" target="_blank"
+                            <a id="tp-youtube" href="{{ episodeToShow.youtube }}" target="_blank"
                                 >Youtube</a
                             >
                         </button>
                         <button class="bt-lifekids item-4">
-                            <a d="tp-lifekids" href="" target="_blank"
+                            <a d="tp-lifekids" href="{{ episodeToShow.lifekids }}" target="_blank"
                                 >Lifekids</a
                             >
                         </button>
