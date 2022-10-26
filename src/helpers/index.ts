@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { TpEpisodeInstance, EpisodesTp } from "../models/TpEpisodes";
 import { AbEpisodeInstance, EpisodesAb } from "../models/AbEpisodes";
-import { getEpisodeOfArray } from "../helpers/rules";
+import { getEpisodeOnArray } from "../helpers/rules";
 
 import dayjs from "dayjs";
 require("dayjs/locale/pt");
@@ -20,13 +20,11 @@ export async function cardTp() {
         if (dayjs(data.showAt).format("MMMM") === monthName) {
             showThisEpisodes = true;
         }
-
         return showThisEpisodes;
     });
 
-    let indexOfEpisode = episodesOfMonth.findIndex(getEpisodeOfArray);
-
-    return episodesOfMonth[indexOfEpisode];
+    let indexEp = episodesOfMonth.findIndex(getEpisodeOnArray);
+    return episodesOfMonth[indexEp];
 }
 
 export async function cardAb() {

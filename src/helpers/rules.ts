@@ -5,7 +5,7 @@ import isBetween from "dayjs/plugin/isBetween";
 
 dayjs.extend(isBetween);
 
-export const getEpisodeOfArray = (data: TpEpisodeInstance) => {
+export const getEpisodeOnArray = (data: TpEpisodeInstance) => {
     const episodeDate = dayjs(data.showAt);
     const start = episodeDate.subtract(2, "day").format("YYYY/MM/DD");
     const end = episodeDate.add(4, "day").format("YYYY/MM/DD");
