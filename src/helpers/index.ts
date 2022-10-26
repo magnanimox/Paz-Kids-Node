@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { TpEpisodeInstance, EpisodesTp } from "../models/TpEpisodes";
 import { AbEpisodeInstance, EpisodesAb } from "../models/AbEpisodes";
-import dayjs from "dayjs";
-import isBetween from "dayjs/plugin/isBetween";
+import { getEpisodeOfArray } from "../helpers/rules";
 
-dayjs.extend(isBetween);
+import dayjs from "dayjs";
 require("dayjs/locale/pt");
 dayjs.locale("pt-br");
+
 export let today = dayjs();
 export let monthName = today.format("MMMM");
 
@@ -24,20 +24,7 @@ export async function cardTp() {
         return showThisEpisodes;
     });
 
-    const ruleToGetEpisodeOfArray = (data: TpEpisodeInstance) => {
-        const episodeDate = dayjs(data.showAt);
-        const start = episodeDate.subtract(2, "day").format("YYYY/MM/DD");
-        const end = episodeDate.add(4, "day").format("YYYY/MM/DD");
-        let showThisEpisode = false;
-
-        if (today.isBetween(start, end, "day", "[]")) {
-            showThisEpisode = true;
-        }
-
-        return showThisEpisode;
-    };
-
-    let indexOfEpisode = episodesOfMonth.findIndex(ruleToGetEpisodeOfArray);
+    let indexOfEpisode = episodesOfMonth.findIndex(getEpisodeOfArray);
 
     return episodesOfMonth[indexOfEpisode];
 }
