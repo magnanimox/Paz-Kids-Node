@@ -1,7 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../instances/mysql";
 
-export interface EpisodeInstance extends Model {
+export interface TpEpisodeInstance extends Model {
     id: number;
     episodio: number;
     temp: number;
@@ -14,7 +14,7 @@ export interface EpisodeInstance extends Model {
     showAt: string;
 }
 
-export const EpisodesTp = sequelize.define<EpisodeInstance>(
+export const EpisodesTp = sequelize.define<TpEpisodeInstance>(
     "Episode",
     {
         id: {

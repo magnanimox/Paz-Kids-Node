@@ -1,21 +1,21 @@
 import { Request, Response } from "express";
-import { EpisodeInstance, EpisodesTp } from "../models/TpEpisodes";
+import { EpisodesTp } from "../models/TpEpisodes";
 import { EpisodesAb } from "../models/AbEpisodes";
+import { monthName, cardTp, cardAb } from "../helpers/index";
 import dayjs from "dayjs";
-import { monthName, today, cardTp } from "../helpers/index";
-
-var isBetween = require("dayjs/plugin/isBetween");
-dayjs.extend(isBetween);
 
 export const inicio = async (req: Request, res: Response) => {
-    const episodeToShow = await cardTp({
-        date: req.query.date as string,
-    });
-    console.log(req.query);
+    const episodeTpToShow = await cardTp();
+    const episodeAbToShow = await cardAb();
+    let episodeWeekDisplay = dayjs(episodeTpToShow.showAt).format(
+        "DD/MMM/YYYY"
+    );
 
     res.render("pages/inicio", {
         monthName,
-        episodeToShow,
+        episodeTpToShow,
+        episodeAbToShow,
+        episodeWeekDisplay,
     });
 };
 

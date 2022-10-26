@@ -6,3 +6,11 @@ const cs = (el) => document.querySelectorAll(el);
 c(".menu .dropdown a").addEventListener("click", function (event) {
     event.preventDefault();
 });
+
+c(".week-menos").addEventListener("click", function (event) {
+    event.preventDefault();
+});
+
+c(".week-mais").addEventListener("click", function (event) {
+    event.preventDefault();
+});

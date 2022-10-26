@@ -12,20 +12,14 @@ export let monthName = today.format("MMMM");
 
 export async function cardTp() {
     const episodes = await EpisodesTp.findAll();
-    let episodesOfMonth = [];
 
-    episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
-        let showThisEpisodes = false;
+    return episodes.filter((data: TpEpisodeInstance) => {
+        const episodeDate = dayjs(data.showAt);
 
-        if (dayjs(data.showAt).format("MMMM") === monthName) {
-            showThisEpisodes = true;
+        if (!episodeDate.isValid()) {
+            return false;
         }
 
-        return showThisEpisodes;
-    });
-
-    const ruleToGetEpisodeOfArray = (data: TpEpisodeInstance) => {
-        const episodeDate = dayjs(data.showAt);
         const start = episodeDate.subtract(2, "day").format("YYYY/MM/DD");
         const end = episodeDate.add(4, "day").format("YYYY/MM/DD");
         let showThisEpisode = false;
@@ -35,11 +29,7 @@ export async function cardTp() {
         }
 
         return showThisEpisode;
-    };
-
-    let indexOfEpisode = episodesOfMonth.findIndex(ruleToGetEpisodeOfArray);
-
-    return episodesOfMonth[indexOfEpisode];
+    })[0];
 }
 
 export async function cardAb() {

@@ -271,7 +271,7 @@ header .backnav-gray {
 .prog-month {
     width: 100%;
     height: auto;
-    text-align: end;
+    text-align: center;
 }
 
 .prog-month:first-child {
@@ -306,6 +306,7 @@ header .backnav-gray {
     flex-direction: column;
     width: 100%;
     height: auto;
+    margin-top: 55px;
 }
 
 .terra-prometida {
@@ -414,11 +415,38 @@ header .backnav-gray {
     font-weight: 700;
 }
 
+.month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 700;
+    color: #4d5974;
+}
+
+.month button.month-mais {
+    margin-left: 8px;
+}
+
+.month button.month-menos {
+    margin-right: 8px;
+}
+
 .week-actual {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-inline: 18px;
+}
+
+.week-actual h4 {
+    text-transform: uppercase;
 }
 
 .week-actual h5 {

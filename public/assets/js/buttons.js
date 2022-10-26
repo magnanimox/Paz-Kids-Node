@@ -1,16 +1,23 @@
 // Dayjs
 dayjs.locale("pt-br");
-dayjs.extend(window.dayjs_plugin_isBetween);
 window.today = dayjs();
 
-function prevWeek() {
-    window.today = dayjs(window.today).subtract(1, "week");
+function prevMonth() {
+    // window.today = dayjs(window.today).subtract(1, "week");
+    alert("Você voltou um mês!");
+}
 
-    window.location = "?date=" + window.today.format("YYYY/MM/DD");
+function nextMonth() {
+    // window.today = dayjs(window.today).add(1, "week");
+    alert("Você adiantou um mês!");
+}
+
+function prevWeek() {
+    // window.today = dayjs(window.today).subtract(1, "week");
+    alert("Você voltou uma semana!");
 }
 
 function nextWeek() {
-    window.today = dayjs(window.today).add(1, "week");
-
-    window.location = "?date=" + window.today.format("YYYY/MM/DD");
+    // window.today = dayjs(window.today).add(1, "week");
+    alert("Você adiantou uma semana!");
 }
