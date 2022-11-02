@@ -1,9 +1,12 @@
 import { Router } from "express";
 import * as PageController from "../controllers/pageController";
 
-const router = Router();
+export const router = Router();
 
 router.get("/", PageController.inicio);
+router.get("/login", PageController.login);
+router.get("/next/:month", PageController.nextmonth);
+router.get("/prev/:month", PageController.prevmonth);
 router.get("/quemsomos", PageController.quemsomos);
 router.get("/recursos", PageController.recursos);
 
