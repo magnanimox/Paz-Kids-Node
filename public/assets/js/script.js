@@ -1,3 +1,10 @@
+// DayJs
+dayjs.extend(window.dayjs_plugin_isBetween);
+dayjs.locale("pt-br");
+let today = dayjs();
+let monthName = today.format("MMMM");
+let currentMonth = dayjs().month();
+
 // Universal Shortcuts
 const c = (el) => document.querySelector(el);
 const cs = (el) => document.querySelectorAll(el);
@@ -5,12 +12,30 @@ const cs = (el) => document.querySelectorAll(el);
 // Menu > Assista; Prevent Default
 c(".menu .dropdown a").addEventListener("click", function (event) {
     event.preventDefault();
+    if (c(".menu .dropdown-menu").style.display == "flex") {
+        c(".menu .dropdown-menu").style.display = "none";
+    } else {
+        c(".menu .dropdown-menu").style.display = "flex";
+    }
 });
 
-c(".week-menos").addEventListener("click", function (event) {
-    event.preventDefault();
-});
+// Actual Terra Prometida Cards
+let cards = cs(".cardTp");
+let dates = cs(".cardTp .week-actual");
+let arrDates = Array.from(dates);
+let indexEp = 0;
 
-c(".week-mais").addEventListener("click", function (event) {
-    event.preventDefault();
-});
+for (i = 0; i < arrDates.length; i++) {
+    const episodeDate = dayjs(arrDates[i].innerText);
+    const start = episodeDate.subtract(2, "day").format("YYYY/MM/DD");
+    const end = episodeDate.add(4, "day").format("YYYY/MM/DD");
+
+    if (today.isBetween(start, end, "day", "[]")) {
+        indexEp = i;
+        cards[i].style.display = "flex";
+    } else {
+        cards[i].style.display = "none";
+    }
+    arrDates[i].innerHTML =
+        "<h4>" + dayjs(arrDates[i].innerText).format("DD/MMM/YYYY") + "</h4>";
+}
