@@ -14,13 +14,9 @@ import {
 } from "../helpers/index";
 import dayjs from "dayjs";
 
-<<<<<<< HEAD
 export const login = async (req: Request, res: Response) => {
     res.render("pages/login");
 };
-=======
-export const login = async (req: Request, res: Response) => {};
->>>>>>> 337ab8b6dffc7f90637df194af012f0cbe90773b
 
 export const inicio = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTp();
