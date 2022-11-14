@@ -1,14 +1,18 @@
+// Requires
 require("dayjs/locale/pt");
 
+// Imports
 import { Request, Response } from "express";
 import { TpEpisodeInstance, EpisodesTp } from "../models/TpEpisodes";
 import { AbEpisodeInstance, EpisodesAb } from "../models/AbEpisodes";
 
+// DayJs
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 dayjs.extend(isBetween);
 dayjs.locale("pt-br");
 
+// Variables
 export let today = dayjs();
 export let month = today.month();
 export let monthName = dayjs().format("MMMM");
@@ -18,6 +22,7 @@ let nextMonth = today.month(today.month() + 1);
 export let prevMonthName = dayjs(prevMonth).format("MMMM");
 export let nextMonthName = dayjs(nextMonth).format("MMMM");
 
+// Functions
 export async function cardTp() {
     const episodes = await EpisodesTp.findAll();
     let episodesOfMonth = [];

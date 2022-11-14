@@ -1,13 +1,13 @@
+// Universal Shortcuts
+const c = (el) => document.querySelector(el);
+const cs = (el) => document.querySelectorAll(el);
+
 // DayJs
 dayjs.extend(window.dayjs_plugin_isBetween);
 dayjs.locale("pt-br");
 let today = dayjs();
 let monthName = today.format("MMMM");
 let currentMonth = dayjs().month();
-
-// Universal Shortcuts
-const c = (el) => document.querySelector(el);
-const cs = (el) => document.querySelectorAll(el);
 
 // Menu > Assista; Prevent Default
 c(".menu .dropdown a").addEventListener("click", function (event) {
@@ -38,4 +38,30 @@ for (i = 0; i < arrDates.length; i++) {
     }
     arrDates[i].innerHTML =
         "<h4>" + dayjs(arrDates[i].innerText).format("DD/MMM/YYYY") + "</h4>";
+}
+
+// Botões de Download
+
+let allDownButtons = cs(".episode-buttons a");
+
+for (let i in allDownButtons) {
+    if (allDownButtons[i].href === "http://localhost:3000/#") {
+        allDownButtons[i].addEventListener("click", (e) => {
+            console.log("clicou");
+            e.preventDefault();
+
+            c(".modal-login").style.opacity = 0;
+            c(".modal-login").style.display = "flex";
+            setTimeout(() => {
+                c(".modal-login").style.opacity = 1;
+            }, 200);
+        });
+    }
+}
+
+function closeModal() {
+    c(".modal-login").style.opacity = 0;
+    setTimeout(() => {
+        c(".modal-login").style.display = "none";
+    }, 500);
 }

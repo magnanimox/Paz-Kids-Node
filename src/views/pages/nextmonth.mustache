@@ -27,10 +27,10 @@
                     </div>
                     <div class="episode-buttons a-b">
                         <button class="bt-download item-1">
-                            <a href="{{ episodeAbToShow.download }}" target="_blank">Download</a>
+                            <a href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="_blank">Download</a>
                         </button>
                         <button class="bt-material item-2">
-                            <a href="{{ episodeAbToShow.materiais }}" target="_blank">Material</a>
+                            <a href="{{ #linkDown }}{{ episodeAbToShow.materiais }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="_blank">Material</a>
                         </button>
                     </div>
                 </div>
@@ -59,20 +59,20 @@
                         </div>
                         <div class="episode-buttons t-p">
                             <button class="bt-download item-1">
-                                <a id="tp-download" href="{{ download }}" target="_blank"
+                                <a id="tp-download" href=" {{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }} " target=""
                                     >Download</a
                                 >
                             </button>
                             <button class="bt-slides item-2">
-                                <a id="tp-slides" href=" {{ slides }} " target="_blank">Slides</a>
+                                <a id="tp-slides" href=" {{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }} " target="">Slides</a>
                             </button>
                             <button class="bt-youtube item-3">
-                                <a id="tp-youtube" href="{{ youtube }}" target="_blank"
+                                <a id="tp-youtube" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target=""
                                     >Youtube</a
                                 >
                             </button>
                             <button class="bt-lifekids item-4">
-                                <a d="tp-lifekids" href="{{ lifekids }}" target="_blank"
+                                <a d="tp-lifekids" href="{{ #linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target=""
                                     >Lifekids</a
                                 >
                             </button>

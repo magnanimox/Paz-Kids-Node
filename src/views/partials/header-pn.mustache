@@ -15,7 +15,7 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
-        <title>Paz Kids | Início</title>
+        <title>Paz Kids | {{ pageName }}</title>
         <link rel="stylesheet" href="/assets/css/style.css" />
         <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
@@ -27,6 +27,20 @@
         <header>
             <div class="header-bar"></div>
             <div class="nav-bar">
+            <div class="nav-bar-right newleft">
+                    <div class="nav-bar--login">
+                    <a 
+                            class="nav-bar--login--profile" href="http://localhost:3000/signin">
+                                    <img src="/assets/images/icon--profile.png" alt=""/>
+                        </a>
+                        {{#logged}}
+                            <span style="color: white;font-size: 20px;">Olá, {{ username }}</span>
+                        {{/logged}}
+                        {{^logged}}
+                        <a href="http://localhost:3000/signin"><span style="color: white;font-size: 18px;">Faça Login</span></a>
+                        {{/logged}}
+                    </div>
+                </div>
                 <div class="nav-bar-left">
                     <div class="header-bar--logo">
                         <svg
@@ -136,8 +150,8 @@
                 </div>
                 <div class="nav-bar-right">
                     <div class="nav-bar--login">
-                        <a href=""><button>Login</button></a>
-                        <a class="nav-bar--login--profile" href="">
+                        <a href="http://localhost:3000/signin"><button>Login</button></a>
+                        <a class="nav-bar--login--profile" href="http://localhost:3000/signin">
                             <img src="/assets/images/icon--profile.png" alt=""/>
                         </a>
                     </div>

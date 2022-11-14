@@ -73,14 +73,18 @@
                         </defs>
                     </svg>
                 </div>
+                {{#danger}}
                 <div class="notification danger">
                     <p>Login e/ou senha inválidos.</p>
                 </div>
+                {{/danger}}
+                {{^danger}}
+                {{/danger}}
                 <form action="" method="POST">
                     <input
-                        name="user"
-                        type="text"
-                        autocomplete="user"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
                         placeholder="Login"
                         autofocus
                     />
@@ -93,7 +97,7 @@
                     <input type="submit" value="Entrar" />
                 </form>
                 <p class="login-p">
-                    Ainda não tem uma conta? <a href="">Criar conta</a>
+                    Ainda não tem uma conta? <a href="http://localhost:3000/signup">Criar conta</a>
                 </p>
             </div>
         </section>

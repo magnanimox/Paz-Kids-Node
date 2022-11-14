@@ -160,6 +160,10 @@ header {
     justify-content: center;
 }
 
+.nav-bar-right.newleft {
+    display: none;
+}
+
 .menu-button-container {
     display: none;
     height: 100%;
@@ -738,7 +742,15 @@ svg {
     align-items: center;
 }
 
-.login {
+.area-login.modal {
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page .login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -747,14 +759,67 @@ svg {
     height: auto;
     padding: 35px;
     border-radius: 8px;
-    /* box-shadow: 0px 0px 10px #e7e7e7; */
+}
+
+.signup-page .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #158cc4;
+    width: 750px;
+    height: auto;
+    padding: 55px;
+    border-radius: 8px;
+}
+
+.success-page .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #158cc4;
+    width: 750px;
+    height: 784.266px;
+    padding: 55px;
+    border-radius: 8px;
+}
+
+.success-page .login .register-ok-redirect {
+    font-size: 35px;
+    color: #ffffff;
 }
 
 .login form {
     display: flex;
-    width: 100%;
     flex-direction: column;
-    margin-top: 17px;
+    width: 100%;
+    margin-top: 13px;
+}
+
+.signup-page form {
+    display: grid;
+    grid-template-columns: 309px 309px;
+    grid-template-rows: 455px;
+    margin-top: 10px;
+}
+
+.signup-page .login form div {
+    margin-bottom: 10px;
+}
+
+.signup-page .login form .iti__selected-flag,
+.signup-page .login form .iti__flag,
+.signup-page .login form .iti__flag-container,
+.signup-page .login form .iti__arrow {
+    margin-bottom: 0px;
+}
+
+.signup-page .login form .coluna {
+    padding: 17px;
+}
+
+#last {
+    margin-bottom: 0px;
 }
 
 .login input {
@@ -769,9 +834,192 @@ svg {
     font-size: 15px;
 }
 
+.signup-page .login input {
+    margin-top: 0px;
+    background-color: #fff;
+    color: #aaa;
+    border: 0;
+    width: 275px;
+    height: 30px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#finalizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-left: 0px;
+    background-color: #48ca56;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    height: 33px;
+}
+
+#voltar {
+    background-color: hwb(50deg 30% 28%);
+    color: #ffffff;
+    border: 0;
+    width: 275px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    height: 33px;
+}
+
+#last {
+    margin-bottom: 10px;
+}
+
+.table-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    max-width: 100%;
+}
+
+.decima {
+    grid-template-columns: repeat(356px);
+    grid-template-rows: 2;
+}
+
+.coluna {
+    /* max-width: 309px; */
+    margin: 0;
+}
+
+.table-signup p {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.table-signup p:first-child {
+    margin-top: 0px;
+}
+
 .login svg {
     width: 150px;
     height: auto;
+}
+
+.signup-page .login svg {
+    width: 107px;
+    height: auto;
+}
+
+.signup-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    justify-content: center;
+}
+
+.signup-top .title {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.table-signup .hasChurch {
+    border: 0;
+    color: #ffffff;
+}
+
+.table-signup fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-signup fieldset p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.table-signup fieldset label {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.table-signup fieldset {
+    display: grid;
+    grid-template-rows: 30px (3);
+    width: 275px;
+}
+
+.table-signup fieldset div {
+    display: flex;
+    align-items: center;
+}
+
+.table-signup fieldset input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 70%;
+    background-clip: content-box;
+    padding: 3px;
+    cursor: pointer;
+    margin-right: 6px;
+    transition: all 300ms ease-in-out;
+}
+
+.table-signup fieldset input[type="radio"]:checked {
+    background-color: #083e57;
+}
+
+.coluna #state,
+.coluna #city,
+.coluna #cityName,
+.coluna #church,
+.coluna #churchName {
+    color: #ffffff;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#state select,
+#city select,
+#church select {
+    width: 275px;
+    height: 30px;
+    border-radius: 8px;
+    border: 0;
+    outline: none;
+    color: #777;
+}
+
+.btns-signup {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 309px 309px;
+    grid-template-rows: 33px;
+    width: 100%;
+}
+
+.btn-voltar {
+    padding: 0px 17px 0px 17px;
+}
+
+.btn-cadastrar {
+    padding: 0px 17px 0px 17px;
 }
 
 input::placeholder {
@@ -814,6 +1062,14 @@ form [type="submit"]:hover {
     background-color: #92dcff;
 }
 
+.signup-page {
+    background-color: #92dcff;
+}
+
+.success-page {
+    background-color: #92dcff;
+}
+
 .notification {
     display: flex;
     justify-content: center;
@@ -829,6 +1085,7 @@ form [type="submit"]:hover {
 }
 
 .notification.danger {
+    display: flex;
     background: rgb(255 0 0 / 78%);
     color: #ffffff;
     border-radius: 8px;
@@ -911,6 +1168,26 @@ form [type="submit"]:hover {
 
     .nav-bar--login {
         display: none;
+    }
+
+    .nav-bar-right.newleft {
+        display: flex;
+        margin-left: 45px;
+    }
+
+    .nav-bar-right.newleft .nav-bar--login {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .nav-bar-right.newleft .nav-bar--login a img {
+        margin-right: 30px;
+        margin-left: 0px;
+    }
+
+    .nav-bar-right.newleft .nav-bar--login a span {
+        margin-right: 45px;
+        margin-left: 0px;
     }
 
     .nav-bar--menu {
@@ -1093,6 +1370,29 @@ form [type="submit"]:hover {
 }
 
 @media (max-width: 573px) {
+    .nav-bar {
+        justify-content: space-between;
+    }
+
+    .nav-bar-right {
+        display: none;
+    }
+
+    .nav-bar-right.newleft {
+        display: flex;
+        margin-left: 45px;
+    }
+
+    .nav-bar-right.newleft .nav-bar--login {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .nav-bar-right.newleft .nav-bar--login a img {
+        margin-right: 30px;
+        margin-left: 0px;
+    }
+
     .section-area {
         padding-inline: 0px;
     }
@@ -1133,6 +1433,18 @@ form [type="submit"]:hover {
     .grid {
         grid-template-columns: repeat(1, 166px);
         grid-template-rows: repeat(3, 128px);
+    }
+
+    .login {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #158cc4;
+        width: 100%;
+        height: 100%;
+        padding: 45px;
+        border-radius: 0;
     }
 }
 
@@ -1244,5 +1556,99 @@ form [type="submit"]:hover {
     .nav-bar--menu .dropdown-menu ul li a {
         margin-left: 0;
         font-size: 18px;
+    }
+}
+
+/* 404 */
+.notFound {
+    height: auto;
+}
+
+.notFound h1 {
+    margin-top: 120px;
+    font-size: 50px;
+    color: #616161;
+}
+
+.notFound h2 {
+    margin-top: 10px;
+    color: #7e49f6;
+}
+
+.notFound a {
+    color: #7e49f6;
+}
+
+/* Modal Login */
+.modal-login {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all ease 0.5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.modal-login-body {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: #02b7ff;
+    border-radius: 20%;
+}
+
+@media screen and (max-width: 750px) {
+    .signup-page .area-login {
+        height: auto;
+    }
+
+    .signup-page .login {
+        border-radius: 0px;
+        width: 100%;
+    }
+    .signup-page form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login form {
+        width: auto;
+    }
+
+    .btns-signup {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-voltar,
+    .btn-cadastrar {
+        padding: 0;
+    }
+
+    #voltar,
+    #finalizar {
+        height: auto;
+        width: 100%;
+    }
+
+    #voltar {
+        margin-bottom: 16px;
+    }
+
+    .success-page .area-login {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .success-page .login {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
     }
 }

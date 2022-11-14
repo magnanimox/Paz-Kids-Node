@@ -1,0 +1,44 @@
+*users
+- id
+- name
+- email
+- state
+- city
+- church
+- telephone
+- passwordHash
+- token
+
+*states
+- id
+- state
+
+*cities
+- id_state
+- city
+- id
+
+*church
+- id_city
+- church
+- id
+
+*abEpisodes
+- id
+- name
+- img
+- download
+- materiais
+- showAt
+
+*tpEpisodes
+- id
+- episodio
+- temp
+- name
+- img
+- download
+- youtube
+- slides
+- lifekids
+- showAt
