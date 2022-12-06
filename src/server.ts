@@ -48,4 +48,4 @@ server.use((req, res) => {
 });
 
 // Port
-server.listen(process.env.PORT);
+server.listen(process.env.PORT || 3000);
