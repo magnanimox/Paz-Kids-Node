@@ -4,7 +4,7 @@
   "installCommand": "npm run install",
   "functions": {
     "**/*": {
-      "memory": 3008,
+      "memory": 1000,
       "maxDuration": 10
     }
   }
