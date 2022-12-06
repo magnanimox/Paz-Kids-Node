@@ -21,6 +21,6 @@ jobs:
             - name: 📂 Sync files
               uses: SamKirkland/FTP-Deploy-Action@4.3.3
               with:
-                  server: ftp.pazkids.com.br
-                  username: contaftp@pazkids.com.br
-                  password: VemMax131296
+                  server: ${{ secrets.server }}
+                  username: ${{ secrets.username }}
+                  password: ${{ secrets.password }}
