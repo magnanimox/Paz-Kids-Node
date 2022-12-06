@@ -3,19 +3,8 @@
   "public": true,
   "functions": {
     "src/server.ts": {
-      "memory": 100
+      "runtime": "@vercel/node"
     }
   },
-  "builds": [
-    {
-      "src": "src/server.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/src/server.ts"
-    }
-  ]
+  "rewrites": [{ "source": "/", "destination": "src/server.ts" }]
 }
