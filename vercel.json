@@ -1,11 +1,5 @@
 {
   "buildCommand": "npm run build",
   "devCommand": "npm run start",
-  "installCommand": "npm run install",
-  "functions": {
-    "**/*": {
-      "memory": 1000,
-      "maxDuration": 10
-    }
-  }
+  "installCommand": "npm run install"
 }
