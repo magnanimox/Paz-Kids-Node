@@ -9,7 +9,7 @@
     "scripts": {
         "tsc": "tsc",
         "start": "node dist/server.js",
-        "postinstall": "npm run tsc && copyfiles -u 1 src/**/*.mustache dist/",
+        "build": "npm run tsc && copyfiles -u 1 src/**/*.mustache dist/",
         "start-dev": "nodemon -e ts,json,mustache src/server.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
