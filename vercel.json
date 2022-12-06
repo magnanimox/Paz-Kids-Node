@@ -4,7 +4,7 @@
   "public": true,
   "functions": {
     "src/server.ts": {
-      "memory": 100,
+      "memory": 100
     },
   },
   "builds": [
