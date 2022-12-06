@@ -6,7 +6,7 @@
     "src/server.ts": {
       "memory": 100,
     },
-  }
+  },
   "builds": [
     {
       "src": "src/server.ts",
