@@ -1,10 +1,14 @@
 {
-  "version": 2,
-  "public": true,
-  "functions": {
-    "src/server.ts": {
-      "runtime": "@vercel/node"
+  "builds": [
+    {
+      "src": "dist/new-server.js",
+      "use": "@vercel/node"
     }
-  },
-  "rewrites": [{ "source": "/", "destination": "src/server.ts" }]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/new-server.js"
+    }
+  ]
 }
