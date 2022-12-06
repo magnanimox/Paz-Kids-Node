@@ -59,13 +59,12 @@ export const prevmonth = async (req: Request, res: Response) => {
     let username = "";
     let pageName = "Início";
     let linkDown = false;
-
+    console.log(logged);
     if (logged) {
         username = req.session.user.name;
         linkDown = true;
     } else {
     }
-    console.log(username);
 
     res.render("pages/prevmonth", {
         monthName,
