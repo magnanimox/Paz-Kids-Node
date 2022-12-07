@@ -61,6 +61,6 @@ jobs:
                 tar -xvf pazkids-dist.tar
                 rm pazkids-dist.tar
                 cd dist/
-                npm install --production
+                npm ci
                 pm2 startOrRestart ./ecosystem.config.js --env production
 
