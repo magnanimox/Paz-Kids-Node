@@ -118,12 +118,12 @@ export const nextmonth = async (req: Request, res: Response) => {
 
 export const quemsomos = (req: Request, res: Response) => {
     let pageName = "Quem Somos";
-    res.render("pages/quemsomos");
+    res.render("pages/manutencao");
 };
 
 export const recursos = async (req: Request, res: Response) => {
     let pageName = "Recursos";
-    res.render("pages/recursos");
+    res.render("pages/manutencao");
 };
 
 export const aventura = async (req: Request, res: Response) => {
