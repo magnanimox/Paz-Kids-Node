@@ -19,6 +19,9 @@ jobs:
               run: |
                   npm install
                   npm run build
+                  cd dist/
+                  npm install --production --platform=linux --arch=x64 --target=18.0.0 --verbose
+                  cd ../
                   tar -cvf pazkids-dist.tar dist/
 
             - name: Save Build Artifact
@@ -61,6 +64,5 @@ jobs:
                 tar -xvf pazkids-dist.tar
                 rm pazkids-dist.tar
                 cd dist/
-                npm ci
                 pm2 startOrRestart ./ecosystem.config.js --env production
 

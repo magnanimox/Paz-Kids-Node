@@ -6,7 +6,7 @@
     "scripts": {
         "tsc": "tsc",
         "start": "node dist/server.js",
-        "build": "npm run tsc && copyfiles src/**/*.mustache package.json package-lock.json ecosystem.config.js dist/",
+        "build": "npm run tsc && copyfiles src/**/*.mustache package.json ecosystem.config.js dist/",
         "dev": "nodemon -e ts,json,mustache src/server.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
