@@ -45,7 +45,7 @@ for (i = 0; i < arrDates.length; i++) {
 let allDownButtons = cs(".episode-buttons a");
 
 for (let i in allDownButtons) {
-    if (allDownButtons[i].href === "http://localhost:3000/#") {
+    if (allDownButtons[i].href === "http://pazkids.com.br/#") {
         allDownButtons[i].addEventListener("click", (e) => {
             console.log("clicou");
             e.preventDefault();
