@@ -15,35 +15,38 @@
         <div class="modal-login">
             <div class="modal-login-body">
                 <section class="area-login modal">
-            <div class="login">
-                {{#danger}}
-                <div class="notification danger">
-                    <p>Login e/ou senha inválidos.</p>
-                </div>
-                {{/danger}}
-                {{^danger}}
-                {{/danger}}
-                <form action="/signin" method="POST">
-                    <input
-                        name="email"
-                        type="email"
-                        autocomplete="email"
-                        placeholder="Login"
-                        autofocus
-                    />
-                    <input
-                        name="password"
-                        autocomplete="current-password"
-                        type="password"
-                        placeholder="Senha"
-                    />
-                    <input type="submit" value="Entrar" />
-                </form>
-                <p class="login-p">
-                    Ainda não tem uma conta? <a href="https://pazkids.com.br/signup">Criar conta</a>
-                </p>
-            </div>
-        </section>
+                    <div class="login">
+                        {{#danger}}
+                            <div class="notification danger">
+                                <p>Login e/ou senha inválidos.</p>
+                            </div>
+                        {{/danger}}
+                        {{^danger}}
+                        {{/danger}}
+                        <form action="/signin" method="POST">
+                            <input
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                placeholder="Login"
+                                autofocus
+                            />
+                            <input
+                                name="password"
+                                autocomplete="current-password"
+                                type="password"
+                                placeholder="Senha"
+                            />
+                            <input type="submit" value="Entrar" />
+                        </form>
+                        <p class="login-p">
+                            Ainda não tem uma conta? <a href="https://pazkids.com.br/signup">Criar conta</a>
+                        </p>
+                    </div>
+                    <div class="exit">
+                        X
+                    </div>
+                </section>
             </div>
         </div>
         <div class="aventura-biblica">
