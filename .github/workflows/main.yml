@@ -19,7 +19,7 @@ jobs:
               run: |
                   npm install
                   npm run build
-                  tar -cvf pazkids-dist.tar dist/**/*
+                  tar -cvf pazkids-dist.tar dist/
 
             - name: Save Build Artifact
               uses: actions/upload-artifact@v2
