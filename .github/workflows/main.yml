@@ -48,3 +48,17 @@ jobs:
               source: "pazkids-dist.tar"
               target: "/home/web/projects"
 
+          - name: Enter SSH and unzip Artifact
+            uses: appleboy/ssh-action@master
+            with:
+              host: ${{ secrets.SSH_HOST }}
+              username: ${{ secrets.SSH_USERNAME }}
+              key: ${{ secrets.SSH_KEY }}
+              port: ${{ secrets.SSH_PORT }}
+              script: |
+                cd /home/web/projects
+                tar -xvf pazkids-dist.tar
+                rm pazkids-dist.tar
+                # npm install --production
+                # pm2 startOrRestart ./ecosystem.config.js --env production
+

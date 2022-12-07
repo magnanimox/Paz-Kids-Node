@@ -1,5 +1,5 @@
 {
-    "name": "paz-kids---node",
+    "name": "paz-kids-node",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -9,7 +9,7 @@
     "scripts": {
         "tsc": "tsc",
         "start": "node dist/server.js",
-        "build": "npm run tsc && copyfiles -u 1 src/**/*.mustache dist/",
+        "build": "npm run tsc && copyfiles src/**/*.mustache package.json package-lock.json dist/",
         "dev": "nodemon -e ts,json,mustache src/server.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
