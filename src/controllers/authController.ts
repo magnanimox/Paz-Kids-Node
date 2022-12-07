@@ -11,10 +11,10 @@ import { nextMonthName } from "../helpers";
 export const { signin, signup } = {
     signin: async (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            res.json({ error: errors.mapped() });
-            return;
-        }
+        // if (!errors.isEmpty()) {
+        //     res.json({ error: errors.mapped() });
+        //     return;
+        // }
 
         const data = matchedData(req);
         let danger = false;
