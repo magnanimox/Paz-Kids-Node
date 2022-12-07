@@ -11,13 +11,15 @@ import { nextMonthName } from "../helpers";
 export const { signin, signup } = {
     signin: async (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
-        // if (!errors.isEmpty()) {
-        //     res.json({ error: errors.mapped() });
-        //     return;
-        // }
+        let danger = false;
+
+        if (!errors.isEmpty()) {
+            danger = true;
+            res.render("pages/signin", { danger });
+            return;
+        }
 
         const data = matchedData(req);
-        let danger = false;
 
         // Verificando o e-mail
         const user = await User.findOne({ where: { email: data.email } });
