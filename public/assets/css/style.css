@@ -1115,6 +1115,7 @@ form [type="submit"]:hover {
     color: #fff;
     position: absolute;
     top: 600px;
+    cursor: pointer;
 }
 
 /* MEDIAS */
