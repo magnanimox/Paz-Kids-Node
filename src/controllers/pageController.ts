@@ -18,8 +18,8 @@ import dayjs from "dayjs";
 export const inicio = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTp();
     let episodeAbToShow = await cardAb();
-    let prevMonthLink = "http://localhost:3000/prev/" + prevMonthName;
-    let nextMonthLink = "http://localhost:3000/next/" + nextMonthName;
+    let prevMonthLink = "http://pazkids.com.br/prev/" + prevMonthName;
+    let nextMonthLink = "http://pazkids.com.br/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
@@ -52,8 +52,8 @@ export const inicio = async (req: Request, res: Response) => {
 export const prevmonth = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTpPrevMonth();
     let episodeAbToShow = await cardAbPrevMonth();
-    let prevMonthLink = "http://localhost:3000/prev/" + prevMonthName;
-    let nextMonthLink = "http://localhost:3000/next/" + nextMonthName;
+    let prevMonthLink = "http://pazkids.com.br/prev/" + prevMonthName;
+    let nextMonthLink = "http://pazkids.com.br/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
@@ -85,8 +85,8 @@ export const prevmonth = async (req: Request, res: Response) => {
 export const nextmonth = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTpNextMonth();
     let episodeAbToShow = await cardAbNextMonth();
-    let prevMonthLink = "http://localhost:3000/prev/" + prevMonthName;
-    let nextMonthLink = "http://localhost:3000/next/" + nextMonthName;
+    let prevMonthLink = "http://pazkids.com.br/prev/" + prevMonthName;
+    let nextMonthLink = "http://pazkids.com.br/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
