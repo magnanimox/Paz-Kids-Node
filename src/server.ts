@@ -28,7 +28,11 @@ server.set("views", path.join(__dirname, "views"));
 server.engine("mustache", mustache());
 
 // Public
-server.use(express.static(path.join(__dirname, "../public")));
+if (process.env.NODE_ENV === "production") {
+  server.use(express.static(path.join(__dirname, "./assets")));
+} else {
+  server.use(express.static(path.join(__dirname, "../public")));
+}
 
 // Session
 server.use(sessionConfigs);
