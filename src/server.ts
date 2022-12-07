@@ -1,27 +1,24 @@
-// Imports
-import express from "express";
 import cors from "cors";
-import path from "path";
-import dotenv from "dotenv";
-import session from "express-session";
+import express from "express";
 import mustache from "mustache-express";
-import mainRoutes from "./routes/index";
+import path from "path";
 import { sessionConfigs } from "./middlewares/session";
+import mainRoutes from "./routes/index";
 
 declare module "express-session" {
-    interface SessionData {
-        user: any;
-    }
+  interface SessionData {
+    user: any;
+  }
 }
 
 const corsOptions = {
-    origin: "http://localhost:3000",
-    credentials: true,
+  origin: "http://localhost:3000",
+  credentials: true,
 };
 
 // Server
 const server = express();
-dotenv.config();
+
 server.use(cors(corsOptions));
 server.use(express.urlencoded({ extended: true }));
 
@@ -31,7 +28,11 @@ server.set("views", path.join(__dirname, "views"));
 server.engine("mustache", mustache());
 
 // Public
-server.use(express.static(path.join(__dirname, "../public")));
+if (process.env.NODE_ENV === "production") {
+  server.use(express.static(path.join(__dirname, "public")));
+} else {
+  server.use(express.static(path.join(__dirname, "../public")));
+}
 
 // Session
 server.use(sessionConfigs);
@@ -41,11 +42,11 @@ server.use(mainRoutes);
 
 // 404: Not Found
 server.use((req, res) => {
-    let pageName = "Página não encontrada";
-    res.render("pages/404", {
-        pageName,
-    });
+  let pageName = "Página não encontrada";
+  res.render("pages/404", {
+    pageName,
+  });
 });
 
 // Port
-server.listen(process.env.PORT);
+server.listen(process.env.PORT || 3000);
