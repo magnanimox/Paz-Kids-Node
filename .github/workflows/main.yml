@@ -57,8 +57,10 @@ jobs:
               port: ${{ secrets.SSH_PORT }}
               script: |
                 cd /home/web/projects
+                rm -rf dist/
                 tar -xvf pazkids-dist.tar
                 rm pazkids-dist.tar
-                # npm install --production
-                # pm2 startOrRestart ./ecosystem.config.js --env production
+                cd dist/
+                npm install --production
+                pm2 startOrRestart ./ecosystem.config.js --env production
 
