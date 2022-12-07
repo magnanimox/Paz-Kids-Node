@@ -34,7 +34,7 @@ function handleCity(event) {
 
 // JSON's
 async function getCities() {
-    await fetch("http://localhost:3000/user/cities")
+    await fetch("http://pazkids.com.br/user/cities")
         .then((data) => {
             return data.json();
         })
@@ -47,7 +47,7 @@ async function getCities() {
 }
 
 async function getChurches() {
-    await fetch("http://localhost:3000/user/churches")
+    await fetch("http://pazkids.com.br/user/churches")
         .then((data) => {
             return data.json();
         })

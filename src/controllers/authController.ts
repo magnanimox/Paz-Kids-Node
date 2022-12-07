@@ -23,7 +23,7 @@ export const { signin, signup } = {
 
         // Verificando o e-mail
         const user = await User.findOne({ where: { email: data.email } });
-        if (!user || null) {
+        if (!user) {
             danger = true;
             res.render("pages/signin", { danger });
             return;
@@ -31,7 +31,7 @@ export const { signin, signup } = {
 
         // Verificando a senha
         const match = await bcrypt.compare(data.password, user.passwordHash);
-        if (!match || null) {
+        if (!match) {
             danger = true;
             res.render("pages/signin", { danger });
             return;
