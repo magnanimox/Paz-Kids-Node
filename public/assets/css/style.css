@@ -768,6 +768,16 @@ svg {
     height: 400px;
 }
 
+.backpage {
+    position: relative;
+    font-size: 70px;
+    font-weight: 500;
+    width: 0;
+    height: 0;
+    top: -121px;
+    left: -182px;
+}
+
 .signup-page .login {
     display: flex;
     flex-direction: column;
