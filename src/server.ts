@@ -6,14 +6,14 @@ import { sessionConfigs } from "./middlewares/session";
 import mainRoutes from "./routes/index";
 
 declare module "express-session" {
-  interface SessionData {
-    user: any;
-  }
+    interface SessionData {
+        user: any;
+    }
 }
 
 const corsOptions = {
-  origin: "http://localhost:3000",
-  credentials: true,
+    origin: "http://localhost:3000",
+    credentials: true,
 };
 
 // Server
@@ -29,9 +29,9 @@ server.engine("mustache", mustache());
 
 // Public
 if (process.env.NODE_ENV === "production") {
-  server.use(express.static(path.join(__dirname, "public")));
+    server.use(express.static(path.join(__dirname, "public")));
 } else {
-  server.use(express.static(path.join(__dirname, "../public")));
+    server.use(express.static(path.join(__dirname, "../public")));
 }
 
 // Session
@@ -42,10 +42,10 @@ server.use(mainRoutes);
 
 // 404: Not Found
 server.use((req, res) => {
-  let pageName = "Página não encontrada";
-  res.render("pages/404", {
-    pageName,
-  });
+    let pageName = "Página não encontrada";
+    res.render("pages/404", {
+        pageName,
+    });
 });
 
 // Port
