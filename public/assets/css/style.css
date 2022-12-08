@@ -1043,15 +1043,19 @@ form [type="submit"]:hover {
 }
 
 .login-p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 43px;
     margin-bottom: 10px;
 }
 
 .login-p a {
     text-decoration: none;
-    color: #92dcff;
+    color: #86dfff;
 }
 
 .login-p a:hover {
@@ -1462,6 +1466,19 @@ form [type="submit"]:hover {
         height: 100%;
         padding: 45px;
         border-radius: 0;
+    }
+
+    .login-page .login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #158cc4;
+        width: 100vh;
+        height: 100vh;
+    }
+
+    .login form {
+        width: 290px;
     }
 }
 
