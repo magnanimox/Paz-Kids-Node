@@ -1501,6 +1501,7 @@ form [type="submit"]:hover {
         background-color: #158cc4;
         width: 100vw;
         height: 100vh;
+        border-radius: 0;
     }
 
     .login form {
