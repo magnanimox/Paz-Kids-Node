@@ -778,6 +778,11 @@ svg {
     left: -182px;
 }
 
+.backpage a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .signup-page .login {
     display: flex;
     flex-direction: column;
