@@ -47,7 +47,6 @@ let allDownButtons = cs(".episode-buttons a");
 for (let i in allDownButtons) {
     if (allDownButtons[i].href === "https://pazkids.com.br/#") {
         allDownButtons[i].addEventListener("click", (e) => {
-            console.log("clicou");
             e.preventDefault();
 
             c(".modal-login").style.opacity = 0;
