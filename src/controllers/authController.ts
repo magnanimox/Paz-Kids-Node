@@ -125,3 +125,11 @@ export const logout = async (req: Request, res: Response) => {
     });
     res.json({});
 };
+
+export const forgot = async (req: Request, res: Response) => {};
+
+export const forgotPage = async (req: Request, res: Response) => {
+    let danger = false;
+
+    res.render("pages/forgot", { danger });
+};

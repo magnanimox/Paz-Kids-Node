@@ -19,7 +19,11 @@ router.get("/signin", AuthController.signinPage);
 router.get("/signup", AuthController.signupPage);
 router.get("/logout", AuthController.logout);
 
-// Actions
+// Forgot Password Page
+router.post("/forgot", AuthController.forgot);
+router.get("/forgot", AuthController.forgotPage);
+
+// Api
 router.get("/user/states", UserController.getStates);
 router.get("/user/cities", UserController.getCities);
 router.get("/user/churches", UserController.getChurches);
