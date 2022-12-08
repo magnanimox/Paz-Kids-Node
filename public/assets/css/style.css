@@ -1402,6 +1402,10 @@ form [type="submit"]:hover {
     .nav-bar .nav-bar-left .header-bar--logo svg {
         display: none;
     }
+
+    .login svg {
+        display: block;
+    }
 }
 
 @media (max-width: 637px) {
