@@ -65,9 +65,11 @@
                         <h4>{{ episodeAbToShow.name }}</h4>
                     </div>
                     <div class="episode-buttons a-b">
-                        <button class="bt-download item-1">
-                            <a href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="">Download</a>
-                        </button>
+                        <a href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="">
+                            <button class="bt-download item-1">
+                                Download
+                            </button>
+                        </a>
                         <button class="bt-material item-2">
                             <a href="{{ #linkDown }}{{ episodeAbToShow.materiais }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="">Material</a>
                         </button>
