@@ -12,7 +12,7 @@ import isBetween from "dayjs/plugin/isBetween";
 dayjs.extend(isBetween);
 dayjs.locale("pt-br");
 
-// Variables
+// Variables DayJs
 export let today = dayjs();
 export let month = today.month();
 export let monthName = dayjs().format("MMMM");
@@ -23,10 +23,11 @@ let nextMonth = today.month(today.month() + 1);
 export let prevMonthName = dayjs(prevMonth).format("MMMM");
 export let nextMonthName = dayjs(nextMonth).format("MMMM");
 
-// Condition to January
-// if(month = 0){
-//     prevMonth = today.month(today.month() + 11);
-// }
+/* Condition to January
+ if(month = 0){
+    prevMonth = today.month(today.month() + 11);
+ }
+*/
 
 // Functions
 export async function cardTp() {
