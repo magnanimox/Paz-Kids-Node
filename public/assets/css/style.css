@@ -1495,7 +1495,7 @@ form [type="submit"]:hover {
         flex-direction: column;
         align-items: center;
         background-color: #158cc4;
-        width: 100vh;
+        width: 100vw;
         height: 100vh;
     }
 
