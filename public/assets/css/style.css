@@ -1151,6 +1151,30 @@ form [type="submit"]:hover {
     cursor: pointer;
 }
 
+/* Modal Login */
+.modal-login {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all ease 0.5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.modal-login-body {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: #02b7ff;
+    border-radius: 20%;
+}
+
 /* MEDIAS */
 
 @media (max-width: 1400px) {
@@ -1494,8 +1518,7 @@ form [type="submit"]:hover {
     }
 
     .modal-login-body {
-        height: 400px;
-        border-radius: 0;
+        border-radius: 10%;
     }
 
     .exit {
@@ -1655,30 +1678,6 @@ form [type="submit"]:hover {
 
 .notFound a {
     color: #7e49f6;
-}
-
-/* Modal Login */
-.modal-login {
-    display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.6);
-    transition: all ease 0.5s;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    z-index: 10;
-}
-
-.modal-login-body {
-    display: flex;
-    width: 500px;
-    height: 500px;
-    background-color: #02b7ff;
-    border-radius: 20%;
 }
 
 @media screen and (max-width: 750px) {
