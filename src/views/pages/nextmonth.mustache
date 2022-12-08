@@ -26,12 +26,16 @@
                         <h4>{{ episodeAbToShow.name }}</h4>
                     </div>
                     <div class="episode-buttons a-b">
-                        <button class="bt-download item-1">
-                            <a href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="_blank">Download</a>
-                        </button>
-                        <button class="bt-material item-2">
-                            <a href="{{ #linkDown }}{{ episodeAbToShow.materiais }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="_blank">Material</a>
-                        </button>
+                        <a href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="_blank">
+                            <button class="bt-download item-1">
+                                Download
+                            </button>
+                        </a>
+                        <a href="{{ #linkDown }}{{ episodeAbToShow.materiais }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="_blank">
+                            <button class="bt-material item-2">
+                                Material
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -58,24 +62,26 @@
                             <h4 id="tp-name">{{ name }}</h4>
                         </div>
                         <div class="episode-buttons t-p">
-                            <button class="bt-download item-1">
-                                <a id="tp-download" href=" {{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }} " target=""
-                                    >Download</a
-                                >
-                            </button>
-                            <button class="bt-slides item-2">
-                                <a id="tp-slides" href=" {{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }} " target="">Slides</a>
-                            </button>
-                            <button class="bt-youtube item-3">
-                                <a id="tp-youtube" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target=""
-                                    >Youtube</a
-                                >
-                            </button>
-                            <button class="bt-lifekids item-4">
-                                <a d="tp-lifekids" href="{{ #linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target=""
-                                    >Lifekids</a
-                                >
-                            </button>
+                            <a id="tp-download" href=" {{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }} " target="">
+                                <button class="bt-download item-1">
+                                    Download
+                                </button>
+                            </a>
+                            <a id="tp-slides" href=" {{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }} " target="">
+                                <button class="bt-slides item-2">
+                                    Slides
+                                </button>
+                            </a>
+                            <a id="tp-youtube" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="">
+                                <button class="bt-youtube item-3">
+                                    Youtube
+                                </button>
+                            </a>
+                            <a d="tp-lifekids" href="{{ #linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#{{ /linkDown }}" target="">
+                                <button class="bt-lifekids item-4">
+                                    Lifekids
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
