@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 // Import DotEnv
 dotenv.config({
-    path: '.env.production'
+    path: ".env.production",
 });
 
 // Sequelize / Database
@@ -15,4 +15,4 @@ export const sequelize = new Sequelize({
     database: process.env.MYSQL_DATABASE as string,
     dialect: "mysql",
     port: parseInt(process.env.MYSQL_PORT as string),
-})
+});

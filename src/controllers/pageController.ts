@@ -31,7 +31,6 @@ export const inicio = async (req: Request, res: Response) => {
         linkDown = true;
     } else {
     }
-    console.log(username);
 
     res.render("pages/inicio", {
         monthName,
@@ -59,7 +58,7 @@ export const prevmonth = async (req: Request, res: Response) => {
     let username = "";
     let pageName = "Início";
     let linkDown = false;
-    console.log(logged);
+
     if (logged) {
         username = req.session.user.name;
         linkDown = true;
@@ -93,7 +92,6 @@ export const nextmonth = async (req: Request, res: Response) => {
     let pageName = "Início";
     let linkDown = false;
 
-    console.log(logged);
     if (logged) {
         username = req.session.user.name;
         linkDown = true;
