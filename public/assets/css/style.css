@@ -1651,9 +1651,9 @@ form [type="submit"]:hover {
         flex-direction: column;
     }
 
-    .login form {
+    /* .login form {
         width: auto;
-    }
+    } */
 
     .btns-signup {
         display: flex;
