@@ -1506,6 +1506,11 @@ form [type="submit"]:hover {
     .login.forgot {
         height: 100vh;
     }
+
+    .backpage {
+        top: -180;
+        left: -20px;
+    }
 }
 
 /* Menu Toogle */
