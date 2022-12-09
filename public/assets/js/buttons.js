@@ -25,3 +25,29 @@ function nextWeek() {
     }
     console.log(indexEp);
 }
+
+function prevWeekPN() {
+    if (indexEpPN > 0) {
+        indexEpPN = indexEpPN - 1;
+    }
+
+    for (i = 0; i < arrDatesPN.length; i++) {
+        if (cardsPN[i].style.display == "flex") {
+            cardsPN[i].style.display = "none";
+            cardsPN[indexEpPN].style.display = "flex";
+        }
+    }
+}
+
+function nextWeekPN() {
+    if (indexEpPN < arrDatesPN.length - 1) {
+        indexEpPN = indexEpPN + 1;
+    }
+
+    for (i = 0; i < arrDatesPN.length - 1; i++) {
+        if (cardsPN[i].style.display == "flex") {
+            cardsPN[i].style.display = "none";
+            cardsPN[indexEpPN].style.display = "flex";
+        }
+    }
+}

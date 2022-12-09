@@ -25,20 +25,47 @@ let dates = cs(".cardTp .week-actual");
 let arrDates = Array.from(dates);
 let indexEp = 0;
 
-for (i = 0; i < arrDates.length; i++) {
-    const episodeDate = dayjs(arrDates[i].innerText);
-    const start = episodeDate.subtract(2, "day").format("YYYY/MM/DD");
-    const end = episodeDate.add(4, "day").format("YYYY/MM/DD");
+function showTheFirst() {
+    for (i = 0; i < arrDates.length; i++) {
+        const episodeDate = dayjs(arrDates[i].innerText);
+        const start = episodeDate.subtract(2, "day").format("YYYY/MM/DD");
+        const end = episodeDate.add(4, "day").format("YYYY/MM/DD");
 
-    if (today.isBetween(start, end, "day", "[]")) {
-        indexEp = i;
-        cards[i].style.display = "flex";
-    } else {
-        cards[i].style.display = "none";
+        if (today.isBetween(start, end, "day", "[]")) {
+            indexEp = i;
+            cards[i].style.display = "flex";
+        } else {
+            cards[i].style.display = "none";
+        }
+        arrDates[i].innerHTML =
+            "<h4>" +
+            dayjs(arrDates[i].innerText).format("DD/MMM/YYYY") +
+            "</h4>";
     }
-    arrDates[i].innerHTML =
-        "<h4>" + dayjs(arrDates[i].innerText).format("DD/MMM/YYYY") + "</h4>";
 }
+
+showTheFirst();
+
+// PREV and NEXT - Terra Prometida Cards
+let cardsPN = cs(".cardTpPN");
+let datesPN = cs(".cardTpPN .week-actual");
+let arrDatesPN = Array.from(datesPN);
+let indexEpPN = 0;
+
+function showTheFirstPN() {
+    for (let i in arrDatesPN) {
+        arrDatesPN[i].innerHTML =
+            "<h4>" +
+            dayjs(arrDatesPN[i].innerText).format("DD/MMM/YYYY") +
+            "</h4>";
+        cardsPN[i].style.display = "none";
+    }
+
+    let firstPN = cardsPN[0];
+    return (firstPN.style.display = "flex");
+}
+
+showTheFirstPN();
 
 // Botões de Download
 
@@ -57,27 +84,6 @@ for (let i in allDownButtons) {
         });
     }
 }
-
-// Actual Terra Prometida Cards
-let cardsPN = cs(".cardTpPN");
-let datesPN = cs(".cardTpPN .week-actual");
-let arrDatesPN = Array.from(datesPN);
-let indexEpPN = 0;
-
-function showTheFirst() {
-    for (let i in arrDatesPN) {
-        arrDatesPN[i].innerHTML =
-            "<h4>" +
-            dayjs(arrDatesPN[i].innerText).format("DD/MMM/YYYY") +
-            "</h4>";
-        cardsPN[i].style.display = "none";
-    }
-
-    let firstPN = cardsPN[0];
-    return (firstPN.style.display = "flex");
-}
-
-showTheFirst();
 
 function closeModal() {
     c(".modal-login").style.opacity = 0;
