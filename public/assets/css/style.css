@@ -400,6 +400,11 @@ header .backnav-gray {
     flex-direction: column;
 }
 
+.cardTpPN {
+    display: flex;
+    flex-direction: column;
+}
+
 .cardTpNextMonth {
     display: none;
     flex-direction: column;

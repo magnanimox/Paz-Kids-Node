@@ -58,6 +58,27 @@ for (let i in allDownButtons) {
     }
 }
 
+// Actual Terra Prometida Cards
+let cardsPN = cs(".cardTpPN");
+let datesPN = cs(".cardTpPN .week-actual");
+let arrDatesPN = Array.from(datesPN);
+let indexEpPN = 0;
+
+function showTheFirst() {
+    for (let i in arrDatesPN) {
+        arrDatesPN[i].innerHTML =
+            "<h4>" +
+            dayjs(arrDatesPN[i].innerText).format("DD/MMM/YYYY") +
+            "</h4>";
+        cardsPN[i].style.display = "none";
+    }
+
+    let firstPN = cardsPN[0];
+    return (firstPN.style.display = "flex");
+}
+
+showTheFirst();
+
 function closeModal() {
     c(".modal-login").style.opacity = 0;
     setTimeout(() => {
