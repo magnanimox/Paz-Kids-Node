@@ -72,7 +72,7 @@ showTheFirstPN();
 let allDownButtons = cs(".episode-buttons a");
 
 for (let i in allDownButtons) {
-    if (allDownButtons[i].href === "https://pazkids.com.br/#") {
+    if (allDownButtons[i].href === "#") {
         allDownButtons[i].addEventListener("click", (e) => {
             e.preventDefault();
 
