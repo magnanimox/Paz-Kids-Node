@@ -62,7 +62,11 @@ function showTheFirstPN() {
     }
 
     let firstPN = cardsPN[0];
-    return (firstPN.style.display = "flex");
+    if (firstPN != "undefined") {
+        firstPN.style.display = "flex";
+    } else {
+        return;
+    }
 }
 
 showTheFirstPN();
