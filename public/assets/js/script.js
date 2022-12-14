@@ -75,8 +75,7 @@ showTheFirstPN();
 
 let allDownButtons = cs(".episode-buttons a");
 
-function openModal(e) {
-    e.preventDefault();
+function openModal() {
     c(".modal-login").style.opacity = 0;
     c(".modal-login").style.display = "flex";
     setTimeout(() => {
