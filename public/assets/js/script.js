@@ -63,7 +63,6 @@ function showTheFirstPN() {
 
     let firstPN = cardsPN[0];
     if (firstPN != null) {
-        debugger;
         firstPN.style.display = "flex";
     } else {
         return;
@@ -76,18 +75,12 @@ showTheFirstPN();
 
 let allDownButtons = cs(".episode-buttons a");
 
-for (let i in allDownButtons) {
-    if (allDownButtons[i].href === "#") {
-        allDownButtons[i].addEventListener("click", (e) => {
-            e.preventDefault();
-
-            c(".modal-login").style.opacity = 0;
-            c(".modal-login").style.display = "flex";
-            setTimeout(() => {
-                c(".modal-login").style.opacity = 1;
-            }, 200);
-        });
-    }
+function openModal() {
+    c(".modal-login").style.opacity = 0;
+    c(".modal-login").style.display = "flex";
+    setTimeout(() => {
+        c(".modal-login").style.opacity = 1;
+    }, 200);
 }
 
 function closeModal() {
