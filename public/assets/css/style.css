@@ -1144,16 +1144,22 @@ form [type="submit"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
-    font-size: 50px;
-    color: #e46064;
-    position: absolute;
+    font-weight: 700;
+    font-size: 30px;
+    color: #ee0000;
     top: 615px;
-    width: 57px;
-    height: 56px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: #ffffff;
     cursor: pointer;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Modal Login */
