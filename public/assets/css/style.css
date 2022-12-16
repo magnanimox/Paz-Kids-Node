@@ -388,6 +388,7 @@ header .backnav-gray {
     font-size: 20px;
     font-weight: 300;
     padding-left: 6px;
+    word-break: break-all;
 }
 
 .episode-title {
