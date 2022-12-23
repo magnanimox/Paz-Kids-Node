@@ -84,21 +84,27 @@ export async function cardTpPrevMonth() {
 
 export async function cardTpNextMonth() {
     const episodes = await EpisodesTp.findAll();
-    let episodesOfMonth = [];
+    let episodesOfMonth: TpEpisodeInstance[] = [];
 
     episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
+        let monthOfEp = dayjs(data.showAt).format("MMMM");
         let showThisEpisode = false;
 
-        if (
-            dayjs(data.showAt).format("MMMM") ===
-            dayjs()
-                .month(currentMonth + 1)
-                .format("MMMM")
+        if (monthOfEp === dayjs().month(currentMonth + 1).format("MMMM")
         ) {
             showThisEpisode = true;
         }
         return showThisEpisode;
     });
+
+    function orderEpisodes(a: any, b: any) {
+        let aDay:string = dayjs(a.showAt).format("D");
+        let bDay:string = dayjs(b.showAt).format("D");
+
+        return parseInt(aDay) - parseInt(bDay);
+    }
+
+    episodesOfMonth.sort(orderEpisodes)
 
     return episodesOfMonth;
 }
