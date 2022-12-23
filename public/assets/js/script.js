@@ -65,7 +65,7 @@ function showTheFirstPN() {
             dayjs(arrDatesPN[i].innerText).format("DD/MMM/YYYY") +
             "</h4>";
         cardsPN[i].style.display = "none";
-        numbersToOrder.push(dayjs(datesPN[i].innerText).format("d"));
+        numbersToOrder.push(dayjs(datesPN[i].innerText).format("D"));
     }
 
     // for (let j in numbersToOrder) {
