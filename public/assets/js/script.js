@@ -68,9 +68,8 @@ function showTheFirstPN() {
         numbersToOrder.push(dayjs(datesPN[i].innerText).format("D"));
     }
 
-    // for (let j in numbersToOrder) {
-    //     arrCardsOrdered.push(cardsPN[j]);
-    // }
+    numbersToOrder.sort(compareDates);
+    // arrCardsOrdered = cardsPN
 
     if (arrCardsOrdered != null) {
         arrCardsOrdered[0].style.display = "flex";
