@@ -1,4 +1,4 @@
-// Requires
+// Require
 require("dayjs/locale/pt");
 
 // Imports
