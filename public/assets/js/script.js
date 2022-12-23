@@ -50,7 +50,7 @@ showTheFirst();
 let cardsPN = cs(".cardTpPN");
 let datesPN = cs(".cardTpPN .week-actual");
 let arrDatesPN = Array.from(datesPN);
-let numbersToOrder = [];
+let datesToOrder = [];
 let arrCardsOrdered = [];
 let indexEpPN = 0;
 
@@ -65,11 +65,29 @@ function showTheFirstPN() {
             dayjs(arrDatesPN[i].innerText).format("DD/MMM/YYYY") +
             "</h4>";
         cardsPN[i].style.display = "none";
-        numbersToOrder.push(dayjs(datesPN[i].innerText).format("D"));
+        datesToOrder.push(dayjs(datesPN[i].innerText).format("D"));
     }
 
-    numbersToOrder.sort(compareDates);
-    // arrCardsOrdered = cardsPN
+    datesToOrder.sort(compareDates);
+    for (let j in cardsPN) {
+        if (datesPN[j].innerText === datesToOrder[0]) {
+            arrCardsOrdered.push(cardsPN[j]);
+        }
+        if (datesPN[j].innerText === datesToOrder[1]) {
+            arrCardsOrdered.push(cardsPN[j]);
+        }
+        if (datesPN[j].innerText === datesToOrder[2]) {
+            arrCardsOrdered.push(cardsPN[j]);
+        }
+        if (datesPN[j].innerText === datesToOrder[3]) {
+            arrCardsOrdered.push(cardsPN[j]);
+        }
+        if (datesPN[j].innerText === datesToOrder[4]) {
+            arrCardsOrdered.push(cardsPN[j]);
+        } else {
+            return;
+        }
+    }
 
     if (arrCardsOrdered != null) {
         arrCardsOrdered[0].style.display = "flex";
