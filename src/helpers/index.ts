@@ -64,22 +64,17 @@ export async function cardTpPrevMonth() {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
         let showThisEpisode = false;
 
-        if (
-            monthOfEp ===
-            dayjs()
-                .month(currentMonth - 1)
-                .format("MMMM")
-        ) {
+        if (monthOfEp === dayjs().month(currentMonth - 1).format("MMMM")) {
             showThisEpisode = true;
         }
         return showThisEpisode;
     });
 
     function orderEpisodes(a: any, b: any) {
-        let aDay = dayjs(a.showAt).format("D");
-        let bDay = dayjs(b.showAt).format("D");
+        let aDay:string = dayjs(a.showAt).format("D");
+        let bDay:string = dayjs(b.showAt).format("D");
 
-        return a - b;
+        return parseInt(aDay) - parseInt(bDay);
     }
 
     episodesOfMonth.sort(orderEpisodes);
