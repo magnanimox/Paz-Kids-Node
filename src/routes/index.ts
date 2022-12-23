@@ -39,5 +39,6 @@ router.get("/recursos", PageController.recursos);
 router.get("/aventura-biblica", PageController.aventura);
 router.get("/1temporada", PageController.temp1);
 router.get("/2temporada", PageController.temp2);
+router.get("/3temporada", PageController.temp3);
 
 export default router;

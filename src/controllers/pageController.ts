@@ -164,6 +164,20 @@ export const temp2 = async (req: Request, res: Response) => {
     });
 };
 
+export const temp3 = async (req: Request, res: Response) => {
+    let episodes = await EpisodesTp.findAll({
+        where: { temp: 3 },
+    });
+    let selectAssista = "selected";
+    let pageName = "E.M.P. - 3ª Temporada";
+
+    res.render("pages/2temporada", {
+        episodes,
+        selectAssista,
+        pageName,
+    });
+};
+
 // Render Partials
 
 export const header = async (req: Request, res: Response) => {
