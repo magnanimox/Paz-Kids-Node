@@ -76,29 +76,9 @@ function showTheFirstPN() {
         }
     }
 
-    for (let j in cardsPN) {
-        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[1]) {
-            arrCardsOrdered.push(cardsPN[j]);
-        }
-    }
-
-    for (let j in cardsPN) {
-        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[2]) {
-            arrCardsOrdered.push(cardsPN[j]);
-        }
-    }
-
-    for (let j in cardsPN) {
-        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[3]) {
-            arrCardsOrdered.push(cardsPN[j]);
-        }
-    }
-
-    for (let j in cardsPN) {
-        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[4]) {
-            arrCardsOrdered.push(cardsPN[j]);
-        } else {
-            return;
+    for (let k in cardsPN) {
+        if (cardsPN[k] == arrCardsOrdered[0]) {
+            cardsPN[k].style.display = "flex";
         }
     }
 
