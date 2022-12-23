@@ -65,13 +65,13 @@ function showTheFirstPN() {
             dayjs(arrDatesPN[i].innerText).format("DD/MMM/YYYY") +
             "</h4>";
         cardsPN[i].style.display = "none";
+        numbersToOrder.push(dayjs(datesPN[i].innerText).format("d"));
     }
 
-    for (let j in datesPN) {
-        numbersToOrder.push(dayjs(datesPN[j].innerText).format("d"));
-    }
+    // for (let j in numbersToOrder) {
+    //     arrCardsOrdered.push(cardsPN[j]);
+    // }
 
-    arrCardsOrdered = cardsPN[numbersToOrder(compareDates)];
     if (arrCardsOrdered != null) {
         arrCardsOrdered[0].style.display = "flex";
     } else {
