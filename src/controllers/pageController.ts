@@ -171,7 +171,7 @@ export const temp3 = async (req: Request, res: Response) => {
     let selectAssista = "selected";
     let pageName = "E.M.P. - 3ª Temporada";
 
-    res.render("pages/2temporada", {
+    res.render("pages/3temporada", {
         episodes,
         selectAssista,
         pageName,
