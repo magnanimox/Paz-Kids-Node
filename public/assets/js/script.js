@@ -70,19 +70,19 @@ function showTheFirstPN() {
 
     datesToOrder.sort(compareDates);
     for (let j in cardsPN) {
-        if (datesPN[j].innerText === datesToOrder[0]) {
+        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[0]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
-        if (datesPN[j].innerText === datesToOrder[1]) {
+        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[1]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
-        if (datesPN[j].innerText === datesToOrder[2]) {
+        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[2]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
-        if (datesPN[j].innerText === datesToOrder[3]) {
+        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[3]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
-        if (datesPN[j].innerText === datesToOrder[4]) {
+        if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[4]) {
             arrCardsOrdered.push(cardsPN[j]);
         } else {
             return;
