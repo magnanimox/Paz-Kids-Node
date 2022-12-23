@@ -74,17 +74,31 @@ function showTheFirstPN() {
         if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[0]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
+    }
+
+    for (let j in cardsPN) {
         if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[1]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
+    }
+
+    for (let j in cardsPN) {
         if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[2]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
+    }
+
+    for (let j in cardsPN) {
         if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[3]) {
             arrCardsOrdered.push(cardsPN[j]);
         }
+    }
+
+    for (let j in cardsPN) {
         if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[4]) {
             arrCardsOrdered.push(cardsPN[j]);
+        } else {
+            return;
         }
     }
 
