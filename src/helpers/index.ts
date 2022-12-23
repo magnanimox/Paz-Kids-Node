@@ -23,12 +23,6 @@ let nextMonth = today.month(today.month() + 1);
 export let prevMonthName = dayjs(prevMonth).format("MMMM");
 export let nextMonthName = dayjs(nextMonth).format("MMMM");
 
-/* Condition to January
- if(month = 0){
-    prevMonth = today.month(today.month() + 11);
- }
-*/
-
 // Functions
 export async function cardTp() {
     const episodes = await EpisodesTp.findAll();
@@ -37,25 +31,25 @@ export async function cardTp() {
 
     episodesOfLastMonth = episodes.filter((data: TpEpisodeInstance) => {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
-        let showThisEpisodes = false;
+        let showThisEpisode = false;
 
         if (monthOfEp === prevMonthName) {
-            showThisEpisodes = true;
+            showThisEpisode = true;
         }
 
-        return showThisEpisodes;
+        return showThisEpisode;
     });
 
     let lastEp = episodesOfLastMonth[episodesOfLastMonth.length - 1];
 
     episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
-        let showThisEpisodes = false;
+        let showThisEpisode = false;
 
         if (monthOfEp === monthName) {
-            showThisEpisodes = true;
+            showThisEpisode = true;
         }
-        return showThisEpisodes;
+        return showThisEpisode;
     });
 
     episodesOfMonth.unshift(lastEp);
@@ -64,11 +58,11 @@ export async function cardTp() {
 
 export async function cardTpPrevMonth() {
     const episodes = await EpisodesTp.findAll();
-    let episodesOfMonth = [];
+    let episodesOfMonth: TpEpisodeInstance[] = [];
 
     episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
-        let showThisEpisodes = false;
+        let showThisEpisode = false;
 
         if (
             monthOfEp ===
@@ -76,10 +70,19 @@ export async function cardTpPrevMonth() {
                 .month(currentMonth - 1)
                 .format("MMMM")
         ) {
-            showThisEpisodes = true;
+            showThisEpisode = true;
         }
-        return showThisEpisodes;
+        return showThisEpisode;
     });
+
+    function orderEpisodes(a: any, b: any) {
+        let aDay = dayjs(a.showAt).format("D");
+        let bDay = dayjs(b.showAt).format("D");
+
+        return a - b;
+    }
+
+    episodesOfMonth.sort(orderEpisodes);
 
     return episodesOfMonth;
 }
@@ -89,7 +92,7 @@ export async function cardTpNextMonth() {
     let episodesOfMonth = [];
 
     episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
-        let showThisEpisodes = false;
+        let showThisEpisode = false;
 
         if (
             dayjs(data.showAt).format("MMMM") ===
@@ -97,9 +100,9 @@ export async function cardTpNextMonth() {
                 .month(currentMonth + 1)
                 .format("MMMM")
         ) {
-            showThisEpisodes = true;
+            showThisEpisode = true;
         }
-        return showThisEpisodes;
+        return showThisEpisode;
     });
 
     return episodesOfMonth;
