@@ -69,6 +69,7 @@ function showTheFirstPN() {
     }
 
     datesToOrder.sort(compareDates);
+
     for (let j in cardsPN) {
         if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[0]) {
             arrCardsOrdered.push(cardsPN[j]);
@@ -84,8 +85,6 @@ function showTheFirstPN() {
         }
         if (dayjs(datesPN[j].innerText).format("D") === datesToOrder[4]) {
             arrCardsOrdered.push(cardsPN[j]);
-        } else {
-            return;
         }
     }
 
