@@ -4,7 +4,6 @@ import * as PageController from "../controllers/pageController";
 import * as AuthController from "../controllers/authController";
 import * as UserController from "../controllers/userController";
 import { AuthValidator } from "../validators/AuthValidator";
-import nodemailer from "nodemailer"
 
 export const router = Router();
 
@@ -23,28 +22,6 @@ router.get("/logout", AuthController.logout);
 // Forgot Password Page
 router.post("/forgot", AuthController.forgot);
 router.get("/forgot", AuthController.forgotPage);
-router.get("/sendmail", async (req, res) => {
-    //transporter
-    var transport = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
-        auth: {
-          user: "e65806f0ef2eb2",
-          pass: "6a81d075e8e91c"
-        }
-      });
-
-    //configuração de email
-    let message = await transport.sendMail({
-        from: '"Pessoa teste" <pessoa@teste.com>',
-        to: "teste@teste.com",
-        subject: "Email com Nodemailer",
-        text: "Esse é um email de teste",
-        html: "<p>Este é um email de teste</p>"
-    })
-
-    res.send("enviou")
-})
 
 // Api
 router.get("/user/states", UserController.getStates);

@@ -27,10 +27,24 @@
                     <
                    </a>
                 </div>
+                {{#danger}}
+                <div class="notification danger">
+                    <p>E-mail inválido.</p>
+                </div>
+                {{/danger}}
+                {{^danger}}
+                {{/danger}}
+                {{#success}}
+                <div class="notification success">
+                    <p>Acabamos de enviar um e-mail com um link para você reestabelecer a sua senha.</p>
+                </div>
+                {{/success}}
+                {{^success}}
+                {{/success}}
                 <h2>
                     Esqueceu a senha
                 </h2>
-                <form action="" method="POST">
+                <form action="/forgot" method="POST">
                     <input
                         name="email"
                         type="email"
