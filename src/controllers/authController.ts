@@ -163,12 +163,9 @@ export const forgot = async (req: Request, res: Response) => {
     });
 
     success = true;
-
     res.render("pages/forgot", { success });
 };
 
 export const forgotPage = async (req: Request, res: Response) => {
-    let danger = false;
-
-    res.render("pages/forgot", { danger });
+    res.render("pages/forgot");
 };
