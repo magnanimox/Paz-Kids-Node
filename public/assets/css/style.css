@@ -16,7 +16,7 @@ button {
     font-family: Poppins;
 }
 
-/* TEXT DECORATION */
+/* DEFAULTS */
 
 a.none {
     text-decoration: none;
@@ -179,15 +179,6 @@ header {
 .checkbox {
     display: none;
 }
-
-/*.menuMobile {
-    display: none;
-    width: 50px;
-    height: 46px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin: 19px 0px;
-}*/
 
 /* SECTION */
 
@@ -1090,7 +1081,7 @@ svg {
 
 .btn-forgot input {
     padding-inline: 20px;
-    height: 0;
+    height: 33px;
     margin-top: 0;
 }
 
@@ -1133,6 +1124,8 @@ form [type="submit"]:hover {
 .login-p a:hover {
     color: #ffffff;
 }
+
+/* Background pages */
 
 .login-page {
     background-color: #92dcff;
