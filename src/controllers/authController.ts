@@ -120,10 +120,9 @@ export const signinPage = async (req: Request, res: Response) => {
 };
 
 export const logout = async (req: Request, res: Response) => {
-    req.session.destroy(() => {
-        console.log("logout");
-    });
-    res.json({});
+    req.session.destroy(() => {});
+    
+    res.render("pages/logout");
 };
 
 export const forgot = async (req: Request, res: Response) => {};
