@@ -154,15 +154,15 @@ export const forgot = async (req: Request, res: Response) => {
     });
 
     //configuração de email
-    let message = await transport.sendMail({
+    let message = {
         from: '"Paz Kids Oficial" <pazkidsonline@gmail.com>',
         to: data.email,
         subject: "Recuperação de Senha",
         text: "Esse é um email de teste",
         html: "<p>Este é um email de teste</p>",
-    });
+    };
 
-    transport.sendMail(message);
+    await transport.sendMail(message);
 
     success = true;
     res.render("pages/forgot", { success });
