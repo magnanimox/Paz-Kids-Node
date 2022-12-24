@@ -11,6 +11,44 @@
                 <a href="https://pazkids.com.br/"><h4 class="nextMonth">{{ monthName }}</h4></a>
             </div>
         </div>
+        <div class="modal-login">
+            <div class="modal-login-body">
+                <section class="area-login modal">
+                    <div class="login">
+                        {{#danger}}
+                            <div class="notification danger">
+                                <p>Login e/ou senha inválidos.</p>
+                            </div>
+                        {{/danger}}
+                        {{^danger}}
+                        {{/danger}}
+                        <form action="/signin" method="POST">
+                            <input
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                placeholder="Login"
+                                autofocus
+                            />
+                            <input
+                                name="password"
+                                autocomplete="current-password"
+                                type="password"
+                                placeholder="Senha"
+                            />
+                            <input type="submit" value="Entrar" />
+                        </form>
+                        <p class="login-p">
+                        <a href="https://pazkids.com.br/forgot">Esqueceu sua senha?</a><br>
+                            Ainda não tem uma conta? <a href="https://pazkids.com.br/signup">Criar conta</a>
+                        </p>
+                        <div class="exit" onclick="closeModal()">
+                            X
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
         <div class="aventura-biblica">
             <div class="grade">
                 <h3>Aventura Bíblica</h3>
@@ -63,22 +101,22 @@
                             <h4 id="tp-name">{{ name }}</h4>
                         </div>
                         <div class="episode-buttons t-p">
-                            <a id="tp-download" href="{{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }} " target="">
+                            <a id="tp-download" href="{{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-download item-1">
                                     Download
                                 </button>
                             </a>
-                            <a id="tp-slides" href="{{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }} " target="">
+                            <a id="tp-slides" href="{{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-slides item-2">
                                     Slides
                                 </button>
                             </a>
-                            <a id="tp-youtube" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }} " target="">
+                            <a id="tp-youtube" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-youtube item-3">
                                     Youtube
                                 </button>
                             </a>
-                            <a id="tp-lifekids" href="{{#linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }} " target="">
+                            <a id="tp-lifekids" href="{{#linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-lifekids item-4">
                                     Lifekids
                                 </button>
