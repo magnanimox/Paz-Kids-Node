@@ -1130,6 +1130,15 @@ form [type="submit"]:hover {
     border-radius: 8px;
 }
 
+.notification.is-sucess.forgot {
+    background: rgba(0, 255, 98, 0.78);
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    margin-top: 0px;
+}
+
 .notification.is-info {
     display: none;
     background: rgba(0, 183, 255, 0.78);
