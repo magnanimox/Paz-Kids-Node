@@ -124,7 +124,7 @@ export const logout = async (req: Request, res: Response) => {
 
 export const forgot = async (req: Request, res: Response) => {
     const data = matchedData(req);
-    res.json(data);
+    res.json(data.email);
     // const errors = validationResult(req);
     // let danger = false;
     // let success = false;
