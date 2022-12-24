@@ -1107,11 +1107,11 @@ svg {
     padding: 0px 17px 0px 17px;
 }
 
-.btns-forgot.btn-voltar {
+.btns-forgot .btn-voltar {
     padding: 0px;
 }
 
-.btns-forgot.btn-forgot {
+.btns-forgot .btn-forgot {
     padding: 0px;
 }
 
