@@ -162,6 +162,8 @@ export const forgot = async (req: Request, res: Response) => {
         html: "<p>Este é um email de teste</p>",
     });
 
+    transport.sendMail(message);
+
     success = true;
     res.render("pages/forgot", { success });
 };
