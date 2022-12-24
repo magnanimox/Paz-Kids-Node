@@ -874,6 +874,18 @@ svg {
     font-size: 15px;
 }
 
+.forgot-page .login input {
+    margin-top: 0px;
+    background-color: #fff;
+    color: #aaa;
+    border: 0;
+    width: 275px;
+    height: 30px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
 #finalizar {
     display: flex;
     justify-content: center;
@@ -1127,6 +1139,10 @@ form [type="submit"]:hover {
 }
 
 .signup-page {
+    background-color: #92dcff;
+}
+
+.forgot-page {
     background-color: #92dcff;
 }
 
