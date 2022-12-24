@@ -1670,6 +1670,10 @@ form [type="submit"]:hover {
         margin-left: 0;
         font-size: 18px;
     }
+
+    .nav-bar--login span {
+        margin-right: 45px;
+    }
 }
 
 /* 404 */

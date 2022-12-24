@@ -123,47 +123,49 @@ export const logout = async (req: Request, res: Response) => {
 };
 
 export const forgot = async (req: Request, res: Response) => {
-    const errors = validationResult(req);
-    let danger = false;
-    let success = false;
-
-    if (!errors.isEmpty()) {
-        danger = true;
-        res.render("pages/forgot", { danger });
-        return;
-    }
-
     const data = matchedData(req);
+    res.json(data);
+    // const errors = validationResult(req);
+    // let danger = false;
+    // let success = false;
 
-    // Verificando o e-mail
-    const user = await User.findOne({ where: { email: data.email } });
-    if (!user) {
-        danger = true;
-        res.render("pages/forgot", { danger });
-        return;
-    }
+    // if (!errors.isEmpty()) {
+    //     danger = true;
+    //     res.render("pages/forgot", { danger });
+    //     return;
+    // }
 
-    //transporter
-    var transport = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
-        auth: {
-            user: "e65806f0ef2eb2",
-            pass: "6a81d075e8e91c",
-        },
-    });
+    // const data = matchedData(req);
 
-    //configuração de email
-    let message = await transport.sendMail({
-        from: '"Paz Kids Oficial" <pazkidsonline@gmail.com>',
-        to: data.email,
-        subject: "Recuperação de Senha",
-        text: "Esse é um email de teste",
-        html: "<p>Este é um email de teste</p>",
-    });
+    // // Verificando o e-mail
+    // const user = await User.findOne({ where: { email: data.email } });
+    // if (!user) {
+    //     danger = true;
+    //     res.render("pages/forgot", { danger });
+    //     return;
+    // }
 
-    success = true;
-    res.render("pages/forgot", { success });
+    // //transporter
+    // var transport = nodemailer.createTransport({
+    //     host: "smtp.mailtrap.io",
+    //     port: 2525,
+    //     auth: {
+    //         user: "e65806f0ef2eb2",
+    //         pass: "6a81d075e8e91c",
+    //     },
+    // });
+
+    // //configuração de email
+    // let message = await transport.sendMail({
+    //     from: '"Paz Kids Oficial" <pazkidsonline@gmail.com>',
+    //     to: data.email,
+    //     subject: "Recuperação de Senha",
+    //     text: "Esse é um email de teste",
+    //     html: "<p>Este é um email de teste</p>",
+    // });
+
+    // success = true;
+    // res.render("pages/forgot", { success });
 };
 
 export const forgotPage = async (req: Request, res: Response) => {
