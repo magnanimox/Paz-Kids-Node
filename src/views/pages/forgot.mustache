@@ -22,11 +22,6 @@
     <body class="login-page">
         <section class="area-login">
             <div class="login forgot">
-                <div class="backpage">
-                   <a href="https://pazkids.com.br/signin">
-                    <
-                   </a>
-                </div>
                 {{#danger}}
                 <div class="notification danger">
                     <p>E-mail inválido.</p>
@@ -44,7 +39,7 @@
                 <h2>
                     Esqueceu a senha
                 </h2>
-                <form action="/forgot" method="POST">
+                <form id="forgot "action="/forgot" method="POST">
                     <input
                         name="email"
                         type="email"
@@ -52,8 +47,15 @@
                         placeholder="Seu e-mail"
                         autofocus
                     />
-                    <input type="submit" value="Enviar" />
                 </form>
+                <div class="btns-signup">
+                    <div class="btn-voltar">
+                        <a href="https://pazkids.com.br/signin"><button id="voltar">Voltar</button></a>
+                    </div>
+                    <div class="btn-cadastrar">
+                        <input form="forgot "type="submit" value="Enviar" />
+                    </div>
+                </div>
             </div>
         </section>
     </body>
