@@ -1198,6 +1198,11 @@ form [type="submit"]:hover {
     border-radius: 8px;
 }
 
+.login.forgot .notification.danger {
+    margin-bottom: 26px;
+    margin-top: 0px;
+}
+
 .notification.is-sucess {
     display: none;
     background: rgba(0, 255, 98, 0.78);
