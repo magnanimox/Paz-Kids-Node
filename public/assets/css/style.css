@@ -902,6 +902,20 @@ svg {
     height: 33px;
 }
 
+#forgot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-left: 0px;
+    background-color: #48ca56;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    height: 33px;
+}
+
 #last {
     margin-bottom: 10px;
 }
@@ -1749,12 +1763,14 @@ form [type="submit"]:hover {
     }
 
     .btn-voltar,
-    .btn-cadastrar {
+    .btn-cadastrar,
+    .btn-forgot {
         padding: 0;
     }
 
     #voltar,
-    #finalizar {
+    #finalizar,
+    #forgot {
         height: auto;
         width: 100%;
     }
