@@ -64,4 +64,11 @@ export const AuthValidator = {
             errorMessage: "Senha precisa ter pelo menos 2 caracteres",
         },
     }),
+    forgot: checkSchema({
+        email: {
+            isEmail: true,
+            normalizeEmail: true,
+            errorMessage: "E-mail inválido",
+        },
+    }),
 };

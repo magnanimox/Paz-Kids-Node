@@ -20,7 +20,7 @@ router.get("/signup", AuthController.signupPage);
 router.get("/logout", AuthController.logout);
 
 // Forgot Password Page
-router.post("/forgot", AuthController.forgot);
+router.post("/forgot", AuthValidator.forgot, AuthController.forgot);
 router.get("/forgot", AuthController.forgotPage);
 
 // Api
