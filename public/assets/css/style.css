@@ -1131,6 +1131,7 @@ form [type="submit"]:hover {
 }
 
 .notification.is-sucess.forgot {
+    display: block;
     background: rgba(0, 255, 98, 0.78);
     color: #ffffff;
     border-radius: 8px;
