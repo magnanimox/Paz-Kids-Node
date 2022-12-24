@@ -895,7 +895,7 @@ svg {
     background-color: hwb(50deg 30% 28%);
     color: #ffffff;
     border: 0;
-    width: 275px;
+    width: 165px;
     outline: none;
     border-radius: 8px;
     font-size: 15px;
@@ -1093,6 +1093,7 @@ svg {
     grid-template-columns: 175px 175px;
     grid-template-rows: 33px;
     width: 100%;
+    margin-top: 40px;
 }
 
 .btn-voltar {
@@ -1112,6 +1113,7 @@ svg {
 }
 
 .btns-forgot .btn-forgot {
+    justify-self: right;
     padding: 0px;
 }
 
