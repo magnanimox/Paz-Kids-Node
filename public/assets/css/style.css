@@ -924,13 +924,13 @@ svg {
     justify-content: center;
     align-items: center;
     margin-top: 0px;
-    padding-left: 0px;
     background-color: #48ca56;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
     height: 33px;
+    width: 165px;
 }
 
 #forgot {
@@ -1105,6 +1105,14 @@ svg {
 
 .btn-forgot {
     padding: 0px 17px 0px 17px;
+}
+
+.btns-forgot.btn-voltar {
+    padding: 0px;
+}
+
+.btns-forgot.btn-forgot {
+    padding: 0px;
 }
 
 .btn-forgot input {
