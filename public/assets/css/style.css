@@ -1042,12 +1042,30 @@ svg {
     width: 100%;
 }
 
+.btns-forgot {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 175px 175px;
+    grid-template-rows: 33px;
+    width: 100%;
+}
+
 .btn-voltar {
     padding: 0px 17px 0px 17px;
 }
 
 .btn-cadastrar {
     padding: 0px 17px 0px 17px;
+}
+
+.btn-forgot {
+    padding: 0px 17px 0px 17px;
+}
+
+.btn-forgot input {
+    padding-inline: 20px;
+    height: 0;
+    margin-top: 0;
 }
 
 input::placeholder {
