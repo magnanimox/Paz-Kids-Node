@@ -905,6 +905,34 @@ svg {
     height: 33px;
 }
 
+#voltarForgot {
+    background-color: hwb(50deg 30% 28%);
+    color: #ffffff;
+    border: 0;
+    width: 275px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    height: 33px;
+}
+
+#finalizarForgot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-left: 0px;
+    background-color: #48ca56;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    height: 33px;
+}
+
 #forgot {
     display: flex;
     justify-content: center;
