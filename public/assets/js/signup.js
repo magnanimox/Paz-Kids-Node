@@ -72,7 +72,9 @@ function makeCityList() {
         }
     }
 
-    citiesPerState.sort();
+    citiesPerState.sort(function (a, b) {
+        return a.city < b.city ? -1 : a.city > b.city ? 1 : 0;
+    });
 }
 // Populate the right churches array
 function makeChurchList() {
@@ -83,7 +85,9 @@ function makeChurchList() {
         }
     }
 
-    churchesPerCity.sort();
+    churchesPerCity.sort(function (a, b) {
+        return a.church < b.church ? -1 : a.church > b.church ? 1 : 0;
+    });
 }
 
 // Populate cities bar
