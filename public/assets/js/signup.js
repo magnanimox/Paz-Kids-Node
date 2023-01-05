@@ -71,6 +71,8 @@ function makeCityList() {
         } else {
         }
     }
+
+    citiesPerState.sort();
 }
 // Populate the right churches array
 function makeChurchList() {
@@ -80,6 +82,8 @@ function makeChurchList() {
         } else {
         }
     }
+
+    churchesPerCity.sort();
 }
 
 // Populate cities bar
