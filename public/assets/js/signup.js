@@ -19,6 +19,7 @@ function handleState(event) {
     stateId = parseInt(event);
     citiesPerState.length = 0;
     cleanCityList();
+    cleanChurchList();
     churchesPerCity.length = 0;
     makeCityList();
     printCitiesPerState();
