@@ -64,15 +64,20 @@ export async function cardTpPrevMonth() {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
         let showThisEpisode = false;
 
-        if (monthOfEp === dayjs().month(currentMonth - 1).format("MMMM")) {
+        if (
+            monthOfEp ===
+            dayjs()
+                .month(currentMonth - 1)
+                .format("MMMM")
+        ) {
             showThisEpisode = true;
         }
         return showThisEpisode;
     });
 
     function orderEpisodes(a: any, b: any) {
-        let aDay:string = dayjs(a.showAt).format("D");
-        let bDay:string = dayjs(b.showAt).format("D");
+        let aDay: string = dayjs(a.showAt).format("D");
+        let bDay: string = dayjs(b.showAt).format("D");
 
         return parseInt(aDay) - parseInt(bDay);
     }
@@ -90,7 +95,11 @@ export async function cardTpNextMonth() {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
         let showThisEpisode = false;
 
-        if (monthOfEp === dayjs().month(currentMonth + 1).format("MMMM")
+        if (
+            monthOfEp ===
+            dayjs()
+                .month(currentMonth + 1)
+                .format("MMMM")
         ) {
             showThisEpisode = true;
         }
@@ -98,13 +107,13 @@ export async function cardTpNextMonth() {
     });
 
     function orderEpisodes(a: any, b: any) {
-        let aDay:string = dayjs(a.showAt).format("D");
-        let bDay:string = dayjs(b.showAt).format("D");
+        let aDay: string = dayjs(a.showAt).format("D");
+        let bDay: string = dayjs(b.showAt).format("D");
 
         return parseInt(aDay) - parseInt(bDay);
     }
 
-    episodesOfMonth.sort(orderEpisodes)
+    episodesOfMonth.sort(orderEpisodes);
 
     return episodesOfMonth;
 }
