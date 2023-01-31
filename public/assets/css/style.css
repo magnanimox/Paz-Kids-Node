@@ -1057,6 +1057,7 @@ svg {
 }
 
 .coluna #state,
+.coluna #region,
 .coluna #city,
 .coluna #cityName,
 .coluna #church,
@@ -1068,7 +1069,12 @@ svg {
     font-weight: 500;
 }
 
+.coluna #region {
+    display: none;
+}
+
 #state select,
+#region select,
 #city select,
 #church select {
     width: 275px;

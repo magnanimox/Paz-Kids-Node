@@ -185,6 +185,16 @@
                                 </select>
                             </div>
 
+                            <div id="region">
+                                <label>Selecione a Base</label><br/>
+                                <select id="id_region" name="id_region" onChange="handleRegion(this.value)">
+                                    <option value="9999">Selecione a Base</option>
+                                    {{ #regionNames }}
+                                        <option value="{{ id }}">{{ region }}</option>
+                                    {{ /regionNames }}
+                                </select>
+                            </div>
+
                             <div id="city">
                                 <label>Selecione a Cidade</label><br/>
                                 <select name="id_city" id="id_city" onChange="handleCity(this.value)">

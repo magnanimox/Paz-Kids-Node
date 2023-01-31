@@ -4,8 +4,16 @@ import { City } from "../models/Cities";
 import { Church } from "../models/Church";
 import { User, UserInstance } from "../models/User";
 import sequelize, { QueryTypes } from "sequelize";
+import { Region } from "../models/Regions";
 
-export const { getStates, getCities, getChurches, info, editAction } = {
+export const {
+    getStates,
+    getRegions,
+    getCities,
+    getChurches,
+    info,
+    editAction,
+} = {
     getStates: async (req: Request, res: Response) => {
         let allStates: any = await State.findAll();
         let statesNames: any = [];
@@ -15,6 +23,10 @@ export const { getStates, getCities, getChurches, info, editAction } = {
         }
 
         res.json(statesNames);
+    },
+    getRegions: async (req: Request, res: Response) => {
+        let regions: any = await Region.findAll();
+        res.json(regions);
     },
     getCities: async (req: Request, res: Response) => {
         let cities = await City.findAll();
@@ -33,6 +45,10 @@ export const { getStates, getCities, getChurches, info, editAction } = {
             where: { id: user.id_state },
         });
 
+        const regionName: any = await Region.findOne({
+            where: { id: user.id_region },
+        });
+
         const cityName: any = await City.findOne({
             where: { id: user.id_city },
         });
@@ -45,6 +61,7 @@ export const { getStates, getCities, getChurches, info, editAction } = {
             name: user.name,
             email: user.email,
             state: stateName.state,
+            region: regionName.region,
             city: cityName.city,
             church: churchName.church,
         });

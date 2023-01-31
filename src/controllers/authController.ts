@@ -145,11 +145,13 @@ export const forgot = async (req: Request, res: Response) => {
 
     //transporter
     var transport = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
+        host: "live.smtp.mailtrap.io",
         port: 2525,
         auth: {
-            user: "e65806f0ef2eb2",
-            pass: "6a81d075e8e91c",
+            // user: "e65806f0ef2eb2",
+            // pass: "6a81d075e8e91c",
+            user: "api",
+            pass: "c8568268cb8189b54d39fff6f904a68e",
         },
     });
 

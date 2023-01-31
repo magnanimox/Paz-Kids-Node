@@ -4,11 +4,14 @@ const cs = (el) => document.querySelectorAll(el);
 
 //
 let stateId = "";
+let regionId = "";
 let cityId = "";
+getRegions();
 getCities();
 getChurches();
 
 // Arrays
+let regions = [];
 let cities = [];
 let citiesPerState = [];
 let churches = [];
@@ -17,6 +20,20 @@ let churchesPerCity = [];
 // Handles
 function handleState(event) {
     stateId = parseInt(event);
+    citiesPerState.length = 0;
+    cleanCityList();
+    cleanChurchList();
+    churchesPerCity.length = 0;
+    makeCityList();
+    printCitiesPerState();
+}
+
+if (stateId == 14) {
+    document.getElementById(".coluna #region").style.display = "flex";
+}
+
+function handleRegion(event) {
+    regionId = parseInt(event);
     citiesPerState.length = 0;
     cleanCityList();
     cleanChurchList();
@@ -34,6 +51,19 @@ function handleCity(event) {
 }
 
 // JSON's
+async function getRegions() {
+    await fetch("https://pazkids.com.br/user/regions")
+        .then((data) => {
+            return data.json();
+        })
+        .then((json) => {
+            regions = json;
+        })
+        .catch((error) => {
+            console.log("Deu problema");
+        });
+}
+
 async function getCities() {
     await fetch("https://pazkids.com.br/user/cities")
         .then((data) => {

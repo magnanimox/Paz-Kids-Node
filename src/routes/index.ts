@@ -27,6 +27,7 @@ router.get("/forgot", AuthController.forgotPage);
 router.get("/user/states", UserController.getStates);
 router.get("/user/cities", UserController.getCities);
 router.get("/user/churches", UserController.getChurches);
+router.get("/user/regions", UserController.getRegions);
 
 // User
 router.get("/user/me", Auth.private, UserController.info);
