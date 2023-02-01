@@ -15,9 +15,10 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
-        <title>Paz Kids | Esqueceu a senha</title>
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <script type="text/javascript" src="assets/js/script.js" defer></script>
+        <title>Paz Kids | Recuperar a Senha</title>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <script type="text/javascript" src="assets/js/signup.js" defer></script>
+        {{! <script type="text/javascript" src="assets/js/recover.js" defer></script> }}
     </head>
     <body class="login-page">
         <section class="area-login">
@@ -37,15 +38,38 @@
                 {{^success}}
                 {{/success}}
                 <h2>
-                    Esqueceu a senha
+                    Criar uma nova senha
                 </h2>
-                <form id="forgotForm" action="/forgot" method="POST">
+                <form id="register" action="/recover" method="POST">
                     <input
-                        name="email"
-                        type="email"
-                        autocomplete="email"
-                        placeholder="Seu e-mail"
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="inputs"
+                        autocomplete="new-password"
+                        placeholder="Nova senha"
+                        onkeyup="checkPassword()"
                         autofocus
+                        required
+                    />
+                    <input
+                        id="confirm-password"
+                        name="confirm_password"
+                        type="password"
+                        class="inputs"
+                        placeholder="Confirmar nova senha"
+                        onkeyup="checkPassword()"
+                        required
+                    />
+                    <input
+                    name="email"
+                    type="hidden"
+                    value="{{ email }}"
+                    />
+                    <input
+                    name="token"
+                    type="hidden"
+                    value="{{ token }}"
                     />
                 </form>
                 <div class="btns-forgot">
@@ -55,7 +79,7 @@
                         </a>
                     </div>
                     <div class="btn-forgot">
-                        <input id="finalizarForgot" form="forgotForm" type="submit" value="Enviar" />
+                        <input id="finalizarForgot" form="register" type="submit" value="Enviar" />
                     </div>
                 </div>
             </div>

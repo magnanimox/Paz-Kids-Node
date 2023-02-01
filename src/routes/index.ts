@@ -13,15 +13,17 @@ router.get("/next/:month", PageController.nextmonth);
 router.get("/prev/:month", PageController.prevmonth);
 
 // Login and Logout
-router.post("/signup", AuthValidator.signup, AuthController.signup);
-router.post("/signin", AuthValidator.signin, AuthController.signin);
-router.get("/signin", AuthController.signinPage);
-router.get("/signup", AuthController.signupPage);
-router.get("/logout", AuthController.logout);
+router.post("/signup", AuthValidator.signup, AuthController.signupPost);
+router.post("/signin", AuthValidator.signin, AuthController.signinPost);
+router.get("/signin", AuthController.signinGet);
+router.get("/signup", AuthController.signupGet);
+router.get("/logout", AuthController.logoutGet);
 
 // Forgot Password Page
-router.post("/forgot", AuthValidator.forgot, AuthController.forgot);
-router.get("/forgot", AuthController.forgotPage);
+router.post("/forgot", AuthValidator.forgot, AuthController.forgotPost);
+router.get("/forgot", AuthController.forgotGet);
+router.post("/recover", AuthController.recoverPost);
+router.get("/recover", AuthController.recoverGet);
 
 // Api
 router.get("/user/states", UserController.getStates);
