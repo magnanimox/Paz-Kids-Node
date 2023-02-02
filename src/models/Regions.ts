@@ -1,13 +1,13 @@
 import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../instances/mysql";
 
-export interface RegionsInstance extends Model {
+export interface RegionInstance extends Model {
     id: number;
     region: string;
 }
 
-export const Region = sequelize.define<RegionsInstance>(
-    "Regions",
+export const Region = sequelize.define<RegionInstance>(
+    "Region",
     {
         id: {
             primaryKey: true,

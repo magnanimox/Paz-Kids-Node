@@ -2,10 +2,11 @@
 const c = (el) => document.querySelector(el);
 const cs = (el) => document.querySelectorAll(el);
 
-//
 let stateId = "";
 let regionId = "";
 let cityId = "";
+
+// getRegions();
 getRegions();
 getCities();
 getChurches();
@@ -14,32 +15,45 @@ getChurches();
 let regions = [];
 let cities = [];
 let citiesPerState = [];
+let citiesPerRegion = [];
 let churches = [];
 let churchesPerCity = [];
+let regionsForPara = [];
 
 // Handles
 function handleState(event) {
     stateId = parseInt(event);
+
+    if (stateId == 14) {
+        document.querySelector(".coluna #region").style.display = "block";
+        regionsForPara.length = 0;
+        cleanRegionList();
+        citiesPerState.length = 0;
+        cleanCityList();
+        churchesPerCity.length = 0;
+        cleanChurchList();
+        printRegionsForPara();
+        return;
+    } else {
+        document.querySelector(".coluna #region").style.display = "none";
+    }
+
     citiesPerState.length = 0;
     cleanCityList();
-    cleanChurchList();
     churchesPerCity.length = 0;
+    cleanChurchList();
     makeCityList();
     printCitiesPerState();
-}
-
-if (stateId == 14) {
-    document.getElementById(".coluna #region").style.display = "flex";
 }
 
 function handleRegion(event) {
     regionId = parseInt(event);
-    citiesPerState.length = 0;
+    citiesPerRegion.length = 0;
     cleanCityList();
-    cleanChurchList();
     churchesPerCity.length = 0;
-    makeCityList();
-    printCitiesPerState();
+    cleanChurchList();
+    makeCityListForRegions();
+    printCitiesPerRegion();
 }
 
 function handleCity(event) {
@@ -91,8 +105,34 @@ async function getChurches() {
 }
 
 // Bars to inner.HTML
+let eleRegion = document.getElementById("id_region");
 let eleCity = document.getElementById("id_city");
 let eleChurch = document.getElementById("id_church");
+
+// Populate the right regions array
+function makeRegionList() {
+    for (let i = 0; i < regions.length; i++) {
+        regions.push(regions[i]);
+    }
+
+    regions.sort(function (a, b) {
+        return a.regions < b.regions ? -1 : a.regions > b.regions ? 1 : 0;
+    });
+}
+
+// Populate the right cities array
+function makeCityListForRegions() {
+    for (let i = 0; i < cities.length; i++) {
+        if (cities[i].id_region === regionId) {
+            citiesPerRegion.push(cities[i]);
+        } else {
+        }
+    }
+
+    citiesPerState.sort(function (a, b) {
+        return a.city < b.city ? -1 : a.city > b.city ? 1 : 0;
+    });
+}
 
 // Populate the right cities array
 function makeCityList() {
@@ -107,6 +147,7 @@ function makeCityList() {
         return a.city < b.city ? -1 : a.city > b.city ? 1 : 0;
     });
 }
+
 // Populate the right churches array
 function makeChurchList() {
     for (let i = 0; i < churches.length; i++) {
@@ -119,6 +160,32 @@ function makeChurchList() {
     churchesPerCity.sort(function (a, b) {
         return a.church < b.church ? -1 : a.church > b.church ? 1 : 0;
     });
+}
+
+// Populate cities bar
+function printRegionsForPara() {
+    for (let i = 0; i < regions.length; i++) {
+        eleRegion.innerHTML =
+            eleRegion.innerHTML +
+            '<option value="' +
+            regions[i].id +
+            '">' +
+            regions[i].region +
+            "</option>";
+    }
+}
+
+// Populate cities bar
+function printCitiesPerRegion() {
+    for (let i = 0; i < citiesPerRegion.length; i++) {
+        eleCity.innerHTML =
+            eleCity.innerHTML +
+            '<option value="' +
+            citiesPerRegion[i].id +
+            '">' +
+            citiesPerRegion[i].city +
+            "</option>";
+    }
 }
 
 // Populate cities bar
@@ -145,6 +212,10 @@ function printChurchesPerCity() {
             churchesPerCity[i].church +
             "</option>";
     }
+}
+
+function cleanRegionList() {
+    eleRegion.innerHTML = "<option value='9999'>Selecione uma Base</option>";
 }
 
 function cleanCityList() {
