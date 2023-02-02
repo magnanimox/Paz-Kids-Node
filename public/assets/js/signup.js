@@ -129,7 +129,7 @@ function makeCityListForRegions() {
         }
     }
 
-    citiesPerState.sort(function (a, b) {
+    citiesPerRegion.sort(function (a, b) {
         return a.city < b.city ? -1 : a.city > b.city ? 1 : 0;
     });
 }
