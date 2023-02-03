@@ -48,6 +48,16 @@ function handleState(event) {
 
 function handleRegion(event) {
     regionId = parseInt(event);
+
+    if (regionId == 5) {
+        document.querySelector(".coluna #city").style.display = "none";
+        selectCityRibeirinho();
+        selectChurchRibeirinho();
+        return;
+    } else {
+        document.querySelector(".coluna #city").style.display = "block";
+    }
+
     citiesPerRegion.length = 0;
     cleanCityList();
     churchesPerCity.length = 0;
@@ -222,8 +232,16 @@ function cleanCityList() {
     eleCity.innerHTML = "<option value='9999'>Selecione uma Cidade</option>";
 }
 
+function selectCityRibeirinho() {
+    eleCity.innerHTML = "<option value='225'>Ribeirinho</option>";
+}
+
 function cleanChurchList() {
     eleChurch.innerHTML = "<option value='9999'>Selecione uma Igreja</option>";
+}
+
+function selectChurchRibeirinho() {
+    eleChurch.innerHTML = "<option value='444'>Ribeirinho</option>";
 }
 
 // isPazChurch
