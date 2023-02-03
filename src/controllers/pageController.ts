@@ -178,6 +178,20 @@ export const temp3 = async (req: Request, res: Response) => {
     });
 };
 
+export const hqd = async (req: Request, res: Response) => {
+    let episodes = await EpisodesTp.findAll({
+        where: { temp: 888 },
+    });
+    let selectAssista = "selected";
+    let pageName = "E.M.P. - História, Quiz e Dinâmica";
+
+    res.render("pages/hqd", {
+        episodes,
+        selectAssista,
+        pageName,
+    });
+};
+
 // Render Partials
 
 export const header = async (req: Request, res: Response) => {
