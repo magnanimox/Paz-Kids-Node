@@ -16,6 +16,7 @@ export interface UserInstance extends Model {
     cellphone: string;
     token: string;
     createdAt: string;
+    updatedAt: string;
 }
 
 export const User = sequelize.define<UserInstance>(

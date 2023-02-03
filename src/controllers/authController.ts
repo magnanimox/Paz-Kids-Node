@@ -172,7 +172,7 @@ export const { forgotGet, forgotPost } = {
                 },
             });
 
-            let createdAt = dayjs(user.createdAt).format("DD/MM/YYYY HH:mm:ss");
+            let createdAt = dayjs(user.createdAt).format("DD/MM/YYYY");
 
             //configuração de email
             let message = {
@@ -193,7 +193,7 @@ export const { forgotGet, forgotPost } = {
                                 <tr>
                                     <td style="padding:10px 0 30px 0">
                                         <br><b>Email:</b> <a href="mailto:${user.email}" target="_blank">${user.email}</a>
-                                        <br><b>Data Registrado:</b> ${createdAt}
+                                        <br><b>Data de registro:</b> ${createdAt}
                                     </td>
                                 </tr>
                                 <tr>
