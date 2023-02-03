@@ -21,18 +21,26 @@
                                 <h4><span id="name">{{ name }}</span></h4>
                             </div>
                             <div class="episode-buttons a-b">
-                                <button id="download" class="bt-download item-1">
-                                    <a href="{{ download }}" target="_blank">Download</a>
+                                <a id="tp-download" href="{{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                <button class="bt-download item-1">
+                                    Download
                                 </button>
-                                <button id="slides" class="bt-slides item-2">
-                                    <a href="{{ slides }}" target="_blank">Slides</a>
+                            </a>
+                            <a id="tp-slides" href="{{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                <button class="bt-slides item-2">
+                                    Slides
                                 </button>
-                                <button id="youtube" class="bt-youtube item-3">
-                                    <a href="{{ youtube }}" target="_blank">Youtube</a>
+                            </a>
+                            <a id="tp-youtube" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                <button class="bt-youtube item-3">
+                                    Youtube
                                 </button>
-                                <button id="lifekids" class="bt-lifekids item-4">
-                                    <a href="{{ lifekids }}" target="_blank">Lifekids</a>
+                            </a>
+                            <a id="tp-lifekids" href="{{#linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                <button class="bt-lifekids item-4">
+                                    Lifekids
                                 </button>
+                            </a>
                             </div>
                         </div>
                     </div>

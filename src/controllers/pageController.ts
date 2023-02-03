@@ -142,11 +142,23 @@ export const temp1 = async (req: Request, res: Response) => {
     });
     let selectAssista = "selected";
     let pageName = "E.M.P. - 1ª Temporada";
+    let logged = req.session.user;
+    let username = "";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
 
     res.render("pages/1temporada", {
         episodes,
         selectAssista,
+        username,
+        logged,
         pageName,
+        linkDown,
     });
 };
 
