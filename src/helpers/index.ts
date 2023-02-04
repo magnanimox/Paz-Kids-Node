@@ -9,7 +9,9 @@ import { AbEpisodeInstance, EpisodesAb } from "../models/AbEpisodes";
 // DayJs
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
+import dayOfYear from "dayjs/plugin/dayOfYear";
 dayjs.extend(isBetween);
+dayjs.extend(dayOfYear);
 dayjs.locale("pt-br");
 
 // Variables DayJs
@@ -26,7 +28,7 @@ export let nextMonthName = dayjs(nextMonth).format("MMMM");
 // Functions
 export async function cardTp() {
     const episodes = await EpisodesTp.findAll();
-    let episodesOfMonth = [];
+    let episodesOfMonth: any = [];
     let episodesOfLastMonth: any = [];
 
     episodesOfLastMonth = episodes.filter((data: TpEpisodeInstance) => {
@@ -49,10 +51,15 @@ export async function cardTp() {
         if (monthOfEp === monthName) {
             showThisEpisode = true;
         }
+
         return showThisEpisode;
     });
 
     episodesOfMonth.unshift(lastEp);
+    console.log(episodesOfMonth);
+    episodesOfMonth.sort(function (a: TpEpisodeInstance, b: TpEpisodeInstance) {
+        return dayjs(a.showAt).dayOfYear() - dayjs(b.showAt).dayOfYear();
+    });
     return episodesOfMonth;
 }
 
