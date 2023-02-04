@@ -168,11 +168,23 @@ export const temp2 = async (req: Request, res: Response) => {
     });
     let selectAssista = "selected";
     let pageName = "E.M.P. - 2ª Temporada";
+    let logged = req.session.user;
+    let username = "";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
 
     res.render("pages/2temporada", {
         episodes,
         selectAssista,
+        username,
+        logged,
         pageName,
+        linkDown,
     });
 };
 
@@ -182,11 +194,23 @@ export const temp3 = async (req: Request, res: Response) => {
     });
     let selectAssista = "selected";
     let pageName = "E.M.P. - 3ª Temporada";
+    let logged = req.session.user;
+    let username = "";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
 
     res.render("pages/3temporada", {
         episodes,
         selectAssista,
+        username,
+        logged,
         pageName,
+        linkDown,
     });
 };
 
@@ -196,11 +220,23 @@ export const hqd = async (req: Request, res: Response) => {
     });
     let selectAssista = "selected";
     let pageName = "E.M.P. - História, Quiz e Dinâmica";
+    let logged = req.session.user;
+    let username = "";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
 
     res.render("pages/hqd", {
         episodes,
         selectAssista,
+        username,
+        logged,
         pageName,
+        linkDown,
     });
 };
 

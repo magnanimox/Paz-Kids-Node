@@ -5,6 +5,44 @@
         <div class="section-title">
             <h3>Escola de Missões Planetária - 2ª Temporada</h3>
         </div>
+        <div class="modal-login">
+            <div class="modal-login-body">
+                <section class="area-login modal">
+                    <div class="login">
+                        {{#danger}}
+                            <div class="notification danger">
+                                <p>Login e/ou senha inválidos.</p>
+                            </div>
+                        {{/danger}}
+                        {{^danger}}
+                        {{/danger}}
+                        <form action="/signin" method="POST">
+                            <input
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                placeholder="Login"
+                                autofocus
+                            />
+                            <input
+                                name="password"
+                                autocomplete="current-password"
+                                type="password"
+                                placeholder="Senha"
+                            />
+                            <input type="submit" value="Entrar" />
+                        </form>
+                        <p class="login-p">
+                        <a href="https://pazkids.com.br/forgot">Esqueceu sua senha?</a><br>
+                            Ainda não tem uma conta? <a href="https://pazkids.com.br/signup">Criar conta</a>
+                        </p>
+                        <div class="exit" onclick="closeModal()">
+                            X
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
          {{#episodes}}
                 <div class="terra-prometida mrg-top">
                     <div class="thumb-backarea">
@@ -21,18 +59,26 @@
                                 <h4><span id="name">{{ name }}</span></h4>
                             </div>
                             <div class="episode-buttons a-b">
-                                <button id="download" class="bt-download item-1">
-                                    <a href="{{ download }}" target="_blank">Download</a>
-                                </button>
-                                <button id="slides" class="bt-slides item-2">
-                                    <a href="{{ slides }}" target="_blank">Slides</a>
-                                </button>
-                                <button id="youtube" class="bt-youtube item-3">
-                                    <a href="{{ youtube }}" target="_blank">Youtube</a>
-                                </button>
-                                <button id="lifekids" class="bt-lifekids item-4">
-                                    <a href="{{ lifekids }}" target="_blank">Lifekids</a>
-                                </button>
+                                <a id="tp-download" href="{{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-download item-1">
+                                        Download
+                                    </button>
+                                </a>
+                                <a id="tp-slides" href="{{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-slides item-2">
+                                        Slides
+                                    </button>
+                                </a>
+                                <a id="tp-youtube" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-youtube item-3">
+                                        Youtube
+                                    </button>
+                                </a>
+                                <a id="tp-lifekids" href="{{#linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-lifekids item-4">
+                                        Lifekids
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
