@@ -1,4 +1,4 @@
-Welcome to the Paz Kids Website 🎉
+<h1> Welcome to the Paz Kids Website 🎉 </h1>
 
 This is a system I developed with NodeJS for a children's ministry at my church.
 
