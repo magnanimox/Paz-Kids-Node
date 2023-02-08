@@ -128,11 +128,23 @@ export const aventura = async (req: Request, res: Response) => {
     let episodes = await EpisodesAb.findAll();
     let selectAssista = "selected";
     let pageName = "Aventura Bíblica";
+    let logged = req.session.user;
+    let username = "";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
 
     res.render("pages/aventura-biblica", {
         episodes,
         selectAssista,
+        username,
+        logged,
         pageName,
+        linkDown,
     });
 };
 
