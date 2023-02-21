@@ -7,11 +7,16 @@
             <h3>Programação</h3>
             <hr />
             <div class="month">
-                <a href="{{ prevMonthLink }}"><h4 class="prevMonth">{{ prevMonthName }}</h4></a>
+                <a href="{{ prevMonthLink }}">
+                    <h4 class="prevMonth">{{ prevMonthName }}</h4>
+                </a>
                 <h4 class="monthCenter">{{ monthName }}</h4>
-                <a href="{{ nextMonthLink }}"><h4 class="nextMonth">{{ nextMonthName }}</h4></a>
+                <a href="{{ nextMonthLink }}">
+                    <h4 class="nextMonth">{{ nextMonthName }}</h4>
+                </a>
             </div>
         </div>
+
         <div class="modal-login">
             <div class="modal-login-body">
                 <section class="area-login modal">
@@ -40,7 +45,7 @@
                             <input type="submit" value="Entrar" />
                         </form>
                         <p class="login-p">
-                        <a href="https://pazkids.com.br/forgot">Esqueceu sua senha?</a><br>
+                            <a href="https://pazkids.com.br/forgot">Esqueceu sua senha?</a><br>
                             Ainda não tem uma conta? <a href="https://pazkids.com.br/signup">Criar conta</a>
                         </p>
                         <div class="exit" onclick="closeModal()">
@@ -50,6 +55,7 @@
                 </section>
             </div>
         </div>
+
         <div class="aventura-biblica">
             <div class="grade">
                 <h3>Aventura Bíblica</h3>
@@ -80,11 +86,13 @@
                 </div>
             </div>
         </div>
+
         <div class="terra-prometida">
             <div class="grade">
                 <h3>Terra Prometida</h3>
                 <h4>(8-10 Anos)</h4>
             </div>
+            
             {{ #episodeTpToShow }}
             <div class="cardTp">
                 <div class="thumb-backarea">
