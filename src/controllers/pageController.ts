@@ -120,7 +120,10 @@ export const quemsomos = (req: Request, res: Response) => {
 
 export const recursos = async (req: Request, res: Response) => {
     let pageName = "Recursos";
-    res.render("pages/manutencao");
+
+    res.render("pages/recursos", {
+        pageName,
+    });
 };
 
 export const aventura = async (req: Request, res: Response) => {

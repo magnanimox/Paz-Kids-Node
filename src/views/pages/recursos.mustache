@@ -1,0 +1,64 @@
+{{>partials/header}}
+
+    <section>
+        <div class="section-area">
+            <div class="section-title">
+                <h3>Recursos Diversos</h3>
+            </div>
+            <div class="modal-login">
+                <div class="modal-login-body">
+                    <section class="area-login modal">
+                        <div class="login">
+                            {{#danger}}
+                                <div class="notification danger">
+                                    <p>Login e/ou senha inválidos.</p>
+                                </div>
+                            {{/danger}}
+                            {{^danger}}
+                            {{/danger}}
+                            <form action="/signin" method="POST">
+                                <input
+                                    name="email"
+                                    type="email"
+                                    autocomplete="email"
+                                    placeholder="Login"
+                                    autofocus
+                                />
+                                <input
+                                    name="password"
+                                    autocomplete="current-password"
+                                    type="password"
+                                    placeholder="Senha"
+                                />
+                                <input type="submit" value="Entrar" />
+                            </form>
+                            <p class="login-p">
+                            <a href="https://pazkids.com.br/forgot">Esqueceu sua senha?</a><br>
+                                Ainda não tem uma conta? <a href="https://pazkids.com.br/signup">Criar conta</a>
+                            </p>
+                            <div class="exit" onclick="closeModal()">
+                                X
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="rec">
+                <div class="rec-img">
+                    <img id="logorec" src="/assets/images/recursos/logo.png">
+                </div>
+                <div class="rec-desc">
+                    <h3> LOGO PAZ KIDS</h3>
+                    <div class="rec-desc-desc">
+                        <p>
+                            Tenha acesso às variantes da logomarca acessando nossa nuvem.<br/><br/>
+                            <a class="none link-rec" target="blank" href="https://drive.google.com/drive/folders/1JqYZ_LLViMVT3aMvEr4wwAqa6auz5EJV"><h3>Clique aqui</h3></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="break-space"></div>
+        </div>
+    </section>
+
+{{>partials/footer}}

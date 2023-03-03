@@ -1283,6 +1283,45 @@ form [type="submit"]:hover {
     border-radius: 20%;
 }
 
+#logorec {
+    width: 120px;
+}
+
+.rec {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    background-color: #e2e7ed;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 18px;
+    border: 1px solid #96a8bf;
+}
+
+.rec-img {
+    padding-right: 46px;
+    padding-left: 36px;
+    /* background-color: #ff0000; */
+}
+
+.rec-desc {
+    display: flex;
+    flex-direction: column;
+    color: #4d5974;
+    padding-right: 20px;
+    /* background-color: #00ff00; */
+}
+
+.link-rec {
+    color: #0698d2;
+    transition: 0.3s;
+}
+
+.link-rec:hover {
+    color: #02b7ff;
+}
+
 /* MEDIAS */
 
 @media (max-width: 1400px) {
