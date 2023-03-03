@@ -13,7 +13,6 @@ import {
     cardTpPrevMonth,
     cardTpNextMonth,
 } from "../helpers/index";
-import dayjs from "dayjs";
 
 export const inicio = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTp();
