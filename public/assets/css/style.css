@@ -1291,7 +1291,7 @@ form [type="submit"]:hover {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 60%;
+    width: 75%;
     background-color: #e2e7ed;
     margin-top: 40px;
     padding: 10px;
