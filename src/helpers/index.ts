@@ -30,6 +30,7 @@ export async function cardTp() {
     const episodes = await EpisodesTp.findAll();
     let episodesOfMonth: any = [];
     let episodesOfLastMonth: any = [];
+    let episodesOfNextMonth: any = [];
 
     episodesOfLastMonth = episodes.filter((data: TpEpisodeInstance) => {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
@@ -42,7 +43,19 @@ export async function cardTp() {
         return showThisEpisode;
     });
 
+    episodesOfNextMonth = episodes.filter((data: TpEpisodeInstance) => {
+        let monthOfEp = dayjs(data.showAt).format("MMMM");
+        let showThisEpisode = false;
+
+        if (monthOfEp === nextMonthName) {
+            showThisEpisode = true;
+        }
+
+        return showThisEpisode;
+    });
+
     let lastEp = episodesOfLastMonth[episodesOfLastMonth.length - 1];
+    let firstEp = episodesOfNextMonth[0];
 
     episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
@@ -56,7 +69,7 @@ export async function cardTp() {
     });
 
     episodesOfMonth.unshift(lastEp);
-    console.log(episodesOfMonth);
+    episodesOfMonth.push(firstEp);
     episodesOfMonth.sort(function (a: TpEpisodeInstance, b: TpEpisodeInstance) {
         return dayjs(a.showAt).dayOfYear() - dayjs(b.showAt).dayOfYear();
     });
