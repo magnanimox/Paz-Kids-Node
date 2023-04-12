@@ -33,6 +33,17 @@ export async function cardTp() {
     let episodesOfLastMonth: any = [];
     let episodesOfNextMonth: any = [];
 
+    episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
+        let monthOfEp = dayjs(data.showAt).format("MMMM");
+        let showThisEpisode = false;
+
+        if (monthOfEp === monthName) {
+            showThisEpisode = true;
+        }
+
+        return showThisEpisode;
+    });
+
     episodesOfLastMonth = episodes.filter((data: TpEpisodeInstance) => {
         let monthOfEp = dayjs(data.showAt).format("MMMM");
         let showThisEpisode = false;
@@ -55,25 +66,31 @@ export async function cardTp() {
         return showThisEpisode;
     });
 
-    let lastEp = episodesOfLastMonth[episodesOfLastMonth.length - 1];
-    let firstEp = episodesOfNextMonth[0];
-
-    episodesOfMonth = episodes.filter((data: TpEpisodeInstance) => {
-        let monthOfEp = dayjs(data.showAt).format("MMMM");
-        let showThisEpisode = false;
-
-        if (monthOfEp === monthName) {
-            showThisEpisode = true;
-        }
-
-        return showThisEpisode;
+    episodesOfLastMonth.sort(function (
+        a: TpEpisodeInstance,
+        b: TpEpisodeInstance
+    ) {
+        return dayjs(a.showAt).dayOfYear() - dayjs(b.showAt).dayOfYear();
     });
 
-    if (lastEp != undefined) {
-        episodesOfMonth.unshift(lastEp);
+    episodesOfNextMonth.sort(function (
+        a: TpEpisodeInstance,
+        b: TpEpisodeInstance
+    ) {
+        return dayjs(a.showAt).dayOfYear() - dayjs(b.showAt).dayOfYear();
+    });
+
+    let lastEpLastMonth = episodesOfLastMonth[episodesOfLastMonth.length - 1];
+    let firstEpNextMonth = episodesOfNextMonth[0];
+
+    if (lastEpLastMonth != undefined) {
+        episodesOfMonth.unshift(lastEpLastMonth);
     }
 
-    episodesOfMonth.push(firstEp);
+    if (firstEpNextMonth != undefined) {
+        episodesOfMonth.push(firstEpNextMonth);
+    }
+
     episodesOfMonth.sort(function (a: TpEpisodeInstance, b: TpEpisodeInstance) {
         return dayjs(a.showAt).dayOfYear() - dayjs(b.showAt).dayOfYear();
     });
