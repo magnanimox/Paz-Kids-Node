@@ -10,6 +10,7 @@ import { AbEpisodeInstance, EpisodesAb } from "../models/AbEpisodes";
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 import dayOfYear from "dayjs/plugin/dayOfYear";
+import { log } from "console";
 dayjs.extend(isBetween);
 dayjs.extend(dayOfYear);
 dayjs.locale("pt-br");
@@ -68,7 +69,10 @@ export async function cardTp() {
         return showThisEpisode;
     });
 
-    episodesOfMonth.unshift(lastEp);
+    if (lastEp != undefined) {
+        episodesOfMonth.unshift(lastEp);
+    }
+
     episodesOfMonth.push(firstEp);
     episodesOfMonth.sort(function (a: TpEpisodeInstance, b: TpEpisodeInstance) {
         return dayjs(a.showAt).dayOfYear() - dayjs(b.showAt).dayOfYear();

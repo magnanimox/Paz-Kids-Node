@@ -24,6 +24,7 @@ export const inicio = async (req: Request, res: Response) => {
     let username = "";
     let pageName = "Início";
     let linkDown = false;
+    console.log(monthName);
 
     if (logged) {
         username = req.session.user.name;
