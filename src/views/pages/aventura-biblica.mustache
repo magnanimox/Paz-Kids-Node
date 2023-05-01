@@ -59,12 +59,12 @@
                         <h4><span id="name">{{ name }}</span></h4>
                     </div>
                     <div class="episode-buttons a-b">
-                        <a id="tp-download" href="{{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                        <a href="{{ #linkDown }}{{ download }}" onClick="Ab_Download_Counter() {{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                             <button class="bt-download item-1">
                                 Download
                             </button>
                         </a>
-                        <a id="material" href="{{ #linkDown }}{{ materiais }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                        <a href="{{ #linkDown }}{{ materiais }}" onClick="Ab_Materiais_Counter() {{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                             <button class="bt-material item-2">
                                 Materiais
                             </button>
