@@ -1,24 +1,24 @@
-function Ab_Download_Counter() {
+window.ab_Download_Counter = function () {
     gtag("event", "ab-download-counter", { "debug-mode": true });
 }
 
-function Ab_Materiais_Counter() {
+window.ab_Materiais_Counter = function() {
     gtag("event", "ab-materiais-counter", { "debug-mode": true });
 }
 
-function Tp_Download_Counter() {
+window.tp_Download_Counter() = function() {
     gtag("event", "tp-download-counter", { "debug-mode": true });
 }
 
-function Tp_Slides_Counter() {
+window.tp_Slides_Counter() = function() {
     gtag("event", "tp-slides-counter", { "debug-mode": true });
 }
 
-function Tp_Youtube_Counter() {
+window.tp_Youtube_Counter() = function() {
     gtag("event", "tp-youtube-counter", { "debug-mode": true });
 }
 
-function Tp_Lifekids_Counter() {
+window.tp_Lifekids_Counter() = function() {
     gtag("event", "tp-lifekids-counter", { "debug-mode": true });
 }
 
