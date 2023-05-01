@@ -72,13 +72,13 @@
                         <h4>{{ episodeAbToShow.name }}</h4>
                     </div>
                     <div class="episode-buttons a-b">
-                        <a id="ab-download" href="{{ #linkDown }}{{ episodeAbToShow.download }}" onClick="Ab_Download_Counter(){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
-                            <button class="bt-download item-1">
+                        <a id="ab-download" href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                            <button class="bt-download item-1" onClick="Ab_Download_Counter()>
                                 Download
                             </button>
                         </a>
-                        <a id="ab-materiais" href="{{ #linkDown }}{{ episodeAbToShow.materiais }}" onClick="Ab_Materiais_Counter(){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
-                            <button class="bt-material item-2">
+                        <a id="ab-materiais" href="{{ #linkDown }}{{ episodeAbToShow.materiais }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                            <button class="bt-material item-2" onClick="Ab_Materiais_Counter()>
                                 Material
                             </button>
                         </a>
