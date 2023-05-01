@@ -72,12 +72,12 @@
                         <h4>{{ episodeAbToShow.name }}</h4>
                     </div>
                     <div class="episode-buttons a-b">
-                        <a id="ab-download" href="{{ #linkDown }}{{ episodeAbToShow.download }}" onClick="gtag('event', 'ab-download-counter', { 'debug-mode': true }){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                        <a id="ab-download" href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                             <button class="bt-download item-1">
                                 Download
                             </button>
                         </a>
-                        <a id="ab-materiais" href="{{ #linkDown }}{{ episodeAbToShow.materiais }}" onClick="gtag('event', 'ab-materiais-counter', { 'debug-mode': true }){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                        <a id="ab-materiais" href="{{ #linkDown }}{{ episodeAbToShow.materiais }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                             <button class="bt-material item-2">
                                 Material
                             </button>
@@ -110,22 +110,22 @@
                             <h4 id="tp-name">{{ name }}</h4>
                         </div>
                         <div class="episode-buttons t-p">
-                            <a id="tp-download" class="download-counter" href="{{ #linkDown }}{{ download }}" onClick="gtag('event', 'tp-download-counter', { 'debug-mode': true }){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                            <a id="tp-download" class="download-counter" href="{{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-download item-1">
                                     Download
                                 </button>
                             </a>
-                            <a id="tp-slides" class="slides-counter" href="{{ #linkDown }}{{ slides }}" onClick="gtag('event', 'tp-slides-counter', { 'debug-mode': true }){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                            <a id="tp-slides" class="slides-counter" href="{{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-slides item-2">
                                     Slides
                                 </button>
                             </a>
-                            <a id="tp-youtube" class="youtube-counter" href="{{ #linkDown }}{{ youtube }}" onClick="gtag('event', 'tp-youtube-counter', { 'debug-mode': true }){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                            <a id="tp-youtube" class="youtube-counter" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-youtube item-3">
                                     Youtube
                                 </button>
                             </a>
-                            <a id="tp-lifekids" class="lifekids-counter" href="{{#linkDown }}{{ lifekids }}" onClick="gtag('event', 'tp-lifekids-counter', { 'debug-mode': true }){{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                            <a id="tp-lifekids" class="lifekids-counter" href="{{#linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
                                 <button class="bt-lifekids item-4">
                                     Lifekids
                                 </button>
