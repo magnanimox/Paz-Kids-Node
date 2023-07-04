@@ -1284,7 +1284,12 @@ form [type="submit"]:hover {
 }
 
 #logorec {
-    width: 185px;
+    width: 135px;
+    margin-top: 12px;
+}
+
+#logorec-conf {
+    width: 135px;
     margin-top: 12px;
 }
 
@@ -1919,7 +1924,7 @@ form [type="submit"]:hover {
         border-radius: 0;
     }
 
-    #logorec {
+    #logorec-conf {
         padding-inline: 16px;
     }
 }
