@@ -126,6 +126,14 @@ export const diversos = async (req: Request, res: Response) => {
     });
 };
 
+export const treinamento = async (req: Request, res: Response) => {
+    let pageName = "Treinamento";
+
+    res.render("pages/treinamento", {
+        pageName,
+    });
+};
+
 export const aventura = async (req: Request, res: Response) => {
     let episodes = await EpisodesAb.findAll();
     let selectAssista = "selected";
