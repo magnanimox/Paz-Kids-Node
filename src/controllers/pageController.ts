@@ -121,7 +121,7 @@ export const quemsomos = (req: Request, res: Response) => {
 export const diversos = async (req: Request, res: Response) => {
     let pageName = "Recursos Diversos";
 
-    res.render("pages/recursos", {
+    res.render("pages/diversos", {
         pageName,
     });
 };
