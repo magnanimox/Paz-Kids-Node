@@ -1777,9 +1777,26 @@ form [type="submit"]:hover {
             visibility 200ms ease-in;
     }
 
+    .dropdown-menu.recursos {
+        width: 450px;
+        left: 514px;
+        right: 0;
+        /*  height of nav-item  */
+        top: 83px;
+        position: absolute;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(0, 10px);
+        transition: opacity 200ms ease-in, transform 200ms ease-in,
+            visibility 200ms ease-in;
+    }
+
     /* shows the dropdown menu on hover */
     .dropdown:hover .dropdown-menu,
-    .dropdown .dropdown-menu:hover {
+    .dropdown-menu-recursos,
+    .dropdown .dropdown-menu:hover,
+    .dropdown-menu-recursos:hover {
         display: block;
         visibility: visible;
         opacity: 1;

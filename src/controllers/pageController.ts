@@ -118,8 +118,8 @@ export const quemsomos = (req: Request, res: Response) => {
     res.render("pages/manutencao");
 };
 
-export const recursos = async (req: Request, res: Response) => {
-    let pageName = "Recursos";
+export const diversos = async (req: Request, res: Response) => {
+    let pageName = "Recursos Diversos";
 
     res.render("pages/recursos", {
         pageName,

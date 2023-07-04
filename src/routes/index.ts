@@ -36,7 +36,7 @@ router.get("/user/me", Auth.private, UserController.info);
 
 // Other Pages
 router.get("/quemsomos", PageController.quemsomos);
-router.get("/recursos", PageController.recursos);
+router.get("/diversos", PageController.diversos);
 
 // Media
 router.get("/aventura-biblica", PageController.aventura);
