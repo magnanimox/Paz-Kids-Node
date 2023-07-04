@@ -120,17 +120,45 @@ export const quemsomos = (req: Request, res: Response) => {
 
 export const diversos = async (req: Request, res: Response) => {
     let pageName = "Recursos Diversos";
+    let selectRecursos = "selected";
+    let logged = req.session.user;
+    let username = "";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
 
     res.render("pages/diversos", {
         pageName,
+        selectRecursos,
+        username,
+        logged,
+        linkDown,
     });
 };
 
 export const treinamento = async (req: Request, res: Response) => {
     let pageName = "Treinamento";
+    let selectRecursos = "selected";
+    let logged = req.session.user;
+    let username = "";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
 
     res.render("pages/treinamento", {
         pageName,
+        selectRecursos,
+        username,
+        logged,
+        linkDown,
     });
 };
 
