@@ -10,12 +10,21 @@ let monthName = today.format("MMMM");
 let currentMonth = dayjs().month();
 
 // Menu > Assista; Prevent Default
-c(".menu .dropdown a").addEventListener("click", function (event) {
+c(".menu .dropdown-a a").addEventListener("click", function (event) {
     event.preventDefault();
-    if (c(".menu .dropdown-menu").style.display == "flex") {
-        c(".menu .dropdown-menu").style.display = "none";
+    if (c(".menu .dropdown-a .dropdown-menu").style.display == "flex") {
+        c(".menu .dropdown-a .dropdown-menu").style.display = "none";
     } else {
-        c(".menu .dropdown-menu").style.display = "flex";
+        c(".menu .dropdown-a .dropdown-menu").style.display = "flex";
+    }
+});
+
+c(".menu .dropdown-b a").addEventListener("click", function (event) {
+    event.preventDefault();
+    if (c(".menu .dropdown-b .dropdown-menu").style.display == "flex") {
+        c(".menu .dropdown-b .dropdown-menu").style.display = "none";
+    } else {
+        c(".menu .dropdown-b .dropdown-menu").style.display = "flex";
     }
 });
 

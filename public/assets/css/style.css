@@ -1328,6 +1328,16 @@ form [type="submit"]:hover {
     color: #02b7ff;
 }
 
+.dropdown-a .dropdown-menu {
+    display: none;
+    justify-content: center;
+}
+
+.dropdown-b .dropdown-menu {
+    display: none;
+    justify-content: center;
+}
+
 /* MEDIAS */
 
 @media (max-width: 1400px) {
@@ -1464,7 +1474,7 @@ form [type="submit"]:hover {
     ul.menu {
         display: block;
         position: absolute;
-        top: 84 px;
+        top: 84px;
         left: 0;
         background-color: #ddd;
         width: 100%;
@@ -1509,7 +1519,7 @@ form [type="submit"]:hover {
     }
 
     .checkbox:checked ~ ul.menu {
-        height: calc(100vh - 379px);
+        height: 100vh;
         visibility: visible;
         overflow-y: auto;
     }
@@ -1721,7 +1731,8 @@ form [type="submit"]:hover {
 }
 
 /* Menu Toogle */
-.dropdown span {
+.dropdown-a span,
+.dropdown-b span {
     color: #ffffff;
     margin-left: 20px;
 }
@@ -1764,7 +1775,8 @@ form [type="submit"]:hover {
 /* breakpoint and up - mega dropdown styles */
 @media screen and (min-width: 1080px) {
     /* makes the dropdown full width  */
-    .dropdown {
+    .dropdown-a,
+    .dropdown-b {
         position: static;
     }
 
@@ -1799,9 +1811,11 @@ form [type="submit"]:hover {
     }
 
     /* shows the dropdown menu on hover */
-    .dropdown:hover .dropdown-menu,
+    .dropdown-a:hover .dropdown-menu,
+    .dropdown-b:hover .dropdown-menu,
     .dropdown-menu-recursos,
-    .dropdown .dropdown-menu:hover,
+    .dropdown-a .dropdown-menu:hover,
+    .dropdown-b .dropdown-menu:hover,
     .dropdown-menu-recursos:hover {
         display: block;
         visibility: visible;
@@ -1822,7 +1836,8 @@ form [type="submit"]:hover {
         flex-direction: column;
     }
 
-    .dropdown span {
+    .dropdown-a span,
+    .dropdown-b span {
         font-size: 1rem;
         margin-left: 0;
     }
