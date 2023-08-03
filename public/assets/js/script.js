@@ -9,6 +9,26 @@ let today = dayjs();
 let monthName = today.format("MMMM");
 let currentMonth = dayjs().month();
 
+const width = window.innerWidth;
+
+if (width < 1080) {
+    c(".dropdown-menu.assista").classList.add("hide");
+    c(".dropdown-menu.recursos").classList.add("hide");
+} else {
+    c(".dropdown-menu.assista").classList.remove("hide");
+    c(".dropdown-menu.recursos").classList.remove("hide");
+}
+
+window.addEventListener("resize", function () {
+    if (width < 1080) {
+        c(".dropdown-menu.assista").classList.add("hide");
+        c(".dropdown-menu.recursos").classList.add("hide");
+    } else {
+        c(".dropdown-menu.assista").classList.remove("hide");
+        c(".dropdown-menu.recursos").classList.remove("hide");
+    }
+});
+
 // Menu > Assista; Prevent Default
 c(".menu .dropdown-a a").addEventListener("click", function (event) {
     event.preventDefault();

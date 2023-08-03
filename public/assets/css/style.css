@@ -1792,7 +1792,7 @@ form [type="submit"]:hover {
         position: static;
     }
 
-    .dropdown-menu {
+    .dropdown-menu.assista {
         width: 450px;
         left: 425px;
         right: 0;
@@ -1853,10 +1853,6 @@ form [type="submit"]:hover {
         font-size: 1rem;
         margin-left: 0;
     }
-
-    /* .dropdown-menu {
-        display: flex;
-    } */
 
     .colunm-menu {
         display: flex;
