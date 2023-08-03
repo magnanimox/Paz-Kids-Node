@@ -1329,13 +1329,25 @@ form [type="submit"]:hover {
 }
 
 .dropdown-a .dropdown-menu {
-    display: none;
+    display: flex;
+    overflow: hidden;
+    max-height: 270px;
+    transition: max-height 1s ease-in-out;
     justify-content: center;
 }
 
 .dropdown-b .dropdown-menu {
-    display: none;
+    display: flex;
+    overflow: hidden;
+    max-height: 200px;
+    transition: max-height 1s ease-in-out;
     justify-content: center;
+}
+
+.dropdown-a .dropdown-menu.hide,
+.dropdown-b .dropdown-menu.hide {
+    max-height: 0;
+    pointer-events: none;
 }
 
 /* MEDIAS */
@@ -1842,9 +1854,9 @@ form [type="submit"]:hover {
         margin-left: 0;
     }
 
-    .dropdown-menu {
+    /* .dropdown-menu {
         display: flex;
-    }
+    } */
 
     .colunm-menu {
         display: flex;

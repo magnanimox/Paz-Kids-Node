@@ -12,19 +12,19 @@ let currentMonth = dayjs().month();
 // Menu > Assista; Prevent Default
 c(".menu .dropdown-a a").addEventListener("click", function (event) {
     event.preventDefault();
-    if (c(".menu .dropdown-a .dropdown-menu").style.display == "flex") {
-        c(".menu .dropdown-a .dropdown-menu").style.display = "none";
+    if (c(".menu .dropdown-a .dropdown-menu").classList.contains("hide")) {
+        c(".menu .dropdown-a .dropdown-menu").classList.remove("hide");
     } else {
-        c(".menu .dropdown-a .dropdown-menu").style.display = "flex";
+        c(".menu .dropdown-a .dropdown-menu").classList.add("hide");
     }
 });
 
 c(".menu .dropdown-b a").addEventListener("click", function (event) {
     event.preventDefault();
-    if (c(".menu .dropdown-b .dropdown-menu").style.display == "flex") {
-        c(".menu .dropdown-b .dropdown-menu").style.display = "none";
+    if (c(".menu .dropdown-b .dropdown-menu").classList.contains("hide")) {
+        c(".menu .dropdown-b .dropdown-menu").classList.remove("hide");
     } else {
-        c(".menu .dropdown-b .dropdown-menu").style.display = "flex";
+        c(".menu .dropdown-b .dropdown-menu").classList.add("hide");
     }
 });
 
