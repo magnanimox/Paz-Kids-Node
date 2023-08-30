@@ -118,3 +118,19 @@ function closeModal() {
         c(".modal-login").style.display = "none";
     }, 500);
 }
+
+function toggleClassCard(cardId) {
+    var card = document.getElementById(cardId + "Card");
+    var toggleButton = document.getElementById("toggle" + cardId);
+    var isOpen = card.classList.contains("visible");
+
+    if (isOpen) {
+        card.classList.remove("visible");
+        toggleButton.textContent = "+";
+        toggleButton.classList.remove("active");
+    } else {
+        card.classList.add("visible");
+        toggleButton.textContent = "-";
+        toggleButton.classList.add("active");
+    }
+}

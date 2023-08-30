@@ -45,7 +45,7 @@
             </div>
             <div class="rec">
                 <div class="rec-img">
-                        <svg width="120px" height="130px" viewBox="0 0 2192 1422" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <svg width="135px" height="100px" viewBox="0 0 2192 1422" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                             <g transform="matrix(2,0,0,2,-82.28,-106.33)">
                                 <path d="M228.758,569.42L129.425,569.42C129.88,569.42 130.3,569.135 130.683,568.608C131.183,567.923 131.622,566.831 132.001,565.429C133.373,560.347 133.953,551.2 133.737,542.692C133.476,532.338 132.038,522.928 129.425,522.928L228.14,522.928L228.253,531.467L138.822,531.467C138.27,531.467 137.822,531.915 137.822,532.467C137.822,533.018 138.27,533.467 138.822,533.467L228.28,533.467L228.345,538.368L138.822,538.368C138.27,538.368 137.822,538.815 137.822,539.368C137.822,539.92 138.27,540.368 138.822,540.368L228.372,540.368L228.437,545.268L138.822,545.268C138.27,545.268 137.822,545.717 137.822,546.268C137.822,546.821 138.27,547.269 138.822,547.269L228.463,547.269L228.529,552.17L138.822,552.17C138.27,552.17 137.822,552.618 137.822,553.17C137.822,553.723 138.27,554.17 138.822,554.17L228.555,554.17L228.62,559.071L138.822,559.071C138.27,559.071 137.822,559.519 137.822,560.071C137.822,560.623 138.27,561.071 138.822,561.071L228.647,561.071L228.758,569.42Z" style="fill:url(#_Linear1);"/>
                             </g>
@@ -771,13 +771,28 @@
                         </svg>
                 </div>
                 <div class="rec-desc">
-                    <h3> PLATAFORMA DE TREINAMENTO </h3>
+                    <h3 style=""> PLATAFORMA DE TREINAMENTO </h3>
                     <div class="rec-desc-desc">
-                        <p>
-                            Tenha acesso aos nossos cursos. 
+                        <p style="color: #ff0000">
+                            Temporariamente desativado.
                         </p>
                         <br/>
-                        <a class="none link-rec" {{ #linkDown }} target="blank" href="https://is.gd/cursospazkids">{{ /linkDown }}{{ ^linkDown }}href="#!" onClick="openModal()">{{ /linkDown }}<h3>Clique aqui</h3></a>
+                        <a class="none unclickable-link" style="    text-decoration: line-through;" {{ #linkDown }} target="blank" href="https://is.gd/cursospazkids">{{ /linkDown }}{{ ^linkDown }}href="#!" onClick="openModal()">{{ /linkDown }}<h3>Clique aqui</h3></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rec">
+                <div class="rec-img">
+                    <img id="logorec-conf" src="/assets/images/recursos/course.png">
+                </div>
+                <div class="rec-desc">
+                    <h3> Treinamento Provisório </h3>
+                    <div class="rec-desc-desc">
+                        <p>
+                            Enquanto a nova plataforma não fica pronta, disponibilizaremos nossos treinamentos diretamente aqui no site.
+                        </p>
+                        <br/>
+                        <a class="none link-rec" href="{{ #linkDown }}https://drive.google.com/drive/folders/1_EwH0vYyT-AIXA4A4F0O_2ALI1C55n0x?usp=sharing{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}"><h3>Clique aqui</h3></a>
                     </div>
                 </div>
             </div>

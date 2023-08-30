@@ -22,6 +22,12 @@ a.none {
     text-decoration: none;
 }
 
+.unclickable-link {
+    pointer-events: none;
+    cursor: default;
+    color: #4d5974;
+}
+
 /* HEADER */
 
 header {
@@ -1289,7 +1295,7 @@ form [type="submit"]:hover {
 }
 
 #logorec-conf {
-    width: 210px;
+    width: 135px;
     margin-top: 12px;
 }
 
@@ -1303,6 +1309,63 @@ form [type="submit"]:hover {
     padding: 10px;
     border-radius: 18px;
     border: 1px solid #96a8bf;
+}
+
+.recCursos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #e2e7ed;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 18px;
+    border: 1px solid #96a8bf;
+}
+
+.classCard {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    padding-left: 38px;
+}
+
+.classCard.visible {
+    max-height: 1000px; /* Um valor maior que a altura máxima esperada */
+    opacity: 1;
+}
+
+.rec-desc-title {
+    flex: 1;
+    position: relative;
+    /* background-color: #f00; */
+}
+
+.toggle-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #02b7ff;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 0px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-button.active {
+    background-color: red;
+    color: white;
+}
+
+.toggle-button:hover {
+    background-color: #ccc;
+    color: #222;
 }
 
 .rec-img {
@@ -1319,12 +1382,49 @@ form [type="submit"]:hover {
     /* background-color: #00ff00; */
 }
 
+.rec-desc-cursos {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    color: #4d5974;
+    padding-right: 20px;
+    /* background-color: #00ff00; */
+}
+.rec-desc {
+    display: flex;
+    flex-direction: column;
+    color: #4d5974;
+    padding-right: 20px;
+    /* background-color: #00ff00; */
+}
+
+.cursos {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px; */
+    background-color: #f00;
+}
+
 .link-rec {
     color: #0698d2;
     transition: 0.3s;
 }
 
 .link-rec:hover {
+    color: #02b7ff;
+}
+
+.link-cursos {
+    display: block;
+    font-size: 22px;
+    color: #0698d2;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.link-cursos:hover {
     color: #02b7ff;
 }
 

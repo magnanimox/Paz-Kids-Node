@@ -1,0 +1,127 @@
+{{>partials/header}}
+
+    <section>
+        <div class="section-area">
+            <div class="section-title">
+                <h3>Cursos</h3>
+            </div>
+            <div class="modal-login">
+                <div class="modal-login-body">
+                    <section class="area-login modal">
+                        <div class="login">
+                            {{#danger}}
+                                <div class="notification danger">
+                                    <p>Login e/ou senha inválidos.</p>
+                                </div>
+                            {{/danger}}
+                            {{^danger}}
+                            {{/danger}}
+                            <form action="/signin" method="POST">
+                                <input
+                                    name="email"
+                                    type="email"
+                                    autocomplete="email"
+                                    placeholder="Login"
+                                    autofocus
+                                />
+                                <input
+                                    name="password"
+                                    autocomplete="current-password"
+                                    type="password"
+                                    placeholder="Senha"
+                                />
+                                <input type="submit" value="Entrar" />
+                            </form>
+                            <p class="login-p">
+                            <a href="https://pazkids.com.br/forgot">Esqueceu sua senha?</a><br>
+                                Ainda não tem uma conta? <a href="https://pazkids.com.br/signup">Criar conta</a>
+                            </p>
+                            <div class="exit" onclick="closeModal()">
+                                X
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="recCursos">
+                <div class="rec-desc-cursos" style="padding: 10px;">
+                    <div class="rec-desc-title" style="display:flex">
+                        <h3 style="font-size:30px"> Treinamento Paz Kids </h3>
+                        <button class="toggle-button" id="toggletreinamento" onclick="toggleClassCard('treinamento')">+</button>
+                    </div>
+                    <div class="classCard" id="treinamentoCard">
+                        <a class="none link-cursos" href="https://vimeo.com/659649550?share=copy" target="_blank"><h4>1. Nossa Declaração</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/659649909?share=copy" target="_blank"><h4>2. Qualificações</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/659650490?share=copy" target="_blank"><h4>3. Expectativas</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/659651036?share=copy" target="_blank"><h4>4. Coisas não negociáveis - Parte 1/2</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/659651708?share=copy" target="_blank"><h4>5. Coisas não negociáveis - Parte 2/2</h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="recCursos">
+                <div class="rec-desc-cursos" style="padding: 10px;">
+                    <div class="rec-desc-title" style="display:flex">
+                        <h3 style="font-size:30px"> Aventura Bíblica </h3>
+                        <button class="toggle-button" id="toggleaventura" onclick="toggleClassCard('aventura')">+</button>
+                    </div>
+                    <div class="classCard" id="aventuraCard">
+                        <a class="none link-cursos" href="https://vimeo.com/638034183?share=copy" target="_blank"><h4>1. A Cultura do Respeito</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/643645934?share=copy" target="_blank"><h4>2. Agenda Visual</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/677502203?share=copy" target="_blank"><h4>3. Brincar</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/643664898?share=copy" target="_blank"><h4>4. Limpar / Transição</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/643667096?share=copy" target="_blank"><h4>5. Introdução com Dinâmica</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/655651975?share=copy" target="_blank"><h4>6. Vídeo e Música</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/654714651?share=copy" target="_blank"><h4>7. Historinha / Conclusão</h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="recCursos">
+                <div class="rec-desc-cursos" style="padding: 10px;">
+                    <div class="rec-desc-title" style="display:flex">
+                        <h3 style="font-size:30px"> Terra Prometida </h3>
+                        <button class="toggle-button" id="toggleterra" onclick="toggleClassCard('terra')">+</button>
+                    </div>
+                    <div class="classCard" id="terraCard">
+                        <a class="none link-cursos" href="https://vimeo.com/581152635?share=copy" target="_blank"><h4>0. Introdução</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581513743?share=copy" target="_blank"><h4>1. Elementos</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581516737?share=copy" target="_blank"><h4>2. Contagem Regressiva e Grupos Pequenos</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581518157?share=copy" target="_blank"><h4>3. Combinados</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581552324?share=copy" target="_blank"><h4>4. Tempo de Brincar</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581552933?share=copy" target="_blank"><h4>5. Missões e Oferta</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581555478?share=copy" target="_blank"><h4>6. Louvor</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581579788?share=copy" target="_blank"><h4>7. Episódio e Grupo Pequeno</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581893484?share=copy" target="_blank"><h4>8. As Quatro Verdades</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/581895157?share=copy" target="_blank"><h4>9. Líderes de Grupo Pequeno</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/582949088?share=copy" target="_blank"><h4>10. Segurança</h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="recCursos">
+                <div class="rec-desc-cursos" style="padding: 10px;">
+                    <div class="rec-desc-title" style="display:flex">
+                        <h3 style="font-size:30px"> Boas Práticas </h3>
+                        <button class="toggle-button" id="toggleboaspraticas" onclick="toggleClassCard('boaspraticas')">+</button>
+                    </div>
+                    <div class="classCard" id="boaspraticasCard">
+                        <a class="none link-cursos" href="https://vimeo.com/659701325?share=copy" target="_blank"><h4>Boas Práticas - Parte 1</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/659703591?share=copy" target="_blank"><h4>Boas Práticas - Parte 2</h4></a>
+                        <a class="none link-cursos" href="https://vimeo.com/659706482?share=copy" target="_blank"><h4>Boas Práticas - Parte 3</h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="recCursos">
+                <div class="rec-desc-cursos" style="padding: 10px;">
+                    <div class="rec-desc-title" style="display:flex">
+                        <h3 style="font-size:30px"> Protocolo de Saúde do Paz Kids </h3>
+                        <button class="toggle-button" id="toggleprotocolosaude" onclick="toggleClassCard('protocolosaude')">+</button>
+                    </div>
+                    <div class="classCard" id="protocolosaudeCard">
+                        <a class="none link-cursos" href="https://vimeo.com/683330619?share=copy" target="_blank"><h4>Protocolo de Saúde do Paz Kids</h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="break-space"></div>
+        </div>
+    </section>
+
+{{>partials/footer}}
