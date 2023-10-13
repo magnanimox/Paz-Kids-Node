@@ -17,8 +17,8 @@ import {
 export const inicio = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTp();
     let episodeAbToShow = await cardAb();
-    let prevMonthLink = "https://pazkids.com.br/prev/" + prevMonthName;
-    let nextMonthLink = "https://pazkids.com.br/next/" + nextMonthName;
+    let prevMonthLink = "https://www.pazkids.com.br/prev/" + prevMonthName;
+    let nextMonthLink = "https://www.pazkids.com.br/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
@@ -50,8 +50,8 @@ export const inicio = async (req: Request, res: Response) => {
 export const prevmonth = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTpPrevMonth();
     let episodeAbToShow = await cardAbPrevMonth();
-    let prevMonthLink = "https://pazkids.com.br/prev/" + prevMonthName;
-    let nextMonthLink = "https://pazkids.com.br/next/" + nextMonthName;
+    let prevMonthLink = "https://www.pazkids.com.br/prev/" + prevMonthName;
+    let nextMonthLink = "https://www.pazkids.com.br/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
@@ -83,8 +83,8 @@ export const prevmonth = async (req: Request, res: Response) => {
 export const nextmonth = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTpNextMonth();
     let episodeAbToShow = await cardAbNextMonth();
-    let prevMonthLink = "https://pazkids.com.br/prev/" + prevMonthName;
-    let nextMonthLink = "https://pazkids.com.br/next/" + nextMonthName;
+    let prevMonthLink = "https://www.pazkids.com.br/prev/" + prevMonthName;
+    let nextMonthLink = "https://www.pazkids.com.br/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
