@@ -10,14 +10,14 @@ function addcss(css) {
 
 addcss("/assets/css/style.css");
 
-// function addjs(js) {
-//     var d = new Date();
-//     var n = d.getTime();
-//     var head = document.getElementsByTagName("head")[0];
-//     var s = document.createElement("script");
-//     s.setAttribute("type", "text/javascript");
-//     s.setAttribute("src", js + "?v=" + n);
-//     head.appendChild(s);
-// }
+function addjs(js) {
+    var d = new Date();
+    var n = d.getTime();
+    var head = document.getElementsByTagName("head")[0];
+    var s = document.createElement("script");
+    s.setAttribute("type", "text/javascript");
+    s.setAttribute("src", js + "?v=" + n);
+    head.appendChild(s);
+}
 
-// addjs("/assets/js/script.js");
+addjs("/assets/js/script.js");
