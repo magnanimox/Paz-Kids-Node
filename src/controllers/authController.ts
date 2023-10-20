@@ -168,7 +168,7 @@ export const { forgotGet, forgotPost } = {
                 port: 587,
                 auth: {
                     user: "pazkidsonline@gmail.com",
-                    pass: "janxepgjufyoueov",
+                    pass: "ekygozveakwshqoq",
                 },
             });
 
