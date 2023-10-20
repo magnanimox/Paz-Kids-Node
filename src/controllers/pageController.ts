@@ -323,3 +323,9 @@ export const header = async (req: Request, res: Response) => {
         // username,
     });
 };
+
+export const encontro = async (req: Request, res: Response) => {
+    const link = "https://www.e-inscricao.com/pazsaopaulo/encontrokids2023";
+
+    res.redirect(link);
+};

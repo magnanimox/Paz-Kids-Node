@@ -39,6 +39,7 @@ router.get("/quemsomos", PageController.quemsomos);
 router.get("/diversos", PageController.diversos);
 router.get("/treinamento", PageController.treinamento);
 router.get("/cursos", PageController.cursos);
+router.get("/encontro", PageController.encontro);
 
 // Media
 router.get("/aventura-biblica", PageController.aventura);
