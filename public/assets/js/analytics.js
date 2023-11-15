@@ -3,7 +3,7 @@ document.getElementById("ab-download").addEventListener("click", function () {
 });
 
 document.getElementById("ab-materiais").addEventListener("click", function () {
-    gtag("event", "ab-download-counter");
+    gtag("event", "ab-materiais-counter");
 });
 
 document.querySelectorAll(".download-counter").forEach(function (element) {
