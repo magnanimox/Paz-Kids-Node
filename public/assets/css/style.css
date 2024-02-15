@@ -1299,6 +1299,11 @@ form [type="submit"]:hover {
     margin-top: 12px;
 }
 
+#logorec-pbs {
+    width: 135px;
+    margin-top: 12px;
+}
+
 .rec {
     display: flex;
     justify-content: flex-start;

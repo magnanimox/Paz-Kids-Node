@@ -162,28 +162,6 @@ export const treinamento = async (req: Request, res: Response) => {
     });
 };
 
-export const cursos = async (req: Request, res: Response) => {
-    let pageName = "Cursos";
-    let selectRecursos = "selected";
-    let logged = req.session.user;
-    let username = "";
-    let linkDown = false;
-
-    if (logged) {
-        username = req.session.user.name;
-        linkDown = true;
-    } else {
-    }
-
-    res.render("pages/cursos", {
-        pageName,
-        selectRecursos,
-        username,
-        logged,
-        linkDown,
-    });
-};
-
 export const aventura = async (req: Request, res: Response) => {
     let episodes = await EpisodesAb.findAll();
     let selectAssista = "selected";

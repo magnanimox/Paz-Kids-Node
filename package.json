@@ -21,9 +21,9 @@
     },
     "homepage": "https://github.com/magnanimox/Paz-Kids-Node#readme",
     "dependencies": {
-        "bcrypt": "^5.1.0",
+        "bcrypt": "^5.1.1",
         "cors": "^2.8.5",
-        "dayjs": "^1.11.5",
+        "dayjs": "^1.11.10",
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
         "express-mysql-session": "^2.1.8",
