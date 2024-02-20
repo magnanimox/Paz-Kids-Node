@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import mustache from "mustache-express";
 import path from "path";
-import { sessionConfigs } from "./middlewares/session(new)";
+import { sessionConfigs } from "./middlewares/session";
 import mainRoutes from "./routes/index";
 
 declare module "express-session" {
