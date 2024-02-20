@@ -5,11 +5,11 @@ dotenv.config({ path: './.env.production' });
 const MySQLStore = require("express-mysql-session")(session);
 
 const options = {
-    host: "157.230.184.110",
-    port: "3306",
-    user: "tiago",
-    password: "h@tPrX%2F^R59J9yfE75",
-    database: "pazkids",
+    host: process.env.MYSQL_HOST as string,
+    port: parseInt(process.env.MYSQL_PORT as string) || "3306",
+    user: process.env.MYSQL_USER as string,
+    password: process.env.MYSQL_PASSWORD as string,
+    database: process.env.MYSQL_DATABASE as string,
     clearExpired: true,
     checkExpirationInterval: 900000,
 };
