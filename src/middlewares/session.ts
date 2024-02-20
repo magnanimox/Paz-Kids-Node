@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 if (process.env.NODE_ENV === "production") {} else {
 dotenv.config({ 
-    path: '.env.production' 
+    path: './.env.production' 
 });
 }
 
