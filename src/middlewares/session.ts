@@ -1,5 +1,4 @@
 import session from "express-session";
-
 const MySQLStore = require("express-mysql-session")(session);
 
 const options = {
