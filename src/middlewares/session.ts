@@ -1,11 +1,9 @@
 import session from "express-session";
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 
-// dotenv.config({ 
-//     path: './.env.production' 
-// });
-
-// console.log(process.env.SESSION_SECRET)
+dotenv.config({ 
+    path: './.env.production' 
+});
 
 const MySQLStore = require("express-mysql-session")(session);
 
