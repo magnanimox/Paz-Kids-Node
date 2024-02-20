@@ -1,6 +1,8 @@
 import session from "express-session";
 import dotenv from 'dotenv';
-dotenv.config({ path: './.env.production' });
+
+if (process.env.NODE_ENV === "production") {
+dotenv.config({ path: './.env.production' });}
 
 const MySQLStore = require("express-mysql-session")(session);
 
