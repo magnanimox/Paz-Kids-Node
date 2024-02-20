@@ -1451,7 +1451,6 @@ form [type="submit"]:hover {
 
 .dropdown-a .dropdown-menu.hide,
 .dropdown-b .dropdown-menu.hide {
-    max-height: 0;
     pointer-events: none;
 }
 
@@ -1654,6 +1653,12 @@ form [type="submit"]:hover {
         transform: rotate(-135deg);
         top: 13px;
     }
+
+    .dropdown-a .dropdown-menu.hide,
+    .dropdown-b .dropdown-menu.hide {
+    max-height: 0;
+    pointer-events: none;
+}
 }
 
 @media (max-width: 860px) {
@@ -1914,7 +1919,7 @@ form [type="submit"]:hover {
 
     .dropdown-menu.recursos {
         width: 450px;
-        left: 514px;
+        left: 500px;
         right: 0;
         /*  height of nav-item  */
         top: 83px;

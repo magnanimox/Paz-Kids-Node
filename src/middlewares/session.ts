@@ -1,12 +1,33 @@
 import session from "express-session";
+import dotenv from 'dotenv';
+dotenv.config({ path: './.env.production' });
 
-var hour = 3600000;
+const MySQLStore = require("express-mysql-session")(session);
+
+const options = {
+    host: process.env.MYSQL_HOST,
+    port: process.env.MYSQL_PORT || "3306",
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    clearExpired: true,
+    checkExpirationInterval: 900000,
+};
+
+
+const sessionStore = new MySQLStore(options);
 
 export const sessionConfigs = session({
     name: "pazkids-session",
     cookie: {
         path: "/",
-        maxAge: hour * 48,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 3600000 * 500,
+        sameSite: "lax",
     },
-    secret: "$2y$10$EyRoSbN1wRqLrEQV9TzR0uk8w/TZX1DdyO7wGYW2eWhSVuW2DbmEG",
+    store: sessionStore,
+    secret: process.env.SESSION_SECRET || "fallback_secret",
+    resave: false,
+    saveUninitialized: false,
 });

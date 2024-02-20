@@ -50,6 +50,7 @@
         "@types/intl-tel-input": "^17.0.5",
         "@types/jsonwebtoken": "^8.5.9",
         "@types/mustache-express": "^1.2.2",
+        "@types/mysql": "^2.15.25",
         "@types/node": "^18.11.11",
         "@types/nodemailer": "^6.4.7",
         "@types/sequelize": "^4.28.14",
