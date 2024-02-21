@@ -1,6 +1,12 @@
 import session from "express-session";
 const MySQLStore = require("express-mysql-session")(session);
 
+import dotenv from "dotenv";
+
+dotenv.config({
+    path: "./.env.production",
+});
+
 const options = {
     host: process.env.MYSQL_HOST as string,
     port: parseInt(process.env.MYSQL_PORT as string) || 3306,

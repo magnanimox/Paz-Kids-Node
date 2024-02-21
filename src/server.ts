@@ -7,7 +7,7 @@ import mainRoutes from "./routes/index";
 import dotenv from "dotenv";
 
 dotenv.config({
-    path: ".env.production",
+    path: "./.env.production",
 });
 
 declare module "express-session" {
