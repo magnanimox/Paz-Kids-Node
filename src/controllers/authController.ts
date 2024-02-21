@@ -15,17 +15,17 @@ export const { signinGet, signinPost } = {
     },
     signinPost: async (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
-    
+
         let danger = false;
-    
+
         if (!errors.isEmpty()) {
             danger = true;
             res.render("pages/signin", { danger });
             return;
         }
-    
+
         const data = matchedData(req);
-    
+
         // Verificando o e-mail
         const user = await User.findOne({ where: { email: data.email } });
         if (!user) {
@@ -33,7 +33,7 @@ export const { signinGet, signinPost } = {
             res.render("pages/signin", { danger });
             return;
         }
-    
+
         // Verificando a senha
         const match = await bcrypt.compare(data.password, user.passwordHash);
         if (!match) {
@@ -41,33 +41,19 @@ export const { signinGet, signinPost } = {
             res.render("pages/signin", { danger });
             return;
         }
-    
-        if (req.session.user) {
-            req.session.destroy((err) => {
-                if (err) {
-                    return next(err);
-                }
-            });
-        }
-    
+
         const payload = (Date.now() + Math.random()).toString();
         const token = await bcrypt.hash(payload, 10);
-    
+
         user.token = token;
         await user.save();
-    
-        req.session.regenerate((err) => {
-            if (err) {
-                return next(err);
-            }
-    
-            req.session.user = user;
-            req.session.save(() => {
-                res.render("pages/logged-in");
-            });
-        });
-    }
-}
+
+        req.session.user = user;
+        req.session.save();
+
+        res.render("pages/logged-in");
+    },
+};
 
 export const { signupGet, signupPost } = {
     signupGet: async (req: Request, res: Response) => {
@@ -286,18 +272,7 @@ export const { recoverGet, recoverPost } = {
 };
 
 export const logoutGet = async (req: Request, res: Response) => {
-    req.session.destroy((err) => {
-        if (err) {
-            // Tratar o erro aqui, se necessário
-            console.error("Erro ao destruir a sessão:", err);
-            return res.status(500).send("Erro ao realizar logout");
-        }
+    req.session.destroy(() => {});
 
-        // Opcional: Limpar o cookie do lado do cliente após destruir a sessão
-        res.clearCookie('pazkids-session', { path: '/' }); // Substitua 'connect.sid' pelo nome do seu cookie de sessão, se for diferente.
-
-        // Redirecionar para a página de logout ou renderizar uma mensagem de sucesso
-        res.render("pages/logout");
-    });
+    res.render("pages/logout");
 };
-

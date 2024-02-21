@@ -1,11 +1,6 @@
 import session from "express-session";
 const MySQLStore = require("express-mysql-session")(session);
 
-console.log(process.env.MYSQL_HOST)
-console.log(process.env.MYSQL_USER)
-console.log(process.env.MYSQL_PASSWORD)
-console.log(process.env.MYSQL_DATABASE)
-
 const options = {
     host: process.env.MYSQL_HOST as string,
     port: parseInt(process.env.MYSQL_PORT as string) || 3306,
@@ -21,7 +16,6 @@ const sessionStore = new MySQLStore(options);
 export const sessionConfigs = session({
     name: "pazkids-session",
     cookie: {
-        secure:true,
         path: "/",
         maxAge: 3600000 * 500,
     },
