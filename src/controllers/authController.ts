@@ -48,10 +48,21 @@ export const { signinGet, signinPost } = {
         user.token = token;
         await user.save();
 
-        req.session.user = user;
-        req.session.save();
+        if (req.session) {
+            req.session.regenerate((err) => {
+                if (err) {
+                    next(err);
+                    return;
+                }
 
-        res.render("pages/logged-in");
+                
+                req.session.user = user.get({ plain: true });
+                res.render("pages/logged-in");
+            });
+        } else {
+            (req.session as any).user = user.get({ plain: true });
+            res.render("pages/logged-in");
+        }
     },
 };
 

@@ -21,10 +21,12 @@ const sessionStore = new MySQLStore(options);
 export const sessionConfigs = session({
     name: "pazkids-session",
     cookie: {
+        secure:true,
         path: "/",
         maxAge: 3600000 * 500,
     },
     store: sessionStore,
     secret: "$2y$10$EyRoSbN1wRqLrEQV9TzR0uk8w/TZX1DdyO7wGYW2eWhSVuW2DbmEG",
-    saveUninitialized:false
+    resave: false,
+    saveUninitialized:false,
 });
