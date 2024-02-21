@@ -7,6 +7,9 @@ dotenv.config({
 });
 
 console.log(process.env.MYSQL_HOST)
+console.log(process.env.MYSQL_USER)
+console.log(process.env.MYSQL_PASSWORD)
+console.log(process.env.MYSQL_DATABASE)
 
 const options = {
     host: process.env.MYSQL_HOST as string,
