@@ -1,10 +1,5 @@
 import session from "express-session";
-import dotenv from "dotenv"
 const MySQLStore = require("express-mysql-session")(session);
-
-dotenv.config({
-    path: ".env.production",
-});
 
 console.log(process.env.MYSQL_HOST)
 console.log(process.env.MYSQL_USER)

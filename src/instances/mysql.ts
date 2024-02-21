@@ -1,11 +1,5 @@
 // Imports
 import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
-
-// Import DotEnv
-dotenv.config({
-    path: ".env.production",
-});
 
 // Sequelize / Database
 export const sequelize = new Sequelize({

@@ -4,6 +4,11 @@ import mustache from "mustache-express";
 import path from "path";
 import { sessionConfigs } from "./middlewares/session";
 import mainRoutes from "./routes/index";
+import dotenv from "dotenv";
+
+dotenv.config({
+    path: ".env.production",
+});
 
 declare module "express-session" {
     interface SessionData {
