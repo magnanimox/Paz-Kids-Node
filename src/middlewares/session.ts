@@ -4,6 +4,8 @@ require('dotenv').config();
 
 const MySQLStore = require("express-mysql-session")(session);
 
+console.log(process.env.MYSQL_HOST)
+
 const options = {
     host: process.env.MYSQL_HOST as string,
     port: parseInt(process.env.MYSQL_PORT as string) || 3306,
