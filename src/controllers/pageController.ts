@@ -308,8 +308,8 @@ export const encontro = async (req: Request, res: Response) => {
     res.redirect(link);
 };
 
-export const ferias2024 = async (req: Request, res: Response) => {
-    const link = "https://www.e-inscricao.com/pazsaopaulo/ferias2024";
+export const acampakids = async (req: Request, res: Response) => {
+    const link = "https://www.e-inscricao.com/pazsaopaulo/acampakids";
 
     res.redirect(link);
 };
