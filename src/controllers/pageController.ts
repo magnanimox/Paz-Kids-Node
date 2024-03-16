@@ -309,7 +309,7 @@ export const encontro = async (req: Request, res: Response) => {
 };
 
 export const acampakids = async (req: Request, res: Response) => {
-    const link = "https://www.e-inscricao.com/pazsaopaulo/acampakids";
+    const link = "https://www.e-inscricao.com/pazsaopaulo/acampakids2024";
 
     res.redirect(link);
 };
