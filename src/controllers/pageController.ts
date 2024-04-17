@@ -44,6 +44,16 @@ export const inicio = async (req: Request, res: Response) => {
         username,
         pageName,
         linkDown,
+        images: [
+            { src: "/assets/images/slides/slide_1.jpeg", alt: "Image 1" },
+            { src: "/assets/images/slides/slide_2.jpeg", alt: "Image 2" },
+            { src: "/assets/images/slides/slide_3.jpeg", alt: "Image 3" },
+            { src: "/assets/images/slides/slide_4.jpeg", alt: "Image 4" },
+            { src: "/assets/images/slides/slide_5.jpeg", alt: "Image 5" },
+            { src: "/assets/images/slides/slide_6.jpeg", alt: "Image 6" },
+            { src: "/assets/images/slides/slide_7.jpeg", alt: "Image 7" },
+            { src: "/assets/images/slides/slide_8.jpeg", alt: "Image 8" },
+        ]
     });
 };
 

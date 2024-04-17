@@ -130,3 +130,47 @@ function toggleClassCard(cardId) {
         toggleButton.classList.add("active");
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var mySwiper = new Swiper('.mySwiper', {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        allowTouchMove: false,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+
+    window.addEventListener('resize', function() {
+        mySwiper.autoplay.stop();
+        mySwiper.update();
+        mySwiper.autoplay.start();
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2  // Ajuste conforme necessário para controlar quando a animação dispara
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.visibility = 'visible';  // Torna o elemento visível
+                entry.target.style.opacity = 1;  // Faz o elemento tornar-se opaco
+                const animationClass = entry.target.dataset.animation;
+                entry.target.classList.add(animationClass);
+                observer.unobserve(entry.target);  // Para de observar o elemento após animá-lo
+            }
+        });
+    }, observerOptions);
+
+    const elementsToAnimate = document.querySelectorAll('.animate__animated');
+    elementsToAnimate.forEach(el => observer.observe(el));
+});
