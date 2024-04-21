@@ -14,6 +14,37 @@ import {
     cardTpNextMonth,
 } from "../helpers/index";
 
+export const licoes = async (req: Request, res: Response) => {
+    let episodeTpToShow = await cardTp();
+    let episodeAbToShow = await cardAb();
+    let prevMonthLink = "https://www.pazkids.com.br/prev/" + prevMonthName;
+    let nextMonthLink = "https://www.pazkids.com.br/next/" + nextMonthName;
+    let logged = req.session.user;
+    let username = "";
+    let pageName = "Início";
+    let linkDown = false;
+
+    if (logged) {
+        username = req.session.user.name;
+        linkDown = true;
+    } else {
+    }
+
+    res.render("pages/licoes", {
+        monthName,
+        episodeTpToShow,
+        episodeAbToShow,
+        prevMonthName,
+        nextMonthName,
+        prevMonthLink,
+        nextMonthLink,
+        logged,
+        username,
+        pageName,
+        linkDown,
+    })
+}
+
 export const inicio = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTp();
     let episodeAbToShow = await cardAb();

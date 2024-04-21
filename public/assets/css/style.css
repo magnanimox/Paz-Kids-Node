@@ -62,30 +62,83 @@ header {
     transform: scale(1.2);
 }
 
+@media (max-width: 1080px) and (min-width: 481px) {
+    .swiper {
+        height: calc(300px + (740 - 300) * ((100vw - 480px) / (1080 - 480)));
+    }
+}
+
+
+@media (max-width: 480px) {
+    .swiper {
+        height: 300px;
+    }
+}
+
 /* SECTION 1 */
 
 .elemento {
     display: flex;
     padding: 10px;
     width: 100%;
-    height: 463px;
+    height: auto;
     background-color: #FFFFFF;
     position: relative;
-    margin-top:50px;
+}
 
+.elemento.dois {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    background-color: #EDF1FC;
+    position: relative;
+}
+
+.elemento.tres {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    position: relative;
 }
 
 .elemento-env{
     display: flex;
-    align-content: flex-start;
+    align-items: flex-start;
     max-width: 1280px;
     margin: auto;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.elemento-env.dois{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    margin: auto;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.paz-kids-container {
+    text-align: center;
 }
 
 .elementor-background-overlay {
     padding: 2em;
-    background-image: url("http://onibusdosmilagres.com.br/wp-content/uploads/2023/12/dashed.png");
-    background-position: bottom center;
+    background-image: url("/assets/images/dashed.png");
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.5;
@@ -97,8 +150,23 @@ header {
     position: absolute;
 }
 
+.elementor-background-overlay-purple {
+    padding: 2em;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #341C77;
+}
+
 .section1 {
     margin-inline: auto;
+    width: 100%;
+}
+
+.section2 {
+    margin-inline: auto;
+    width: 100%;
 }
 
 .photo-section-1{
@@ -110,11 +178,202 @@ header {
     height: 370px;
     border-radius: 15px;
     display: inline-block;
+    margin: 2em;
+}
+
+@media (max-width: 1079px) {
+    .elemento-env{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    .paz-kids-container{
+        margin: auto;
+        /* max-width: 620px; */
+        padding: 0 2em 0 2em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .photo-section-1 {
+        width: 80vw;
+        margin: 0 auto;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+}
+
+@keyframes wobble {
+    16.65% {
+        transform: skew(-12deg)
+    }
+
+    33.3% {
+        transform: skew(10deg)
+    }
+
+    49.95% {
+        transform: skew(-6deg)
+    }
+
+    66.6% {
+        transform: skew(4deg)
+    }
+
+    83.25% {
+        transform: skew(-2deg)
+    }
+
+    100% {
+        transform: skew(0)
+    }
+}
+
+.animate__wobble {
+    animation-name: wobble;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.blobs-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 1fr)); /* Ajusta colunas para serem mais flexíveis */
+    grid-template-rows: 1fr 1fr; /* 2 linhas de altura igual */
+    gap: 20px; /* Espaço entre os itens */
+    padding: 20px;
+    width: 100%;
+    max-width: 1280px; /* Largura máxima */
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blob {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    mask-image: url('/assets/images/blob-green.png');
+    mask-size: cover; /* A imagem cobre totalmente a área */
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 895px) {
+    .blobs-container {
+        grid-template-columns: repeat(3, 1fr); /* Muda para 2 colunas abaixo de 895px */
+    }
+}
+
+@media (max-width: 700px) {
+    .blobs-container {
+        grid-template-columns: 1fr; /* Muda para 1 coluna abaixo de 700px */
+    }
+}
+
+.blob-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease;
+}
+
+.blob.um:hover {
+    background-color: #341C77;
+}
+
+.blob.um{
+    background-color: #02B890;
+}
+
+.blob.dois:hover {
+    background-color: #341C77;
+}
+
+.blob.dois{
+    background-color: #FE5D37;
+}
+
+.blob.tres:hover {
+    background-color: #341C77;
+}
+
+.blob.tres{
+    background-color: #FDB510;
+}
+
+.blob.quatro:hover {
+    background-color: #341C77;
+}
+
+.blob.quatro{
+    background-color: #FE5D37;
+}
+
+.blob.cinco:hover {
+    background-color: #341C77;
+}
+
+.blob.cinco{
+    background-color: #FDB510;
+}
+
+.blob.seis:hover {
+    background-color: #341C77;
+}
+
+.blob.seis{
+    background-color: #02B890;
+}
+
+.blob img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blob-logo {
+    width: 100px;  /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.blob-title {
+    font-size: 36px;  /* Ajuste o tamanho da fonte conforme necessário */
+    color: #ffffff;  /* Ajuste a cor do texto conforme necessário */
+    margin-bottom: 5px;
+}
+
+.blob-text {
+    width: 250px;
+    font-size: 16px;  /* Ajuste o tamanho da fonte conforme necessário */
+    font-family: "Nunito Sans", sans-serif;
+    color: #ffffff;  /* Ajuste a cor do texto conforme necessário */
+    text-align: center;
+}
+
+@media (max-width: 990px) {
+    .blob-title {
+        font-size: 25px;  /* Ajuste o tamanho da fonte conforme necessário */
+
+    }
+    
+    .blob-text {
+        font-size: 13px;  /* Ajuste o tamanho da fonte conforme necessário */
+    }
+
 }
 
 .paz-kids-container {
-    /* font-family: 'Arial', sans-serif; */
-    /* background-color: #f4f4f9; */
     display: block;
     color: #333;
     padding: 2em;
@@ -132,7 +391,10 @@ header {
     height: 24px;
     margin-top: 0;
     text-transform: uppercase;
-    /* padding: 2em; */
+}
+
+.paz-kids-title-small.blobs {
+    font-size: 13px;
 }
 
 .paz-kids-title-large {
@@ -141,7 +403,11 @@ header {
     font-size: 45px;
     font-weight: 700;
     color: #341C77;
+}
 
+.paz-kids-title-large.blobs {
+    font-size: 48px;
+    font-weight: 700;
 }
 
 .paz-kids-paragraph {
@@ -166,6 +432,25 @@ header {
     color: white;
     text-decoration: none;
     border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all .3s;
+}
+
+.paz-kids-button-container:hover > .paz-kids-button,
+.paz-kids-button-container:hover > .paz-kids-button.licoes {
+    background-color: #02B890;
+}
+
+
+
+.paz-kids-button.licoes {
+    padding: 10px 25px;
+    background-color: #FE5D37;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
     font-size: 16px;
     display: inline-block;
 }
@@ -179,8 +464,9 @@ header {
 }
 
 .animate__animated {
-    visibility: hidden; /* Oculta o elemento totalmente */
-    opacity: 0;  /* Certifica-se de que o elemento também está transparente */
+    visibility: hidden;
+    opacity: 0;
+    animation-duration: 1.25s
 }
 
 /* */
@@ -213,14 +499,14 @@ header {
 }
 
 .header-bar--logo svg {
-    height: 200px; /* Ajusta o SVG para preencher o container do logo */
-    width: auto; /* Mantém a proporção do SVG */
+    height: 200px;
+    width: auto;
 }
 
 .nav-bar--menu ul,
 .nav-bar--menu li {
     list-style-type: none;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .nav-bar--menu ul {
@@ -234,11 +520,11 @@ header {
 }
 
 .nav-bar--menu ul li {
-    position: relative; /* Posicionamento relativo para os pseudoelementos */
+    position: relative;
     padding: 5px;
     font-size: 20px;
-    /* text-transform: uppercase; */
     font-weight: 700;
+    white-space: nowrap;
 }
 
 
@@ -347,9 +633,8 @@ footer {
 .ft-area {
     display: flex;
     width: 100%;
-    /* max-width: 1180px; */
     height: auto;
-    background-color: #e2e9f1;
+    background-color: #EDF1FC;
 }
 
 /* BACKNAV-GRAY */
@@ -583,7 +868,6 @@ header .backnav-gray {
 
 .month {
     display: grid;
-
     grid-template-columns: 180px 180px 180px;
     justify-content: center;
     align-items: center;
@@ -632,7 +916,7 @@ h4.nextMonth {
 }
 
 .break-space {
-    height: 215px;
+    height: 500px;
 }
 
 /* FOOTER */
@@ -652,8 +936,13 @@ h4.nextMonth {
 .ft-logo {
     display: block;
     position: absolute;
-    top: -117px;
-    right: 96px;
+    top: -145px;
+    right: 175px;
+    z-index: 200;
+}
+
+.ft-logo img {
+    width: 200px;
 }
 
 .ft-area .area {
@@ -663,7 +952,6 @@ h4.nextMonth {
     align-items: center;
     width: 100%;
     height: 100%;
-    /*background-color: #ccc;*/
 }
 
 .grid {
@@ -778,12 +1066,11 @@ svg {
     opacity: 0.9;
     border-radius: 50%;
 }
-/* Need extra specificity to override the hover state
-     when both hover and active states are active */
+
 .sb-iconButton.sb-iconButton-highContrast:active {
     transform: scale(0.95);
 }
-/* Enabling hover only for non touchscreen devices or having a pointer (e.g: laptop with a touchscreen) */
+
 @media (hover: hover) and (pointer: fine) {
     .sb-iconButton:hover .sb-icon-hover,
     .sb-iconButton:active .sb-icon-hover {
@@ -1415,7 +1702,8 @@ form [type="submit"]:hover {
     flex-direction: column;
 }
 
-/* Modal Login */
+/* MODAL LOGIN */
+
 .modal-login {
     display: none;
     position: fixed;
@@ -1588,6 +1876,12 @@ form [type="submit"]:hover {
     pointer-events: none;
 }
 
+.slide-container{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
 .elementor-top {
     overflow: hidden;
     position: absolute;
@@ -1599,15 +1893,37 @@ form [type="submit"]:hover {
     z-index: 2;
 }
 
+.elementor-top.purple {
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+    z-index: 2;
+}
+
 .elementor-bot {
     overflow: hidden;
     position: absolute;
     left: 0;
-    top:690px;
+    bottom:-1px;
     width: 100%;
     line-height: 0;
     direction: ltr;
     z-index: 30;
+}
+
+.elementor-top-ninedeg {
+    overflow: hidden;
+    position: absolute;
+    top:-1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+    z-index: 31;
 }
 
 .elementor-top svg {
@@ -1616,13 +1932,9 @@ form [type="submit"]:hover {
     position: relative;
 }
 
-.slide-container{
-    width: 100%;
-}
-
 .elementor-bot svg {
     display: block;
-    width: calc(100% + 1.3px);
+    width: 100%;
     position: relative;
 }
 
@@ -1631,11 +1943,24 @@ form [type="submit"]:hover {
 }
 
 .elementor-shape-bot svg {
-    height: 151px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.elementor-shape-top-ninedeg svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 75px;
+    position: relative;
 }
 
 .elementor-shape-top .elementor-shape-fill {
     fill: #EDF1FC;
+}
+
+.elementor-shape-top-ninedeg .elementor-shape-fill {
+    fill: #FFFFFF;
 }
 
 .elementor-shape-bot .elementor-shape-fill{
@@ -1646,6 +1971,7 @@ form [type="submit"]:hover {
     width: auto;
     transition: fill 0.3s ease;
     margin-left: 10px;
+    margin-right: 25px;
 }
 
 .nav-bar--login--profile svg circle {
@@ -1702,6 +2028,10 @@ form [type="submit"]:hover {
         align-items: center;
         border-end-start-radius: 0px;
         border-end-end-radius: 0px;
+    }
+
+    .nav-bar .logo-container {
+        margin-left: 50px;
     }
 
     .section-area {
@@ -1784,14 +2114,6 @@ form [type="submit"]:hover {
         display: flex;
     }
 
-    /* .nav-bar .logo-container svg {
-        width: 250px;
-        position: absolute;
-        top: -80px;
-        left: 85px;
-        z-index: 2;
-    } */
-
     /* Menu Mobile */
     ul.menu {
         display: block;
@@ -1811,7 +2133,7 @@ form [type="submit"]:hover {
         align-items: center;
         gap: 3rem;
         margin-right: 45px;
-        color: #ffffff;
+        color: #341C77;
         padding-block: 40px;
         cursor: pointer;
     }
@@ -1827,7 +2149,7 @@ form [type="submit"]:hover {
         display: flex;
         width: 33px;
         height: 3px;
-        background-color: currentColor;
+        background-color: #341C77;
         position: relative;
         transition: 0.3s;
     }
@@ -1934,10 +2256,6 @@ form [type="submit"]:hover {
 }
 
 @media (max-width: 700px) {
-    .nav-bar .nav-bar-left .header-bar--logo svg {
-        display: none;
-    }
-
     .login svg {
         display: block;
     }
@@ -2014,7 +2332,8 @@ form [type="submit"]:hover {
 
     .grid {
         grid-template-columns: repeat(1, 166px);
-        grid-template-rows: repeat(3, 128px);
+        grid-template-rows: 14ch 12ch minmax(70px, 120px);
+        margin-top:25px;
     }
 
     .login {
@@ -2079,6 +2398,7 @@ form [type="submit"]:hover {
 .dropdown-menu {
     border: none;
     background-color: #341C77 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .nav-bar--menu .dropdown-menu ul li {
@@ -2118,9 +2438,7 @@ form [type="submit"]:hover {
     flex-direction: column;
 }
 
-/* breakpoint and up - mega dropdown styles */
 @media screen and (min-width: 1080px) {
-    /* makes the dropdown full width  */
     .dropdown-a,
     .dropdown-b,
     .dropdown-c {
@@ -2134,7 +2452,6 @@ form [type="submit"]:hover {
         height: auto;
         left: 0;
         right: 0;
-        /*  height of nav-item  */
         top: 89px;
         position: absolute;
         display: block;
@@ -2146,7 +2463,6 @@ form [type="submit"]:hover {
             visibility 100ms ease-in;
     }
 
-    /* shows the dropdown menu on hover */
     .dropdown-a:hover .dropdown-menu,
     .dropdown-b:hover .dropdown-menu,
     .dropdown-c:hover .dropdown-menu,
@@ -2278,9 +2594,7 @@ form [type="submit"]:hover {
     }
 }
 
-/* a comment to git */
-
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1081px) {
     .nav-bar {
         max-width: 1048px;
     }

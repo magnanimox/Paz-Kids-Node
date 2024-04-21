@@ -1,0 +1,15 @@
+<div class="nav-bar-right newleft">
+                    <div class="nav-bar--login">
+                        <a 
+                            class="nav-bar--login--profile" href="https://www.pazkids.com.br/signin">
+                                    <img src="/assets/images/icon--profile.png" alt=""/>
+                        </a>
+                        {{#logged}}
+                        <span style="color: white;font-size: 18px;">Olá, {{ username }}</span>
+                        {{/logged}}
+                        {{^logged}}
+                        <a href="https://www.pazkids.com.br/signin"><span style="color: white;font-size: 18px;">Faça Login</span>
+                        </a>
+                        {{/logged}}
+                    </div>
+                </div>

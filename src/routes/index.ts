@@ -42,6 +42,7 @@ router.get("/encontro", PageController.encontro);
 router.get("/acampakids", PageController.acampakids);
 
 // Media
+router.get("/licoes", PageController.licoes);
 router.get("/aventura-biblica", PageController.aventura);
 router.get("/1temporada", PageController.temp1);
 router.get("/2temporada", PageController.temp2);

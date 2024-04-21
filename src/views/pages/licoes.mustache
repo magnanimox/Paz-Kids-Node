@@ -1,0 +1,149 @@
+{{>partials/header}}
+    <section> 
+        <div class="section-area">
+            <div class="prog-month">
+                <h3>Programação</h3>
+                <hr />
+                <div class="month">
+                    <a href="{{ prevMonthLink }}">
+                        <h4 class="prevMonth">{{ prevMonthName }}</h4>
+                    </a>
+                    <h4 class="monthCenter">{{ monthName }}</h4>
+                    <a href="{{ nextMonthLink }}">
+                        <h4 class="nextMonth">{{ nextMonthName }}</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-login">
+                <div class="modal-login-body">
+                    <section class="area-login modal">
+                        <div class="login">
+                            {{#danger}}
+                                <div class="notification danger">
+                                    <p>Login e/ou senha inválidos. </p>
+                                </div>
+                            {{/danger}}
+                            {{^danger}}
+                            {{/danger}}
+                            <form action="/signin" method="POST">
+                                <input
+                                    name="email"
+                                    type="email"
+                                    autocomplete="email"
+                                    placeholder="Login"
+                                    autofocus
+                                />
+                                <input
+                                    name="password"
+                                    autocomplete="current-password"
+                                    type="password"
+                                    placeholder="Senha"
+                                />
+                                <input type="submit" value="Entrar" />
+                            </form>
+                            <p class="login-p">
+                                <a href="https://www.pazkids.com.br/forgot">Esqueceu sua senha? </a><br>
+                                Ainda não tem uma conta? <a href="https://www.pazkids.com.br/signup">Criar conta</a>
+                            </p>
+                            <div class="exit" onclick="closeModal()">
+                                X
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="aventura-biblica">
+                <div class="grade">
+                    <h3>Aventura Bíblica</h3>
+                    <h4>(2-7 Anos)</h4>
+                </div>
+
+                <div class="thumb-backarea">
+                    <div class="thumbnail">
+                        <img src="{{ episodeAbToShow.img }}" alt="" srcset="" />
+                    </div>
+                    <div class="info-episode">
+                        <div class="episode-title">
+                            <h3>Episódio:</h3>
+                            <h4>{{ episodeAbToShow.name }}</h4>
+                        </div>
+                        <div class="episode-buttons a-b">
+                            <a id="ab-download" href="{{ #linkDown }}{{ episodeAbToShow.download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                <button class="bt-download item-1">
+                                    Download
+                                </button>
+                            </a>
+                            <a id="ab-materiais" href="{{ #linkDown }}{{ episodeAbToShow.materiais }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                <button class="bt-material item-2">
+                                    Material
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="terra-prometida">
+                <div class="grade">
+                    <h3>Terra Prometida</h3>
+                </div>
+                
+                {{ #episodeTpToShow }}
+                <div class="cardTp">
+                    <div class="thumb-backarea">
+                        <div class="thumbnail">
+                            <img
+                                id="tp-thumb"
+                                src="{{ img }}"
+                                alt=""
+                                srcset=""
+                            />
+                        </div>
+                        <div class="info-episode">
+                            <div class="episode-title">
+                                <h3>Episódio:</h3>
+                                <h4 id="tp-name">{{ name }}</h4>
+                            </div>
+                            <div class="episode-buttons t-p">
+                                <a id="tp-download" class="download-counter" href="{{ #linkDown }}{{ download }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-download item-1">
+                                        Download
+                                    </button>
+                                </a>
+                                <a id="tp-slides" class="slides-counter" href="{{ #linkDown }}{{ slides }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-slides item-2">
+                                        Slides
+                                    </button>
+                                </a>
+                                <a id="tp-youtube" class="youtube-counter" href="{{ #linkDown }}{{ youtube }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-youtube item-3">
+                                        Youtube
+                                    </button>
+                                </a>
+                                <a id="tp-lifekids" class="lifekids-counter" href="{{#linkDown }}{{ lifekids }}{{ /linkDown }}{{ ^linkDown }}#!" onClick="openModal(){{ /linkDown }}" target="">
+                                    <button class="bt-lifekids item-4">
+                                        Lifekids
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weeks">
+                        <div class="weeks-area">
+                            <button class="week-menos" onclick="prevWeek()">-</button>
+                            <div class="week-actual">
+                                <h4>{{ showAt }}</h4>
+                            </div>
+                            <button class="week-mais" onclick="nextWeek()">+</button>
+                        </div>
+                    </div>
+                </div>
+                {{ /episodeTpToShow }}
+            </div>
+        </div>
+        <div class="break-space"></div>
+    </section>
+
+{{>partials/footer}}

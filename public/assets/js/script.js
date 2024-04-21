@@ -131,6 +131,8 @@ function toggleClassCard(cardId) {
     }
 }
 
+// MySyper - Slides
+
 document.addEventListener('DOMContentLoaded', function () {
     var mySwiper = new Swiper('.mySwiper', {
         loop: true,
@@ -152,21 +154,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Animação do Section 1
+
 document.addEventListener("DOMContentLoaded", function() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.2  // Ajuste conforme necessário para controlar quando a animação dispara
+        threshold: 0.2
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.visibility = 'visible';  // Torna o elemento visível
-                entry.target.style.opacity = 1;  // Faz o elemento tornar-se opaco
+                entry.target.style.visibility = 'visible';
+                entry.target.style.opacity = 1;
                 const animationClass = entry.target.dataset.animation;
                 entry.target.classList.add(animationClass);
-                observer.unobserve(entry.target);  // Para de observar o elemento após animá-lo
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -174,3 +178,60 @@ document.addEventListener("DOMContentLoaded", function() {
     const elementsToAnimate = document.querySelectorAll('.animate__animated');
     elementsToAnimate.forEach(el => observer.observe(el));
 });
+
+// Swiper Height
+
+window.addEventListener('resize', function() {
+    var swiperHeight = document.querySelector('.swiper').clientHeight;
+    console.log('Altura do swiper: ' + swiperHeight + 'px');
+});
+
+// Blobs
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        root: null, // Observa a relação do elemento com a viewport
+        rootMargin: '0px',
+        threshold: 0.1 // Começa a animar quando 10% do elemento está visível
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { // Se o elemento está entrando na viewport
+                const blob = entry.target;
+                const animationClass = blob.dataset.animation;
+                blob.classList.add(animationClass); // Adiciona a classe de animação
+                blob.style.visibility = 'visible';
+                blob.style.opacity = 1; // Torna o elemento totalmente opaco
+                observer.unobserve(blob); // Para de observar o elemento após a animação
+            }
+        });
+    }, observerOptions);
+
+    const blobs = document.querySelectorAll('.animate__animated'); // Seleciona todos os elementos para animar
+    blobs.forEach(blob => {
+        observer.observe(blob); // Observa cada elemento
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const blobs = document.querySelectorAll('.blob-info');
+
+    blobs.forEach(blob => {
+        blob.addEventListener('mouseenter', () => {
+            blob.classList.add('animate__wobble');
+        });
+
+        blob.addEventListener('mouseleave', () => {
+            blob.classList.remove('animate__wobble');
+        });
+    });
+});
+
+
+
+
+
+
+
+
