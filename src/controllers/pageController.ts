@@ -313,3 +313,20 @@ export const acampakids = async (req: Request, res: Response) => {
 
     res.redirect(link);
 };
+
+export const discipulador = async (req: Request, res: Response) => {
+    let pageName = "Discipulador";
+    let logged = req.session.user;
+    let username = "";
+
+    if (logged) {
+        username = req.session.user.name;
+    } else {
+    }
+
+    res.render("pages/discipulador", {
+        username,
+        logged,
+        pageName,
+    });
+};
