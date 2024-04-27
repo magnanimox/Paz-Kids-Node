@@ -243,39 +243,43 @@ header {
     display: grid;
     grid-template-columns: repeat(3, minmax(auto, 1fr)); /* Ajusta colunas para serem mais flexíveis */
     grid-template-rows: 1fr 1fr; /* 2 linhas de altura igual */
-    gap: 20px; /* Espaço entre os itens */
+    gap: 20px;
     padding: 20px;
     width: 100%;
     max-width: 1280px; /* Largura máxima */
     margin: auto;
     transition: transform 0.3s ease-in-out;
+    place-items: center;
 }
 
 .blob {
     width: 100%;
     height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
     mask-image: url('/assets/images/blob-green.png');
-    mask-size: cover; /* A imagem cobre totalmente a área */
+    mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
     background-color: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease-in-out;
 }
 
-@media (max-width: 895px) {
+@media (max-width: 915px) and (min-width: 701px) {
     .blobs-container {
-        grid-template-columns: repeat(3, 1fr); /* Muda para 2 colunas abaixo de 895px */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 700px) {
     .blobs-container {
-        grid-template-columns: 1fr; /* Muda para 1 coluna abaixo de 700px */
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    .blob {
+        width: 250px;
     }
 }
 
@@ -285,6 +289,8 @@ header {
     justify-content: center;
     align-items: center;
     transition: all .4s ease;
+    padding: 10px;
+    overflow: auto;
 }
 
 .blob.um:hover {
@@ -345,32 +351,44 @@ header {
     width: 100px;  /* Ajuste o tamanho conforme necessário */
     height: auto;
     margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .blob-title {
-    font-size: 36px;  /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 2em;  /* Ajuste o tamanho da fonte conforme necessário */
     color: #ffffff;  /* Ajuste a cor do texto conforme necessário */
     margin-bottom: 5px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .blob-text {
     width: 250px;
-    font-size: 16px;  /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 1em;  /* Ajuste o tamanho da fonte conforme necessário */
     font-family: "Nunito Sans", sans-serif;
     color: #ffffff;  /* Ajuste a cor do texto conforme necessário */
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    white-space: normal;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1280px) and (min-width: 917px) {
+    .blob-info {
+        width: calc(50% + (430px * (100vw - 917px) / 363)); /* Ajuste a largura baseando-se na largura da viewport */
+    }
+}
+
+@media (max-width:701px) {
+    .blob-info {
+        width: 120px;
+    }
     .blob-title {
-        font-size: 25px;  /* Ajuste o tamanho da fonte conforme necessário */
-
+        font-size: 1.2em
     }
-    
     .blob-text {
-        font-size: 13px;  /* Ajuste o tamanho da fonte conforme necessário */
+        font-size: .5em;
     }
-
 }
 
 .paz-kids-container {
