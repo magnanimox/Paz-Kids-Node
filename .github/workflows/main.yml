@@ -1,69 +1,73 @@
-on: push
+on:
+  push:
+    branches:
+      - main
 
 name: 🚀 Deploy website on push
 
 jobs:
-    build:
-        name: 🎉 Build Project
-        runs-on: ubuntu-latest
-        steps:
-            - name: 🚚 Get latest code
-              uses: actions/checkout@v2
+  build:
+    name: 🎉 Build Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
 
-            - name: Use Node.js 18
-              uses: actions/setup-node@v2
-              with:
-                  node-version: "18"
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
 
-            - name: 🔨 Build Project
-              run: |
-                  npm install
-                  npm run build
-                  cd dist/
-                  npm install --production
-                  cd ../
-                  tar -cvf pazkids-dist.tar dist/
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+          cd dist/
+          npm install --production
+          cd ../
+          tar -cvf pazkids-dist.tar dist/
 
-            - name: Save Build Artifact
-              uses: actions/upload-artifact@v2
-              with:
-                name: pazkids-dist.tar
-                path: pazkids-dist.tar
-                if-no-files-found: error
-    deploy: 
-        name: 🚢 Deploy Project
-        runs-on: ubuntu-latest
-        needs: build
-        steps:
-          - name: Download Build Artifact
-            uses: actions/download-artifact@v2
-            with:
-              name: pazkids-dist.tar
+      - name: Save Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: pazkids-dist.tar
+          path: pazkids-dist.tar
+          if-no-files-found: error
 
-          - name: Upload Artifact over SSH
-            uses: appleboy/scp-action@master
-            with:
-              host: ${{ secrets.SSH_HOST }}
-              username: ${{ secrets.SSH_USERNAME }}
-              key: ${{ secrets.SSH_KEY }}
-              port: ${{ secrets.SSH_PORT }}
-              overwrite: true
-              source: "pazkids-dist.tar"
-              target: "/home/web/projects"
+  deploy:
+    name: 🚢 Deploy Project
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: pazkids-dist.tar
 
-          - name: Enter SSH and unzip Artifact
-            uses: appleboy/ssh-action@master
-            with:
-              host: ${{ secrets.SSH_HOST }}
-              username: ${{ secrets.SSH_USERNAME }}
-              key: ${{ secrets.SSH_KEY }}
-              port: ${{ secrets.SSH_PORT }}
-              script: |
-                cd /home/web/projects
-                rm -rf dist/
-                tar -xvf pazkids-dist.tar
-                rm pazkids-dist.tar
-                cd dist/
-                source ~/variables.sh
-                pm2 startOrRestart ./ecosystem.config.js --env production
+      - name: Upload Artifact over SSH
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          overwrite: true
+          source: "pazkids-dist.tar"
+          target: "/home/web/projects"
 
+      - name: Enter SSH and unzip Artifact
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/web/projects
+            rm -rf dist/
+            tar -xvf pazkids-dist.tar
+            rm pazkids-dist.tar
+            cd dist/
+            source ~/variables.sh
+            pm2 startOrRestart ./ecosystem.config.js --env production
