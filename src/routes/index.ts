@@ -33,6 +33,7 @@ router.get("/user/regions", UserController.getRegions);
 
 // User
 router.get("/user/me", Auth.private, UserController.info);
+router.get("/perfil", PageController.perfil);
 
 // Other Pages
 router.get("/quemsomos", PageController.quemsomos);

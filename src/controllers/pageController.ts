@@ -354,3 +354,10 @@ export const acampakids = async (req: Request, res: Response) => {
 
     res.redirect(link);
 };
+
+export const perfil = async (req: Request, res: Response) => {
+    let pageName = "Perfil";
+
+    res.render("pages/perfil", {
+        pageName
+    })};

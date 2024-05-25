@@ -2,8 +2,7 @@ import { Request, Response } from "express";
 import { State, StateInstance } from "../models/States";
 import { City } from "../models/Cities";
 import { Church } from "../models/Church";
-import { User, UserInstance } from "../models/User";
-import sequelize, { QueryTypes } from "sequelize";
+import { User } from "../models/User";
 import { Region } from "../models/Regions";
 
 export const {

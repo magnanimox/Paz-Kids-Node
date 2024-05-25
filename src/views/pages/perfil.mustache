@@ -1,0 +1,29 @@
+{{>partials/header}}
+
+    <div class="profile-container">
+        <div class="profile-left">
+            <div class="profile-picture">
+                <img id="profile-img" src="/public/assets/images/icon--profile3.png" alt="">
+                <input type="file" id="profile-img-input" accept="image/*" onchange="previewProfileImage(event)">
+            </div>
+        </div>
+        <div class="profile-right">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <h2 class="profile-name">Lauren Bowen</h2>
+                    <p class="profile-title">Design is my lifelong craft.</p>
+                    <p class="profile-location">San Francisco, California</p>
+                </div>
+            </div>
+            <div class="profile-details">
+                <p><strong>Data de Nascimento:</strong> <span id="birthdate">01/01/1990</span></p>
+                <p><strong>Cidade:</strong> <span id="city">San Francisco, California</span></p>
+                <p><strong>Igreja:</strong> <span id="church">Paz Church</span></p>
+            </div>
+            {{! <div class="profile-actions">
+                <button class="profile-button" onclick="editProfile()">Editar Perfil</button>
+            </div> }}
+        </div>
+    </div>
+
+{{>partials/footer}}

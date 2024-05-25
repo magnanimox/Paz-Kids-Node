@@ -75,6 +75,92 @@ header {
     }
 }
 
+/* PERFIL */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.profile-picture img {
+    width: 200px;
+    height: 200px;
+    background-color: #f00;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.profile-picture input[type="file"] {
+    display: none;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info .profile-name {
+    font-size: 2.2em;
+    margin: 0;
+}
+
+.profile-info .profile-title {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.profile-info .profile-location {
+    font-size: 14px;
+    color: #888;
+}
+
+.profile-details {
+    margin-bottom: 20px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+}
+
+.profile-actions {
+    text-align: center;
+}
+
+.profile-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #02B890;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.profile-button:hover {
+    background-color: #02896e;
+}
+
 /* SECTION 1 */
 
 .elemento {
@@ -290,56 +376,32 @@ header {
     align-items: center;
     transition: all .4s ease;
     padding: 10px;
-    overflow: auto;
 }
 
-.blob.um:hover {
-    background-color: #341C77;
-}
-
-.blob.um{
+.blob.um, 
+.blob.seis {
     background-color: #02B890;
 }
 
-.blob.dois:hover {
-    background-color: #341C77;
-}
-
-.blob.dois{
+.blob.dois, 
+.blob.quatro {
     background-color: #FE5D37;
 }
 
-.blob.tres:hover {
-    background-color: #341C77;
-}
-
-.blob.tres{
+.blob.tres, 
+.blob.cinco {
     background-color: #FDB510;
 }
 
-.blob.quatro:hover {
-    background-color: #341C77;
-}
-
-.blob.quatro{
-    background-color: #FE5D37;
-}
-
-.blob.cinco:hover {
-    background-color: #341C77;
-}
-
-.blob.cinco{
-    background-color: #FDB510;
-}
-
+.blob.um:hover, 
+.blob.dois:hover, 
+.blob.tres:hover, 
+.blob.quatro:hover, 
+.blob.cinco:hover, 
 .blob.seis:hover {
     background-color: #341C77;
 }
 
-.blob.seis{
-    background-color: #02B890;
-}
 
 .blob img {
     max-width: 100%;
@@ -371,6 +433,7 @@ header {
     overflow-wrap: break-word; 
     word-wrap: break-word; 
     white-space: normal;
+    overflow: hidden;
 }
 
 @media (max-width: 1280px) and (min-width: 917px) {
@@ -387,7 +450,8 @@ header {
         font-size: 1.2em
     }
     .blob-text {
-        font-size: .5em;
+        font-size: .8em;
+        width: 200px;
     }
 }
 
@@ -456,7 +520,7 @@ header {
     transition: all .3s;
 }
 
-.paz-kids-button-container:hover > .paz-kids-button,
+.paz-kids-button:hover,
 .paz-kids-button-container:hover > .paz-kids-button.licoes {
     background-color: #02B890;
 }
@@ -471,10 +535,6 @@ header {
     border-radius: 30px;
     font-size: 16px;
     display: inline-block;
-}
-
-.paz-kids-button:hover {
-    background-color: #0056b3;
 }
 
 .paz-kids-box {
@@ -990,10 +1050,11 @@ h4.nextMonth {
 .links .item a {
     text-decoration: none;
     color: #ffffff;
+    transition: color 0.3s ease;
 }
 
 .links .item a:hover {
-    color: #fff;
+    color: #faffc6;
 }
 
 .links .item.title {
@@ -1022,7 +1083,7 @@ h4.nextMonth {
 .icons nav p {
     font-weight: 300;
     font-size: 1.1rem;
-    margin-top:5px;
+    margin-top:13px;
     color: #ffffff;
 }
 
@@ -1061,6 +1122,10 @@ svg {
 
 .sm-mr1 {
     margin-right: 1.2rem !important;
+}
+
+.sm-mr1:last-child {
+    margin-right: 0 !important;
 }
 
 .sb-iconButton {
