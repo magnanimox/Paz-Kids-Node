@@ -2,7 +2,6 @@
 require("dayjs/locale/pt");
 
 // Imports
-import { Request, Response } from "express";
 import { TpEpisodeInstance, EpisodesTp } from "../models/TpEpisodes";
 import { AbEpisodeInstance, EpisodesAb } from "../models/AbEpisodes";
 
@@ -10,7 +9,6 @@ import { AbEpisodeInstance, EpisodesAb } from "../models/AbEpisodes";
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 import dayOfYear from "dayjs/plugin/dayOfYear";
-import { log } from "console";
 dayjs.extend(isBetween);
 dayjs.extend(dayOfYear);
 dayjs.locale("pt-br");
