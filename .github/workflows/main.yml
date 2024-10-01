@@ -28,7 +28,7 @@ jobs:
           tar -cvf pazkids-dist.tar dist/
 
       - name: Save Build Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: pazkids-dist.tar
           path: pazkids-dist.tar
@@ -41,7 +41,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Download Build Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: pazkids-dist.tar
 
