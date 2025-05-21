@@ -34,19 +34,19 @@ server.engine("mustache", mustache());
 
 // Public
 if (process.env.NODE_ENV === "production") {
-    server.use(express.static(path.join(__dirname, "public")));
+    server.use("/old", express.static(path.join(__dirname, "public")));
 } else {
-    server.use(express.static(path.join(__dirname, "../public")));
+    server.use("/old",express.static(path.join(__dirname, "../public")));
 }
 
 // Session
 server.use(sessionConfigs);
 
 // Main Routes
-server.use(mainRoutes);
+server.use("/old", mainRoutes);
 
 // 404: Not Found
-server.use((req, res) => {
+server.use("/old", (req, res) => {
     let pageName = "Página não encontrada";
     res.render("pages/404", {
         pageName,
