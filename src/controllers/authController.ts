@@ -198,12 +198,12 @@ export const { forgotGet, forgotPost } = {
                                 </tr>
                                 <tr>
                                     <td style="padding:10px 0 30px 0">
-                                        <center><a href="https://www.pazkids.com.br/recover?token=${token}" style="display:inline-block;padding:11px 30px;margin:20px 0px 30px;font-size:15px;color:#fff;background:#02b7ff;border-radius:60px;text-decoration:none" target="_blank">Clique aqui para alterar sua senha</a></center>
+                                        <center><a href="https://www.pazkids.com.br/old/recover?token=${token}" style="display:inline-block;padding:11px 30px;margin:20px 0px 30px;font-size:15px;color:#fff;background:#02b7ff;border-radius:60px;text-decoration:none" target="_blank">Clique aqui para alterar sua senha</a></center>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="border-top:1px solid #f6f6f6;padding-top:20px;color:#777">
-                                        Site: <a href="https://www.pazkids.com.br">Paz Kids Oficial</a>
+                                        Site: <a href="https://www.pazkids.com.br/old">Paz Kids Oficial</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -245,7 +245,7 @@ export const { recoverGet, recoverPost } = {
             res.render("pages/recover", { email, token });
         } else {
             res.redirect(
-                "https://www.pazkids.com.br/forgot?error=invalid_token"
+                "https://www.pazkids.com.br/old/forgot?error=invalid_token"
             );
             return;
         }

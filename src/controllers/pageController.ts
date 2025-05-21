@@ -17,8 +17,8 @@ import {
 export const inicio = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTp();
     let episodeAbToShow = await cardAb();
-    let prevMonthLink = "https://www.pazkids.com.br/prev/" + prevMonthName;
-    let nextMonthLink = "https://www.pazkids.com.br/next/" + nextMonthName;
+    let prevMonthLink = "https://www.pazkids.com.br/old/prev/" + prevMonthName;
+    let nextMonthLink = "https://www.pazkids.com.br/old/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
@@ -50,8 +50,8 @@ export const inicio = async (req: Request, res: Response) => {
 export const prevmonth = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTpPrevMonth();
     let episodeAbToShow = await cardAbPrevMonth();
-    let prevMonthLink = "https://www.pazkids.com.br/prev/" + prevMonthName;
-    let nextMonthLink = "https://www.pazkids.com.br/next/" + nextMonthName;
+    let prevMonthLink = "https://www.pazkids.com.br/old/prev/" + prevMonthName;
+    let nextMonthLink = "https://www.pazkids.com.br/old/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
@@ -83,8 +83,8 @@ export const prevmonth = async (req: Request, res: Response) => {
 export const nextmonth = async (req: Request, res: Response) => {
     let episodeTpToShow = await cardTpNextMonth();
     let episodeAbToShow = await cardAbNextMonth();
-    let prevMonthLink = "https://www.pazkids.com.br/prev/" + prevMonthName;
-    let nextMonthLink = "https://www.pazkids.com.br/next/" + nextMonthName;
+    let prevMonthLink = "https://www.pazkids.com.br/old/prev/" + prevMonthName;
+    let nextMonthLink = "https://www.pazkids.com.br/old/next/" + nextMonthName;
     let selectInicio = "selected";
     let logged = req.session.user;
     let username = "";
@@ -299,34 +299,5 @@ export const header = async (req: Request, res: Response) => {
     res.render("pages/header", {
         logged,
         // username,
-    });
-};
-
-export const encontro = async (req: Request, res: Response) => {
-    const link = "https://www.e-inscricao.com/pazsaopaulo/encontrokids2023";
-
-    res.redirect(link);
-};
-
-export const acampakids = async (req: Request, res: Response) => {
-    const link = "https://www.e-inscricao.com/pazsaopaulo/acampakids2024";
-
-    res.redirect(link);
-};
-
-export const discipulador = async (req: Request, res: Response) => {
-    let pageName = "Discipulador";
-    let logged = req.session.user;
-    let username = "";
-
-    if (logged) {
-        username = req.session.user.name;
-    } else {
-    }
-
-    res.render("pages/discipulador", {
-        username,
-        logged,
-        pageName,
     });
 };
